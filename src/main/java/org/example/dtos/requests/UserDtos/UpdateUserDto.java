@@ -1,5 +1,6 @@
 package org.example.dtos.requests.UserDtos;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data()
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpdateUserDto {
     @NotBlank()
     private UUID userId;

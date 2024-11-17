@@ -15,11 +15,24 @@ public class UserService {
 
     public Optional<UsersEntity> getUserById(UUID userId) {
         return userRepository.findById(userId);
-    }
+    };
 
     public UsersEntity saveUser(UsersEntity usersEntity) {
         return userRepository.save(usersEntity);
     }
+
+    public void deleteUser(UUID userId) {
+        userRepository.deleteById(userId);
+    }
+
+    public UsersEntity getUserByUserName(String userName) {
+        return userRepository.getUserByUserName(userName);
+    }
+
+    public UsersEntity getUserByEmail(String email) {
+        return userRepository.getUserByEmail(email);
+    }
+
 
 
 }

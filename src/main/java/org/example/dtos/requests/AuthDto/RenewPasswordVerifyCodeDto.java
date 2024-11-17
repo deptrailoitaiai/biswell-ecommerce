@@ -1,4 +1,4 @@
-package org.example.dtos.requests.AuthenDtos;
+package org.example.dtos.requests.AuthDto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
