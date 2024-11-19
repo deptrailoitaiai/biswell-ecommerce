@@ -11,6 +11,6 @@ import java.util.UUID;
 
 @Repository()
 public interface ArticleRepository extends JpaRepository<ArticlesEntity, UUID> {
-    @Query(value = "SELECT * FROM Articles WHERE article_name = :articleName")
+    @Query(value = "SELECT a FROM Articles a WHERE a.articleName = :articleName")
     Optional<ArticlesEntity> getArticleByName(@Param("articleName") String articleName);
 }

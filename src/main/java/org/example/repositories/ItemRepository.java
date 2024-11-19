@@ -11,6 +11,6 @@ import java.util.UUID;
 
 @Repository()
 public interface ItemRepository extends JpaRepository<ItemsEntity, UUID> {
-    @Query(value = "SELECT * FROM Items WHERE item_name = :itemName")
+    @Query(value = "SELECT i FROM Items i WHERE i.itemName = :itemName")
     Optional<ItemsEntity> getItemByName(@Param("itemName") String itemName);
 }
