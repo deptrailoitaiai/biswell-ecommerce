@@ -1,16 +1,13 @@
-package org.example.dtos.requests.AuthDto;
+package org.example.dtos.requests.AuthDtos;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data()
-public class SignUpDto {
+public class LoginDto {
     @NotBlank()
-    private String userName;
+    private String email;
 
     @NotBlank()
     private String password;
-
-    @NotBlank()
-    private String email;
 }

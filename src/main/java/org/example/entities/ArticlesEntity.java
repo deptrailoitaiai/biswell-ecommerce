@@ -18,6 +18,10 @@ public class ArticlesEntity {
     @Column(name = "article_id")
     private UUID articleId;
 
+    @Column(name = "article_name")
+    @Lob()
+    private String articleName;
+
     @Column(name = "text")
     @Lob()
     private String text;
