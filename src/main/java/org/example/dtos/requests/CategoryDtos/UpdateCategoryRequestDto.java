@@ -1,4 +1,4 @@
-package org.example.dtos.requests.ItemDtos;
+package org.example.dtos.requests.CategoryDtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
@@ -6,23 +6,16 @@ import lombok.Data;
 
 import java.util.UUID;
 
+
 @Data()
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UpdateItemDto {
+public class UpdateCategoryRequestDto {
     @NotBlank()
     private UUID categoryId;
 
-    private String itemName;
-
-    private String itemImage;
+    private String categoryName;
 
     private String description;
 
-    private float price;
-
-    private float salePrice;
-
-    private boolean saleActive;
-
-    private int sold;
+    private String categoryImage;
 }

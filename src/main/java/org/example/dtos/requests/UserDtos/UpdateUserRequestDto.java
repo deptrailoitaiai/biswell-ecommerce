@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Data()
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UpdateUserDto {
+public class UpdateUserRequestDto {
     @NotBlank()
     private UUID userId;
 

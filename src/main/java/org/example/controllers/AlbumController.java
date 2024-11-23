@@ -1,13 +1,14 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
-import org.example.dtos.requests.AlbumDtos.CreateAlbumDto;
-import org.example.dtos.requests.AlbumDtos.DeleteAlbumDto;
-import org.example.dtos.requests.AlbumDtos.UpdateAlbumDto;
+import org.example.dtos.requests.AlbumDtos.CreateAlbumRequestDto;
+import org.example.dtos.requests.AlbumDtos.DeleteAlbumRequestDto;
+import org.example.dtos.requests.AlbumDtos.UpdateAlbumRequestDto;
 import org.example.entities.AlbumsEntity;
 import org.example.services.AlbumService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -33,21 +34,21 @@ public class AlbumController {
     }
 
     @PostMapping()
-    public AlbumsEntity createAlbum(@Valid() @RequestBody() CreateAlbumDto createAlbumDto) {
-        AlbumsEntity albumsEntity = entityNonNull.map(createAlbumDto, AlbumsEntity.class);
+    public AlbumsEntity createAlbum(@Valid() @RequestBody() CreateAlbumRequestDto createAlbumRequestDto) {
+        AlbumsEntity albumsEntity = entityNonNull.map(createAlbumRequestDto, AlbumsEntity.class);
 
         return albumService.saveAlbum(albumsEntity);
     }
 
     @PatchMapping()
-    public AlbumsEntity updateAlbum(@Valid() @RequestBody()UpdateAlbumDto updateAlbumDto) {
-        AlbumsEntity albumsEntity = entityNonNull.map(updateAlbumDto, AlbumsEntity.class);
+    public AlbumsEntity updateAlbum(@Valid() @RequestBody() UpdateAlbumRequestDto updateAlbumRequestDto) {
+        AlbumsEntity albumsEntity = entityNonNull.map(updateAlbumRequestDto, AlbumsEntity.class);
 
         return albumService.saveAlbum(albumsEntity);
     }
 
     @DeleteMapping()
-    public void deleteAlbum(@Valid() @RequestBody()DeleteAlbumDto deleteAlbumDto) {
-        albumService.deleteAlbum(deleteAlbumDto.getAlbumId());
+    public void deleteAlbum(@Valid() @RequestBody() DeleteAlbumRequestDto deleteAlbumRequestDto) {
+        albumService.deleteAlbum(deleteAlbumRequestDto.getAlbumId());
     }
 }

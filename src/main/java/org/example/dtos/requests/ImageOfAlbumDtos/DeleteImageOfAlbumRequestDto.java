@@ -6,11 +6,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data()
-public class UpdateImageOfAlbumDto {
+public class DeleteImageOfAlbumRequestDto {
     @NotBlank()
     private UUID imageId;
-
-    private String description;
-
-    private String image;
 }

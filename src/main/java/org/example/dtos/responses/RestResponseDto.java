@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Data()
-@NoArgsConstructor()
-@AllArgsConstructor()
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.ALWAYS)
 public class RestResponseDto<T> {
     private boolean sucsess;
     private String message;

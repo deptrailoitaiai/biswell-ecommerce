@@ -3,10 +3,8 @@ package org.example.dtos.requests.ItemDtos;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-import java.util.UUID;
-
 @Data()
-public class CreateItemDto {
+public class CreateItemRequestDto {
     @NotBlank()
     private String itemName;
 

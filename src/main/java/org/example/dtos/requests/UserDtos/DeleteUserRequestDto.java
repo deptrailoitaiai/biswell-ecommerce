@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 
 import java.util.UUID;
 
-public class DeleteUserDto {
+public class DeleteUserRequestDto {
     @NotBlank()
     private UUID userId;
 }

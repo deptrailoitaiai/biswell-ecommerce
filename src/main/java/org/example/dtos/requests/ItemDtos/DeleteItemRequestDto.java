@@ -1,4 +1,4 @@
-package org.example.dtos.requests.ImageOfAlbumDtos;
+package org.example.dtos.requests.ItemDtos;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data()
-public class DeleteImageOfAlbumDto {
+public class DeleteItemRequestDto {
     @NotBlank()
-    private UUID imageId;
+    private UUID itemId;
 }

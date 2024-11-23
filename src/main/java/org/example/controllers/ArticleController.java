@@ -1,9 +1,9 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
-import org.example.dtos.requests.ArticleDtos.CreateArticleDto;
-import org.example.dtos.requests.ArticleDtos.DeleteArticleDto;
-import org.example.dtos.requests.ArticleDtos.UpdateArticleDto;
+import org.example.dtos.requests.ArticleDtos.CreateArticleRequestDto;
+import org.example.dtos.requests.ArticleDtos.DeleteArticleRequestDto;
+import org.example.dtos.requests.ArticleDtos.UpdateArticleRequestDto;
 import org.example.entities.ArticlesEntity;
 import org.example.services.ArticleService;
 import org.modelmapper.ModelMapper;
@@ -33,21 +33,21 @@ public class ArticleController {
     }
 
     @PostMapping()
-    public ArticlesEntity createArticle(@Valid() @RequestBody()CreateArticleDto createArticleDto) {
-        ArticlesEntity articlesEntity = entityNonNull.map(createArticleDto, ArticlesEntity.class);
+    public ArticlesEntity createArticle(@Valid() @RequestBody() CreateArticleRequestDto createArticleRequestDto) {
+        ArticlesEntity articlesEntity = entityNonNull.map(createArticleRequestDto, ArticlesEntity.class);
 
         return articleService.saveArticle(articlesEntity);
     }
 
     @PatchMapping()
-    public ArticlesEntity updateArticle(@Valid() @RequestBody()UpdateArticleDto updateArticleDto) {
-        ArticlesEntity articlesEntity = entityNonNull.map(updateArticleDto, ArticlesEntity.class);
+    public ArticlesEntity updateArticle(@Valid() @RequestBody() UpdateArticleRequestDto updateArticleRequestDto) {
+        ArticlesEntity articlesEntity = entityNonNull.map(updateArticleRequestDto, ArticlesEntity.class);
 
         return articleService.saveArticle(articlesEntity);
     }
 
     @DeleteMapping()
-    public void deleteArticle(@Valid() @RequestBody()DeleteArticleDto deleteArticleDto) {
-        articleService.deleteArticle(deleteArticleDto.getArticleId());
+    public void deleteArticle(@Valid() @RequestBody() DeleteArticleRequestDto deleteArticleRequestDto) {
+        articleService.deleteArticle(deleteArticleRequestDto.getArticleId());
     }
 }

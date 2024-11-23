@@ -12,5 +12,5 @@ import java.util.UUID;
 @Repository()
 public interface AlbumRepository extends JpaRepository<AlbumsEntity, UUID> {
     @Query(value = "SELECT a FROM Albums a WHERE a.albumName = :albumName")
-    Optional<AlbumsEntity> getAlbumByName (@Param("albumName") String albumName);
+        Optional<AlbumsEntity> getAlbumByName (@Param("albumName") String albumName);
 }

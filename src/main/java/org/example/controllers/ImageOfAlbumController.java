@@ -1,9 +1,9 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
-import org.example.dtos.requests.ImageOfAlbumDtos.CreateImageOfAlbumDto;
-import org.example.dtos.requests.ImageOfAlbumDtos.DeleteImageOfAlbumDto;
-import org.example.dtos.requests.ImageOfAlbumDtos.UpdateImageOfAlbumDto;
+import org.example.dtos.requests.ImageOfAlbumDtos.CreateImageOfAlbumRequestDto;
+import org.example.dtos.requests.ImageOfAlbumDtos.DeleteImageOfAlbumRequestDto;
+import org.example.dtos.requests.ImageOfAlbumDtos.UpdateImageOfAlbumRequestDto;
 import org.example.entities.ImagesOfAlbumEntity;
 import org.example.services.ImagesOfAlbumService;
 import org.modelmapper.ModelMapper;
@@ -28,21 +28,21 @@ public class ImageOfAlbumController {
     }
 
     @PostMapping()
-    public ImagesOfAlbumEntity createImage(@Valid() @RequestBody() CreateImageOfAlbumDto createImageOfAlbumDto) {
-        ImagesOfAlbumEntity imagesOfAlbumEntity = entityNonNull.map(createImageOfAlbumDto, ImagesOfAlbumEntity.class);
+    public ImagesOfAlbumEntity createImage(@Valid() @RequestBody() CreateImageOfAlbumRequestDto createImageOfAlbumRequestDto) {
+        ImagesOfAlbumEntity imagesOfAlbumEntity = entityNonNull.map(createImageOfAlbumRequestDto, ImagesOfAlbumEntity.class);
 
         return imagesOfAlbumService.saveImage(imagesOfAlbumEntity);
     }
 
     @PatchMapping()
-    public ImagesOfAlbumEntity updateImage(@Valid() @RequestBody() UpdateImageOfAlbumDto updateImageOfAlbumDto) {
-        ImagesOfAlbumEntity imagesOfAlbumEntity = entityNonNull.map(updateImageOfAlbumDto, ImagesOfAlbumEntity.class);
+    public ImagesOfAlbumEntity updateImage(@Valid() @RequestBody() UpdateImageOfAlbumRequestDto updateImageOfAlbumRequestDto) {
+        ImagesOfAlbumEntity imagesOfAlbumEntity = entityNonNull.map(updateImageOfAlbumRequestDto, ImagesOfAlbumEntity.class);
 
         return imagesOfAlbumService.saveImage(imagesOfAlbumEntity);
     }
 
     @DeleteMapping()
-    public void deleteImage(@Valid() @RequestBody()DeleteImageOfAlbumDto deleteImageOfAlbumDto) {
-        imagesOfAlbumService.deleteImage(deleteImageOfAlbumDto.getImageId());
+    public void deleteImage(@Valid() @RequestBody() DeleteImageOfAlbumRequestDto deleteImageOfAlbumRequestDto) {
+        imagesOfAlbumService.deleteImage(deleteImageOfAlbumRequestDto.getImageId());
     }
 }

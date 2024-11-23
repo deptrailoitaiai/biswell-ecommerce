@@ -5,7 +5,7 @@ import lombok.Data;
 
 
 @Data()
-public class CreateCategoryDto {
+public class CreateCategoryRequestDto {
     @NotBlank()
     private String categoryName;
 

@@ -1,4 +1,4 @@
-package org.example.dtos.requests.ArticleDtos;
+package org.example.dtos.requests.ImageOfAlbumDtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
@@ -8,11 +8,13 @@ import java.util.UUID;
 
 @Data()
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UpdateArticleDto {
+public class CreateImageOfAlbumRequestDto {
     @NotBlank()
-    private UUID articleId;
+    private UUID albumId;
 
-    private String articleName;
+    @NotBlank()
+    private String description;
 
-    private String text;
+    @NotBlank()
+    private String image;
 }

@@ -1,4 +1,4 @@
-package org.example.dtos.requests.AlbumDtos;
+package org.example.dtos.requests.ArticleDtos;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data()
-public class DeleteAlbumDto {
+public class DeleteArticleRequestDto {
     @NotBlank()
-    private UUID albumId;
+    private UUID articleId;
 }
