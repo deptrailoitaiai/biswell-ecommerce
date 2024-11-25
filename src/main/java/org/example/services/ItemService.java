@@ -44,6 +44,7 @@ public class ItemService {
     public void deleteItem(UUID itemId) {
         if(itemRepository.existsById(itemId)) {
             itemRepository.deleteById(itemId);
+            return;
         }
 
         throw new ItemNotExistException("Item '" + itemId + "' not exist");

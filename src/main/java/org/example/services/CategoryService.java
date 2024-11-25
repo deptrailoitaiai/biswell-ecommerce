@@ -44,6 +44,7 @@ public class CategoryService {
     public void deleteCategory(UUID categoryId) {
         if(categoryRepository.existsById(categoryId)) {
             categoryRepository.deleteById(categoryId);
+            return;
         }
 
         throw new CategoryNotExistException("Category '" + categoryId + "' not exist");

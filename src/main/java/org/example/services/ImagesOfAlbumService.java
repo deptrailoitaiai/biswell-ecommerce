@@ -34,6 +34,7 @@ public class ImagesOfAlbumService {
     public void deleteImage(UUID imageId) {
         if(imagesOfAlbumRepository.existsById(imageId)) {
             imagesOfAlbumRepository.deleteById(imageId);
+            return;
         }
 
         throw new ImageOfAlbumNotExistException("image '" + imageId + "' not exist");

@@ -43,6 +43,7 @@ public class AlbumService {
     public void deleteAlbum(UUID albumId) {
         if (albumRepository.existsById(albumId)) {
             albumRepository.deleteById(albumId);
+            return;
         }
 
         throw new AlbumNotExistException("Album '" + albumId + "' not exist");

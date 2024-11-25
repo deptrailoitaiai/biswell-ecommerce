@@ -1,6 +1,7 @@
 package org.example.dtos.requests.ItemDtos;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data()
@@ -14,12 +15,12 @@ public class CreateItemRequestDto {
     @NotBlank()
     private String description;
 
-    @NotBlank()
+    @NotNull()
     private float price;
 
-    @NotBlank()
+    @NotNull()
     private float salePrice;
 
-    @NotBlank()
+    @NotNull()
     private boolean saleActive;
 }

@@ -44,6 +44,7 @@ public class ArticleService {
     public void deleteArticle(UUID articleId) {
         if(articleRepository.existsById(articleId)) {
             articleRepository.deleteById(articleId);
+            return;
         }
 
         throw new ArticleNotExistException("Article '" + articleId + "' not exist");
