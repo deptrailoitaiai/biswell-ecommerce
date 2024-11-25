@@ -1,16 +1,19 @@
 package org.example.controllers;
 
-import java.util.Optional;
 import java.util.UUID;
-
 import jakarta.validation.Valid;
 import org.example.dtos.requests.CategoryDtos.CreateCategoryRequestDto;
 import org.example.dtos.requests.CategoryDtos.DeleteCategoryRequestDto;
 import org.example.dtos.requests.CategoryDtos.UpdateCategoryRequestDto;
+import org.example.dtos.responses.CategoryDtos.CreateCategoryResponseDto;
+import org.example.dtos.responses.CategoryDtos.GetCategoryResponseDto;
+import org.example.dtos.responses.CategoryDtos.UpdateCategoryResponseDto;
+import org.example.dtos.responses.GlobalResponseDto;
 import org.example.entities.CategoriesEntity;
 import org.example.services.CategoryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
@@ -20,34 +23,69 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @Autowired()
-    private ModelMapper entityNonNull;
+    private ModelMapper objectAssign;
 
     @GetMapping("/id/{id}")
-    public Optional<CategoriesEntity> getCategoryById(@PathVariable("id") UUID id) {
-        return categoryService.getCategoryById(id);
+    public ResponseEntity<GlobalResponseDto<GetCategoryResponseDto>> getCategoryById(@PathVariable("id") UUID id) {
+        CategoriesEntity categoriesEntity = categoryService.getCategoryById(id);
+
+        GlobalResponseDto<GetCategoryResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(categoriesEntity, GetCategoryResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/name/{name}")
-    public Optional<CategoriesEntity> getCategoryByName(@PathVariable("name") String name) {
-        return categoryService.getCategoryByName(name);
+    public ResponseEntity<GlobalResponseDto<GetCategoryResponseDto>> getCategoryByName(@PathVariable("name") String name) {
+        CategoriesEntity categoriesEntity = categoryService.getCategoryByName(name);
+
+        GlobalResponseDto<GetCategoryResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(categoriesEntity, GetCategoryResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping()
-    public CategoriesEntity createCategory(@Valid() @RequestBody() CreateCategoryRequestDto createCategoryRequestDto) {
-        CategoriesEntity categoriesEntity = entityNonNull.map(createCategoryRequestDto, CategoriesEntity.class);
+    public ResponseEntity<GlobalResponseDto<CreateCategoryResponseDto>> createCategory(@Valid() @RequestBody() CreateCategoryRequestDto createCategoryRequestDto) {
+        CategoriesEntity categoriesEntity = categoryService.createCategory(objectAssign.map(createCategoryRequestDto, CategoriesEntity.class));
 
-        return categoryService.saveCategory(categoriesEntity);
+        GlobalResponseDto<CreateCategoryResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Created successfully.",
+                objectAssign.map(categoriesEntity, CreateCategoryResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PatchMapping()
-    public CategoriesEntity updateCategory(@Valid() @RequestBody() UpdateCategoryRequestDto updateCategoryRequestDto) {
-        CategoriesEntity categoriesEntity = entityNonNull.map(updateCategoryRequestDto, CategoriesEntity.class);
+    public ResponseEntity<GlobalResponseDto<UpdateCategoryResponseDto>> updateCategory(@Valid() @RequestBody() UpdateCategoryRequestDto updateCategoryRequestDto) {
+        CategoriesEntity categoriesEntity = categoryService.updateCategory(objectAssign.map(updateCategoryRequestDto, CategoriesEntity.class));
 
-        return categoryService.saveCategory(categoriesEntity);
+        GlobalResponseDto<UpdateCategoryResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Updated successfully.",
+                objectAssign.map(categoriesEntity, UpdateCategoryResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping()
-    public void deleteCategory(@Valid() @RequestBody() DeleteCategoryRequestDto deleteCategoryRequestDto) {
+    public ResponseEntity<GlobalResponseDto<String>> deleteCategory(@Valid() @RequestBody() DeleteCategoryRequestDto deleteCategoryRequestDto) {
         categoryService.deleteCategory(deleteCategoryRequestDto.getCategoryId());
+
+        GlobalResponseDto<String> response = new GlobalResponseDto<>(
+                true,
+                "Deleted successfully."
+        );
+
+        return ResponseEntity.ok(response);
     }
 }

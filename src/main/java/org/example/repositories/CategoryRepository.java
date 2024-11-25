@@ -13,4 +13,7 @@ import java.util.UUID;
 public interface CategoryRepository extends JpaRepository<CategoriesEntity, UUID> {
     @Query(value = "SELECT c FROM Categories c WHERE c.categoryName = :categoryName")
     Optional<CategoriesEntity> getCategoryByName(@Param("categoryName") String categoryName);
+
+    @Query("SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END FROM Categories c WHERE c.categoryName = :categoryName")
+    boolean existsByName(String categoryName);
 }

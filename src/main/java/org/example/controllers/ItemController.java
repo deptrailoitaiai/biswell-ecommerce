@@ -4,10 +4,15 @@ import jakarta.validation.Valid;
 import org.example.dtos.requests.ItemDtos.CreateItemRequestDto;
 import org.example.dtos.requests.ItemDtos.DeleteItemRequestDto;
 import org.example.dtos.requests.ItemDtos.UpdateItemRequestDto;
+import org.example.dtos.responses.GlobalResponseDto;
+import org.example.dtos.responses.ItemDtos.CreateItemResponseDto;
+import org.example.dtos.responses.ItemDtos.GetItemResponseDto;
+import org.example.dtos.responses.ItemDtos.UpdateItemResponseDto;
 import org.example.entities.ItemsEntity;
 import org.example.services.ItemService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -20,35 +25,69 @@ public class ItemController {
     private ItemService itemService;
 
     @Autowired()
-    private ModelMapper entityNonNull;
+    private ModelMapper objectAssign;
 
-    @GetMapping("id/{id}")
-    public Optional<ItemsEntity> getItemById(@PathVariable() UUID itemId) {
-        return itemService.getItemById(itemId);
+    @GetMapping("/id/{id}")
+    public ResponseEntity<GlobalResponseDto<GetItemResponseDto>> getItemById(@PathVariable("id") UUID id) {
+        ItemsEntity itemsEntity = itemService.getItemById(id);
+
+        GlobalResponseDto<GetItemResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(itemsEntity, GetItemResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
-    @GetMapping("name/{name}")
-    public Optional<ItemsEntity> getItemByName(@PathVariable() String itemName) {
-        return itemService.getItemByName(itemName);
+    @GetMapping("/name/{name}")
+    public ResponseEntity<GlobalResponseDto<GetItemResponseDto>> getItemByName(@PathVariable("name") String name) {
+        ItemsEntity itemsEntity = itemService.getItemByName(name);
+
+        GlobalResponseDto<GetItemResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(itemsEntity, GetItemResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping()
-    public ItemsEntity createItem(@Valid() @RequestBody() CreateItemRequestDto createItemRequestDto) {
-        ItemsEntity itemsEntity = entityNonNull.map(createItemRequestDto, ItemsEntity.class);
+    public ResponseEntity<GlobalResponseDto<CreateItemResponseDto>> createItem(@Valid() @RequestBody() CreateItemRequestDto createItemRequestDto) {
+        ItemsEntity itemsEntity = itemService.createItem(objectAssign.map(createItemRequestDto, ItemsEntity.class));
 
-        return itemService.saveItem(itemsEntity);
+        GlobalResponseDto<CreateItemResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Created successfully.",
+                objectAssign.map(itemsEntity, CreateItemResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PatchMapping()
-    public ItemsEntity updateItem(@Valid() @RequestBody() UpdateItemRequestDto updateItemRequestDto) {
-        ItemsEntity itemsEntity = entityNonNull.map(updateItemRequestDto, ItemsEntity.class);
+    public ResponseEntity<GlobalResponseDto<UpdateItemResponseDto>> updateitem(@Valid() @RequestBody() UpdateItemRequestDto updateItemRequestDto) {
+        ItemsEntity itemsEntity = itemService.updateItem(objectAssign.map(updateItemRequestDto, ItemsEntity.class));
 
-        return itemService.saveItem(itemsEntity);
+        GlobalResponseDto<UpdateItemResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Updated successfully.",
+                objectAssign.map(itemsEntity, UpdateItemResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping()
-    public void deleteItem(@Valid() @RequestBody() DeleteItemRequestDto deleteItemRequestDto) {
+    public ResponseEntity<GlobalResponseDto<String>> deleteItem(@Valid() @RequestBody() DeleteItemRequestDto deleteItemRequestDto) {
         itemService.deleteItem(deleteItemRequestDto.getItemId());
-    }
 
+        GlobalResponseDto<String> response = new GlobalResponseDto<>(
+                true,
+                "Deleted successfully."
+        );
+
+        return ResponseEntity.ok(response);
+    }
 }

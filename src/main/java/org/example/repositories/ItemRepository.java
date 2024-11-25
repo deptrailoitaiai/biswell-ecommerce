@@ -13,4 +13,7 @@ import java.util.UUID;
 public interface ItemRepository extends JpaRepository<ItemsEntity, UUID> {
     @Query(value = "SELECT i FROM Items i WHERE i.itemName = :itemName")
     Optional<ItemsEntity> getItemByName(@Param("itemName") String itemName);
+
+    @Query("SELECT CASE WHEN COUNT(i) > 0 THEN true ELSE false END FROM Items i WHERE i.itemName = :itemName")
+    boolean existsByName(String itemName);
 }

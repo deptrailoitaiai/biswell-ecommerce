@@ -1,6 +1,8 @@
 package org.example.services;
 
 import org.example.entities.ItemsEntity;
+import org.example.exceptions.ItemExceptions.ItemExistedException;
+import org.example.exceptions.ItemExceptions.ItemNotExistException;
 import org.example.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,19 +15,37 @@ public class ItemService {
     @Autowired()
     private ItemRepository itemRepository;
 
-    public Optional<ItemsEntity> getItemById(UUID itemId) {
-        return itemRepository.findById(itemId);
+    public ItemsEntity getItemById(UUID itemId) {
+        return itemRepository.findById(itemId)
+                .orElseThrow(() -> new ItemNotExistException("Item '" + itemId + "' not exist"));
     }
 
-    public ItemsEntity saveItem(ItemsEntity itemsEntity) {
+    public ItemsEntity getItemByName(String itemName) {
+        return itemRepository.getItemByName(itemName)
+                .orElseThrow(() -> new ItemNotExistException("Item '" + itemName + "' not exist"));
+    }
+
+    public ItemsEntity createItem(ItemsEntity itemsEntity) {
+        if(itemRepository.existsByName(itemsEntity.getItemName())) {
+            throw new ItemExistedException("Item '" + itemsEntity.getItemName() + "' existed");
+        }
+
         return itemRepository.save(itemsEntity);
     }
 
-    public void deleteItem(UUID itemId) {
-        itemRepository.deleteById(itemId);
+    public ItemsEntity updateItem(ItemsEntity itemsEntity) {
+        if(itemRepository.existsById(itemsEntity.getItemId())) {
+            return itemRepository.save(itemsEntity);
+        }
+
+        throw new ItemNotExistException("Item '" + itemsEntity.getItemId() + "' not exist");
     }
 
-    public Optional<ItemsEntity> getItemByName(String userName) {
-        return itemRepository.getItemByName(userName);
+    public void deleteItem(UUID itemId) {
+        if(itemRepository.existsById(itemId)) {
+            itemRepository.deleteById(itemId);
+        }
+
+        throw new ItemNotExistException("Item '" + itemId + "' not exist");
     }
 }

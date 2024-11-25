@@ -4,10 +4,15 @@ import jakarta.validation.Valid;
 import org.example.dtos.requests.ImageOfAlbumDtos.CreateImageOfAlbumRequestDto;
 import org.example.dtos.requests.ImageOfAlbumDtos.DeleteImageOfAlbumRequestDto;
 import org.example.dtos.requests.ImageOfAlbumDtos.UpdateImageOfAlbumRequestDto;
+import org.example.dtos.responses.GlobalResponseDto;
+import org.example.dtos.responses.ImageOfAlbumDtos.CreateImageOfAlbumResponseDto;
+import org.example.dtos.responses.ImageOfAlbumDtos.GetImageOfAlbumResponseDto;
+import org.example.dtos.responses.ImageOfAlbumDtos.UpdateImageOfAlbumResponseDto;
 import org.example.entities.ImagesOfAlbumEntity;
 import org.example.services.ImagesOfAlbumService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -20,29 +25,56 @@ public class ImageOfAlbumController {
     private ImagesOfAlbumService imagesOfAlbumService;
 
     @Autowired()
-    private ModelMapper entityNonNull;
+    private ModelMapper objectAssign;
 
     @GetMapping("/{id}")
-    public Optional<ImagesOfAlbumEntity> getImageById(UUID imageId) {
-        return imagesOfAlbumService.getImageById(imageId);
+    public ResponseEntity<GlobalResponseDto<GetImageOfAlbumResponseDto>> getImageById(UUID imageId) {
+        ImagesOfAlbumEntity imagesOfAlbumEntity = imagesOfAlbumService.getImageById(imageId);
+
+        GlobalResponseDto<GetImageOfAlbumResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(imagesOfAlbumEntity, GetImageOfAlbumResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping()
-    public ImagesOfAlbumEntity createImage(@Valid() @RequestBody() CreateImageOfAlbumRequestDto createImageOfAlbumRequestDto) {
-        ImagesOfAlbumEntity imagesOfAlbumEntity = entityNonNull.map(createImageOfAlbumRequestDto, ImagesOfAlbumEntity.class);
+    public ResponseEntity<GlobalResponseDto<CreateImageOfAlbumResponseDto>> createImage(@Valid() @RequestBody() CreateImageOfAlbumRequestDto createImageOfAlbumRequestDto) {
+        ImagesOfAlbumEntity imagesOfAlbumEntity = imagesOfAlbumService.createImage(objectAssign.map(createImageOfAlbumRequestDto, ImagesOfAlbumEntity.class));
 
-        return imagesOfAlbumService.saveImage(imagesOfAlbumEntity);
+        GlobalResponseDto<CreateImageOfAlbumResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Created successfully.",
+                objectAssign.map(imagesOfAlbumEntity, CreateImageOfAlbumResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PatchMapping()
-    public ImagesOfAlbumEntity updateImage(@Valid() @RequestBody() UpdateImageOfAlbumRequestDto updateImageOfAlbumRequestDto) {
-        ImagesOfAlbumEntity imagesOfAlbumEntity = entityNonNull.map(updateImageOfAlbumRequestDto, ImagesOfAlbumEntity.class);
+    public ResponseEntity<GlobalResponseDto<UpdateImageOfAlbumResponseDto>> updateImage(@Valid() @RequestBody() UpdateImageOfAlbumRequestDto updateImageOfAlbumRequestDto) {
+        ImagesOfAlbumEntity imagesOfAlbumEntity = imagesOfAlbumService.updateImage(objectAssign.map(updateImageOfAlbumRequestDto, ImagesOfAlbumEntity.class));
 
-        return imagesOfAlbumService.saveImage(imagesOfAlbumEntity);
+        GlobalResponseDto<UpdateImageOfAlbumResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Updated successfully.",
+                objectAssign.map(imagesOfAlbumEntity, UpdateImageOfAlbumResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping()
-    public void deleteImage(@Valid() @RequestBody() DeleteImageOfAlbumRequestDto deleteImageOfAlbumRequestDto) {
+    public ResponseEntity<GlobalResponseDto<String>> deleteImage(@Valid() @RequestBody() DeleteImageOfAlbumRequestDto deleteImageOfAlbumRequestDto) {
         imagesOfAlbumService.deleteImage(deleteImageOfAlbumRequestDto.getImageId());
+
+        GlobalResponseDto<String> response = new GlobalResponseDto<>(
+                true,
+                "Deleted successfully."
+        );
+
+        return ResponseEntity.ok(response);
     }
 }

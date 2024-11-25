@@ -4,10 +4,15 @@ import jakarta.validation.Valid;
 import org.example.dtos.requests.ArticleDtos.CreateArticleRequestDto;
 import org.example.dtos.requests.ArticleDtos.DeleteArticleRequestDto;
 import org.example.dtos.requests.ArticleDtos.UpdateArticleRequestDto;
+import org.example.dtos.responses.ArticleDtos.CreateArticleResponseDto;
+import org.example.dtos.responses.ArticleDtos.GetArticleResponseDto;
+import org.example.dtos.responses.ArticleDtos.UpdateArticleResponseDto;
+import org.example.dtos.responses.GlobalResponseDto;
 import org.example.entities.ArticlesEntity;
 import org.example.services.ArticleService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -20,34 +25,69 @@ public class ArticleController {
     private ArticleService articleService;
 
     @Autowired()
-    private ModelMapper entityNonNull;
+    private ModelMapper objectAssign;
 
     @GetMapping("/id/{id}")
-    public Optional<ArticlesEntity> getArticleById(@PathVariable("id") UUID id) {
-        return articleService.getArticleById(id);
+    public ResponseEntity<GlobalResponseDto<GetArticleResponseDto>> getArticleById(@PathVariable("id") UUID id) {
+        ArticlesEntity articlesEntity = articleService.getArticleById(id);
+
+        GlobalResponseDto<GetArticleResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(articlesEntity, GetArticleResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/name/{name}")
-    public Optional<ArticlesEntity> getArticleByName(@PathVariable("name") String name) {
-        return articleService.getArticleByName(name);
+    public ResponseEntity<GlobalResponseDto<GetArticleResponseDto>> getArticleByName(@PathVariable("name") String name) {
+        ArticlesEntity articlesEntity = articleService.getArticleByName(name);
+
+        GlobalResponseDto<GetArticleResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Data retrieved successfully.",
+                objectAssign.map(articlesEntity, GetArticleResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping()
-    public ArticlesEntity createArticle(@Valid() @RequestBody() CreateArticleRequestDto createArticleRequestDto) {
-        ArticlesEntity articlesEntity = entityNonNull.map(createArticleRequestDto, ArticlesEntity.class);
+    public ResponseEntity<GlobalResponseDto<CreateArticleResponseDto>> createArticle(@Valid() @RequestBody() CreateArticleRequestDto createArticleRequestDto) {
+        ArticlesEntity articlesEntity = articleService.createArticle(objectAssign.map(createArticleRequestDto, ArticlesEntity.class));
 
-        return articleService.saveArticle(articlesEntity);
+        GlobalResponseDto<CreateArticleResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Created successfully.",
+                objectAssign.map(articlesEntity, CreateArticleResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @PatchMapping()
-    public ArticlesEntity updateArticle(@Valid() @RequestBody() UpdateArticleRequestDto updateArticleRequestDto) {
-        ArticlesEntity articlesEntity = entityNonNull.map(updateArticleRequestDto, ArticlesEntity.class);
+    public ResponseEntity<GlobalResponseDto<UpdateArticleResponseDto>> updateArticle(@Valid() @RequestBody() UpdateArticleRequestDto updateArticleRequestDto) {
+        ArticlesEntity articlesEntity = articleService.updateArticle(objectAssign.map(updateArticleRequestDto, ArticlesEntity.class));
 
-        return articleService.saveArticle(articlesEntity);
+        GlobalResponseDto<UpdateArticleResponseDto> response = new GlobalResponseDto<>(
+                true,
+                "Updated successfully.",
+                objectAssign.map(articlesEntity, UpdateArticleResponseDto.class)
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping()
-    public void deleteArticle(@Valid() @RequestBody() DeleteArticleRequestDto deleteArticleRequestDto) {
+    public ResponseEntity<GlobalResponseDto<String>> deleteArticle(@Valid() @RequestBody() DeleteArticleRequestDto deleteArticleRequestDto) {
         articleService.deleteArticle(deleteArticleRequestDto.getArticleId());
+
+        GlobalResponseDto<String> response = new GlobalResponseDto<>(
+                true,
+                "Deleted successfully."
+        );
+
+        return ResponseEntity.ok(response);
     }
 }
