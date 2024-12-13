@@ -1,8 +1,8 @@
 package org.example.services;
 
 import org.example.entities.AlbumsEntity;
-import org.example.exceptions.AlbumExceptions.AlbumExistedException;
-import org.example.exceptions.AlbumExceptions.AlbumNotExistException;
+import org.example.exceptions.RuntimeExceptions.ExistedException;
+import org.example.exceptions.RuntimeExceptions.NotExistsException;
 import org.example.repositories.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +16,17 @@ public class AlbumService {
 
     public AlbumsEntity getAlbumByName(String albumName) {
         return albumRepository.getAlbumByName(albumName)
-                .orElseThrow(() -> new AlbumNotExistException("Album '" + albumName + "' not exist"));
+                .orElseThrow(() -> new NotExistsException("Album '" + albumName + "' not exist"));
     }
 
     public AlbumsEntity getAlbumById(UUID albumId) {
         return albumRepository.findById(albumId)
-                .orElseThrow(() -> new AlbumNotExistException("Album '" + albumId + "' not exist"));
+                .orElseThrow(() -> new NotExistsException("Album '" + albumId + "' not exist"));
     }
 
     public AlbumsEntity createAlbum(AlbumsEntity albumsEntity) {
         if(albumRepository.existsByName(albumsEntity.getAlbumName())) {
-            throw new AlbumExistedException("Album '" + albumsEntity.getAlbumName() + "' existed");
+            throw new ExistedException("Album '" + albumsEntity.getAlbumName() + "' existed");
         }
 
         return albumRepository.save(albumsEntity);
@@ -37,7 +37,7 @@ public class AlbumService {
             return albumRepository.save(albumsEntity);
         }
 
-        throw new AlbumNotExistException("Album '" + albumsEntity.getAlbumId() + "' not exist");
+        throw new NotExistsException("Album '" + albumsEntity.getAlbumId() + "' not exist");
     }
 
     public void deleteAlbum(UUID albumId) {
@@ -46,6 +46,6 @@ public class AlbumService {
             return;
         }
 
-        throw new AlbumNotExistException("Album '" + albumId + "' not exist");
+        throw new NotExistsException("Album '" + albumId + "' not exist");
     }
 }

@@ -1,12 +1,11 @@
 package org.example.services;
 
 import org.example.entities.ImagesOfAlbumEntity;
-import org.example.exceptions.ImageOfAlbumExceptions.ImageOfAlbumNotExistException;
+import org.example.exceptions.RuntimeExceptions.NotExistsException;
 import org.example.repositories.ImagesOfAlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 import java.util.UUID;
 
 @Service()
@@ -16,7 +15,7 @@ public class ImagesOfAlbumService {
 
     public ImagesOfAlbumEntity getImageById(UUID imageId) {
         return imagesOfAlbumRepository.findById(imageId)
-                .orElseThrow(() -> new ImageOfAlbumNotExistException("image '" + imageId + "' not exist"));
+                .orElseThrow(() -> new NotExistsException("image '" + imageId + "' not exist"));
     }
 
     public ImagesOfAlbumEntity createImage(ImagesOfAlbumEntity imagesOfAlbumEntity) {
@@ -28,7 +27,7 @@ public class ImagesOfAlbumService {
             return imagesOfAlbumRepository.save(imagesOfAlbumEntity);
         }
 
-        throw new ImageOfAlbumNotExistException("image '" + imagesOfAlbumEntity.getImageId() + "' not exist");
+        throw new NotExistsException("image '" + imagesOfAlbumEntity.getImageId() + "' not exist");
     }
 
     public void deleteImage(UUID imageId) {
@@ -37,6 +36,6 @@ public class ImagesOfAlbumService {
             return;
         }
 
-        throw new ImageOfAlbumNotExistException("image '" + imageId + "' not exist");
+        throw new NotExistsException("image '" + imageId + "' not exist");
     }
 }

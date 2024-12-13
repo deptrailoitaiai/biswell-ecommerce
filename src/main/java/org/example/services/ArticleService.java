@@ -1,13 +1,12 @@
 package org.example.services;
 
 import org.example.entities.ArticlesEntity;
-import org.example.exceptions.ArticleExceptions.ArticleExistedException;
-import org.example.exceptions.ArticleExceptions.ArticleNotExistException;
+import org.example.exceptions.RuntimeExceptions.ExistedException;
+import org.example.exceptions.RuntimeExceptions.NotExistsException;
 import org.example.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 import java.util.UUID;
 
 @Service()
@@ -17,17 +16,17 @@ public class ArticleService {
 
     public ArticlesEntity getArticleById(UUID articleId) {
         return articleRepository.findById(articleId)
-                .orElseThrow(() -> new ArticleNotExistException("Article '" + articleId + "' not exist"));
+                .orElseThrow(() -> new NotExistsException("Article '" + articleId + "' not exist"));
     }
 
     public ArticlesEntity getArticleByName(String articleName) {
         return articleRepository.getArticleByName(articleName)
-                .orElseThrow(() -> new ArticleNotExistException("Article '" + articleName + "' not exist"));
+                .orElseThrow(() -> new NotExistsException("Article '" + articleName + "' not exist"));
     }
 
     public ArticlesEntity createArticle(ArticlesEntity articlesEntity) {
         if(articleRepository.existsByName(articlesEntity.getArticleName())) {
-            throw new ArticleExistedException("Article '" + articlesEntity.getArticleName() + "' existed");
+            throw new ExistedException("Article '" + articlesEntity.getArticleName() + "' existed");
         }
 
         return articleRepository.save(articlesEntity);
@@ -38,7 +37,7 @@ public class ArticleService {
             return articleRepository.save(articlesEntity);
         }
 
-        throw new ArticleNotExistException("Article '" + articlesEntity.getArticleName() + "' not exist");
+        throw new NotExistsException("Article '" + articlesEntity.getArticleName() + "' not exist");
     }
 
     public void deleteArticle(UUID articleId) {
@@ -47,6 +46,6 @@ public class ArticleService {
             return;
         }
 
-        throw new ArticleNotExistException("Article '" + articleId + "' not exist");
+        throw new NotExistsException("Article '" + articleId + "' not exist");
     }
 }
