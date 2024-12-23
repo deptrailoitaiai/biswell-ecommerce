@@ -1,0 +1,74 @@
+.boxCart{
+	margin-bottom: 45px;
+}
+.boxCart .t1{
+	font-size: 25px;
+	line-height: 33px;
+	color:#1b5633 ;
+	font-weight: bold;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-bottom: 10px;
+}
+.boxCart .des1{
+	max-width: 370px;
+	margin-bottom: 30px;
+}
+.boxCart .appBtn{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.boxCart .btnn {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: #1b5633 ;
+    border-radius: 5px;
+    padding: 13px 28px;
+}
+.boxCart .btnn span{
+	padding-left: 35px;
+	position: relative;
+}
+.boxCart .btnn span:before{
+	content: "\f291";
+	font-family: fontAwesome;
+	position: absolute;
+	left:0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.boxCart .t2{
+	font-size: 25px;
+	line-height: 33px;
+	color:#1b5633 ;
+	font-weight: bold;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-bottom: 10px;
+	max-width: 420px;
+	margin: 0 auto;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.boxCart .list1{
+	max-width: 420px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.boxCart .list1 ul li{
+	padding-left: 20px;
+	position: relative;
+}
+.boxCart .list1 ul li:before{
+	content: "\f058";
+	font-family: fontAwesome;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color:#1b5633 ;
+}
