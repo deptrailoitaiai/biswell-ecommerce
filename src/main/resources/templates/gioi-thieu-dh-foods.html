@@ -1,679 +1,1594 @@
 <!DOCTYPE html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <!-- Mirrored from dhfoods.com.vn/vn/gioi-thieu-dh-foods.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 11:45:34 GMT -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <title>Giới thiệu Dh Foods</title>
+    <meta name="keywords" content="Dh Foods" />
+    <meta
+      name="description"
+      content="Tại Dh Foods chúng tôi tin rằng, những gia vị chất lượng sẽ làm cho các bữa ăn ngon miệng và mọi người cảm thấy hạnh phúc hơn. Chúng tôi tự hào giới thiệu những gia vị tuyệt vời nhất từ mọi miền Tổ quốc đến bên gian bếp gia đình bạn."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="aEmUg-7Z0H8FynZTBTzycgen1XIhJ8ExKGPLjmo2XfM"
+    />
+    <meta name="author" content="Dh Foods" />
+    <style type="text/css">
 
-<!-- Mirrored from dhfoods.com.vn/vn/gioi-thieu-dh-foods.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 11:45:34 GMT -->
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-	<title>Giới thiệu Dh Foods</title>
-	<meta name="keywords" CONTENT="Dh Foods"/>
-	<meta name="description" CONTENT="Tại Dh Foods chúng tôi tin rằng, những gia vị chất lượng sẽ làm cho các bữa ăn ngon miệng và mọi người cảm thấy hạnh phúc hơn. Chúng tôi tự hào giới thiệu những gia vị tuyệt vời nhất từ mọi miền Tổ quốc đến bên gian bếp gia đình bạn."/>
-	<meta name="robots" content="index, follow"/>
-	<meta name="google-site-verification" content="aEmUg-7Z0H8FynZTBTzycgen1XIhJ8ExKGPLjmo2XfM" />
-<meta name="author" content="Dh Foods"/>
-<style type="text/css">
- 
-  .wrap>a:focus{
-    outline: none;
-  }
-  .header-tools>.languageMobile a{
-    padding-top: 14px;
-  }
-  
-  .header-tools>.menuTop>ul>li{
-    margin-right: 35px;
-  }
-  .mainHeadWrap>.mainHead.fixed .logo img{
-    max-height: 60px;
-  }
-  .menuTab ul li a,.productCart a,.info-contact .view-map-contact a,.info-contact .view-map-contact a:before,.form-contact button{
-    border-radius: 5px;
-  }
-  div#vnt-footer>.mainFoot .grid .col:nth-child(3),div#vnt-footer>.mainFoot .grid .col:nth-child(4){
-    margin-bottom: 25px;
-  }
- 
-  .item>.productCat .tend {
-    min-height: 75px;
-  }
-  .item>.productCat .tend h3{
-      font-size: 27px;
-      line-height: 35px;
-      white-space: normal;
-  }
-  .breadcrumb ul li:first-child{
-    display: none;
-  }
-  .breadcrumb ul li:nth-child(2){
-    margin-left: 0;
-  }
-  .col-lg-6.col-md-6.col-sm-12.col-xs-12>.productDes{
-    font-size: 18px;
-    line-height: 26px;
-  }
-  .item>.productCat .tend h3,.col-lg-4.col-md-4.col-sm-6.col-xs-6>.product .tend a,.item>.product .tend a,.col-lg-6.col-md-6.col-sm-12.col-xs-12>.productTitle h1,.col-lg-6.col-md-6.col-sm-12.col-xs-12>.productTitle h2,.col>.productCat .tend h3{
-    text-transform: none;
-  }
-  .col-lg-4.col-md-4.col-sm-6.col-xs-6>.product .tend a{
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .productDes>ol, .productDes>ul{
-    list-style: disc !important;
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding-inline-start: 40px;
-  }
-  .info-contact .view-map-contact a span{
-    padding-top: 1px;
-  }
-  .col-lg-4.col-md-4.col-sm-6.col-xs-12>.recruit .tend h3{
-    height: auto;
-  }
-  .recruit .des{
-    padding-top: 25px;
-  }
-  .recruit:hover .des{
-    padding-top: 0px;
-  }
-  @media all and (max-width: 1024px){
-  
-  .mid-content>#slideOther .slick-prev{
-    left: 0;
-  }
-  .mid-content>#slideOther .slick-next{
-    right: 0;
-  }
-  div#vnt-footer>.mainFoot .grid{
-    margin: 0;
-  }
-  div#vnt-footer>.mainFoot .name,.col-lg-4.col-md-4.col-sm-6.col-xs-6>.product .tend a{
-    font-size: 17px;
-      line-height: 25px
-  }
-  div#vnt-footer>.mainFoot .grid .col{
-      padding: 0 5px;
-  }
-  .mid-content>.roomContact .grid .col{
-      padding: 0 12px;
-  }
-  .mmMenu>ul>li:focus-within>a, .mmMenu>ul>li:focus-within>.m-sub>a{
-    background: #1b5633 ;
-      color: #ffffff;
-  }
- .item>.productCat {
- margin-bottom: 30px !important;
-}
+        .wrap>a:focus{
+          outline: none;
+        }
+        .header-tools>.languageMobile a{
+          padding-top: 14px;
+        }
 
-  .item>.productCat .tend h3{
-   font-size: 22px;
-    line-height: 32px;
-  }
-  }
+        .header-tools>.menuTop>ul>li{
+          margin-right: 35px;
+        }
+        .mainHeadWrap>.mainHead.fixed .logo img{
+          max-height: 60px;
+        }
+        .menuTab ul li a,.productCart a,.info-contact .view-map-contact a,.info-contact .view-map-contact a:before,.form-contact button{
+          border-radius: 5px;
+        }
+        div#vnt-footer>.mainFoot .grid .col:nth-child(3),div#vnt-footer>.mainFoot .grid .col:nth-child(4){
+          margin-bottom: 25px;
+        }
 
-  @media (min-width: 991px){
-    .mainHeadWrap>.mainHead.fixed .logo{
-      bottom: 0;
-    }
-.productWrap{
-  margin-bottom: 55px !important;
-}
-.recruit .img img{
- height: auto !important;
-}
-  }
+        .item>.productCat .tend {
+          min-height: 75px;
+        }
+        .item>.productCat .tend h3{
+            font-size: 27px;
+            line-height: 35px;
+            white-space: normal;
+        }
+        .breadcrumb ul li:first-child{
+          display: none;
+        }
+        .breadcrumb ul li:nth-child(2){
+          margin-left: 0;
+        }
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12>.productDes{
+          font-size: 18px;
+          line-height: 26px;
+        }
+        .item>.productCat .tend h3,.col-lg-4.col-md-4.col-sm-6.col-xs-6>.product .tend a,.item>.product .tend a,.col-lg-6.col-md-6.col-sm-12.col-xs-12>.productTitle h1,.col-lg-6.col-md-6.col-sm-12.col-xs-12>.productTitle h2,.col>.productCat .tend h3{
+          text-transform: none;
+        }
+        .col-lg-4.col-md-4.col-sm-6.col-xs-6>.product .tend a{
+          font-size: 24px;
+          line-height: 32px;
+        }
+        .productDes>ol, .productDes>ul{
+          list-style: disc !important;
+          margin-top: 0;
+          margin-bottom: 10px;
+          padding-inline-start: 40px;
+        }
+        .info-contact .view-map-contact a span{
+          padding-top: 1px;
+        }
+        .col-lg-4.col-md-4.col-sm-6.col-xs-12>.recruit .tend h3{
+          height: auto;
+        }
+        .recruit .des{
+          padding-top: 25px;
+        }
+        .recruit:hover .des{
+          padding-top: 0px;
+        }
+        @media all and (max-width: 1024px){
 
-  @media all and (max-width: 991px){
-    .wrapper>.box_mid .mid-title .titleL{
-      font-size: 30px;
-      line-height: 44px;
-    }
-    .mid-content>.contactTitle{
-      font-size: 24px;
-        line-height: 32px;
-    }
+        .mid-content>#slideOther .slick-prev{
+          left: 0;
+        }
+        .mid-content>#slideOther .slick-next{
+          right: 0;
+        }
+        div#vnt-footer>.mainFoot .grid{
+          margin: 0;
+        }
+        div#vnt-footer>.mainFoot .name,.col-lg-4.col-md-4.col-sm-6.col-xs-6>.product .tend a{
+          font-size: 17px;
+            line-height: 25px
+        }
+        div#vnt-footer>.mainFoot .grid .col{
+            padding: 0 5px;
+        }
+        .mid-content>.roomContact .grid .col{
+            padding: 0 12px;
+        }
+        .mmMenu>ul>li:focus-within>a, .mmMenu>ul>li:focus-within>.m-sub>a{
+          background: #1b5633 ;
+            color: #ffffff;
+        }
+       .item>.productCat {
+       margin-bottom: 30px !important;
+      }
 
-    .mid-content>#slideOther .slick-prev{
-    left: 50%;
-  }
-   div#vnt-background>.productHome .title h2, div#vnt-background>.newsHome .title h2{
-        font-size: 33px;
-      line-height: 43px;
-    }
-  }
-   @media screen and (max-width: 823px) and (min-width: 812px){
-    .sbzoff{
-      bottom: 55px !important;
-    }
-    body>a.go_top{
-        bottom: 145px;
-    }
-  }
-  @media all and (max-width: 768px){
-    .wrapper>.box_statistics{
-      display: none;
-    }
-  
-  }
-   @media (min-width: 768px){
-    #vnt-tools-mobile{
-      display: none;
-    }
-    div#vnt-container>#vnt-footer{
-      padding-bottom: 0;
-    }
-  }
-  @media all and (max-width: 736px){
-    .sbzoff{
-      bottom: 55px !important;
-    }
-    body>a.go_top{
-        bottom: 135px;
-    }
-}
-@media all and (max-width: 480px){
-    .sbzoff{
-      bottom: 76px !important;
-    }
-    body>a.go_top{
-        bottom: 160px;
-    }
-}
-  @media all and (max-width: 360px){
-    .mid-content>.info-contact ul li{
-      font-size: 14px;
-        line-height: 22px;
-    }
-    .mid-content>.form-contact .textContact{
-        font-size: 12px;
-        line-height: 22px;
-    }
+        .item>.productCat .tend h3{
+         font-size: 22px;
+          line-height: 32px;
+        }
+        }
 
-  }
-  /*banner trang chu*/
-   @media all and (min-width: 1024px){     .vnt-slide-home>#vnt-slide-home .item .img {    height: -webkit-calc(80vh + 0px);    height: -moz-calc(80vh + 0px);    height: -o-calc(80vh + 0px);    height: calc(80vh + 0px); margin-top: 100px}     /*.wrap>.logo {    bottom: 0px;    max-width: 70px;}}*/ div#vnt-header>.topHead {    background: rgb(51, 51, 51);    }
-   @media all and (max-width: 767px)  {  .vnt-slide-home>#vnt-slide-home .item .img {    height: 250px;} div#vnt-background>.aboutHome {    padding: 30px 0 35px; }}
-   @media all and (max-width: 375px)  {   .vnt-slide-home>#vnt-slide-home .item .img {    height: 250px;}}
+        @media (min-width: 991px){
+          .mainHeadWrap>.mainHead.fixed .logo{
+            bottom: 0;
+          }
+      .productWrap{
+        margin-bottom: 55px !important;
+      }
+      .recruit .img img{
+       height: auto !important;
+      }
+        }
 
- /*khảng cách tiêu đề bài viết*/
-.wrapConts .box_mid .mid-title .titleL
-{
- margin-top: 30px
-}
-.productWrap_c{
-margin-top: 30px;
-}
-</style>
+        @media all and (max-width: 991px){
+          .wrapper>.box_mid .mid-title .titleL{
+            font-size: 30px;
+            line-height: 44px;
+          }
+          .mid-content>.contactTitle{
+            font-size: 24px;
+              line-height: 32px;
+          }
 
-<style type="text/css">
-	.bx-bct{
-		display: flex;
-	}
-	@media all and (max-width: 991px) {
-		.bx-bct{
-			display: block;
-		}
-		#vnt-footer {
-			padding-bottom: 0px !important;
-		}
-		#bocongthuong{
-			padding-bottom: 60px !important;
-		}
-	}
-</style>
+          .mid-content>#slideOther .slick-prev{
+          left: 50%;
+        }
+         div#vnt-background>.productHome .title h2, div#vnt-background>.newsHome .title h2{
+              font-size: 33px;
+            line-height: 43px;
+          }
+        }
+         @media screen and (max-width: 823px) and (min-width: 812px){
+          .sbzoff{
+            bottom: 55px !important;
+          }
+          body>a.go_top{
+              bottom: 145px;
+          }
+        }
+        @media all and (max-width: 768px){
+          .wrapper>.box_statistics{
+            display: none;
+          }
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MH95T6W');</script>
-<!-- End Google Tag Manager -->
+        }
+         @media (min-width: 768px){
+          #vnt-tools-mobile{
+            display: none;
+          }
+          div#vnt-container>#vnt-footer{
+            padding-bottom: 0;
+          }
+        }
+        @media all and (max-width: 736px){
+          .sbzoff{
+            bottom: 55px !important;
+          }
+          body>a.go_top{
+              bottom: 135px;
+          }
+      }
+      @media all and (max-width: 480px){
+          .sbzoff{
+            bottom: 76px !important;
+          }
+          body>a.go_top{
+              bottom: 160px;
+          }
+      }
+        @media all and (max-width: 360px){
+          .mid-content>.info-contact ul li{
+            font-size: 14px;
+              line-height: 22px;
+          }
+          .mid-content>.form-contact .textContact{
+              font-size: 12px;
+              line-height: 22px;
+          }
 
-<!-- Messenger Plugin chat Code -->
+        }
+        /*banner trang chu*/
+         @media all and (min-width: 1024px){     .vnt-slide-home>#vnt-slide-home .item .img {    height: -webkit-calc(80vh + 0px);    height: -moz-calc(80vh + 0px);    height: -o-calc(80vh + 0px);    height: calc(80vh + 0px); margin-top: 100px}     /*.wrap>.logo {    bottom: 0px;    max-width: 70px;}}*/ div#vnt-header>.topHead {    background: rgb(51, 51, 51);    }
+         @media all and (max-width: 767px)  {  .vnt-slide-home>#vnt-slide-home .item .img {    height: 250px;} div#vnt-background>.aboutHome {    padding: 30px 0 35px; }}
+         @media all and (max-width: 375px)  {   .vnt-slide-home>#vnt-slide-home .item .img {    height: 250px;}}
+
+       /*khảng cách tiêu đề bài viết*/
+      .wrapConts .box_mid .mid-title .titleL
+      {
+       margin-top: 30px
+      }
+      .productWrap_c{
+      margin-top: 30px;
+      }
+    </style>
+
+    <style type="text/css">
+      .bx-bct {
+        display: flex;
+      }
+      @media all and (max-width: 991px) {
+        .bx-bct {
+          display: block;
+        }
+        #vnt-footer {
+          padding-bottom: 0px !important;
+        }
+        #bocongthuong {
+          padding-bottom: 60px !important;
+        }
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "../../www.googletagmanager.com/gtm5445.html?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MH95T6W");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Messenger Plugin chat Code -->
     <div id="fb-root"></div>
 
     <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
 
     <script>
-      var chatbox = document.getElementById('fb-customer-chat');
+      var chatbox = document.getElementById("fb-customer-chat");
       chatbox.setAttribute("page_id", "221625157979721");
       chatbox.setAttribute("attribution", "biz_inbox");
-      window.fbAsyncInit = function() {
+      window.fbAsyncInit = function () {
         FB.init({
-          xfbml            : true,
-          version          : 'v10.0'
+          xfbml: true,
+          version: "v10.0",
         });
       };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = '../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html';
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html";
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      })(document, "script", "facebook-jssdk");
     </script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-131752892-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131752892-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      gtag("config", "UA-131752892-1");
+    </script>
 
-  gtag('config', 'UA-131752892-1');
-</script>
+    <script
+      data-ad-client="ca-pub-1654659979400507"
+      async
+      src="../dhfood/pagead2.googlesyndication.com/pagead/js/f.txt"
+    ></script>
 
-<script data-ad-client="ca-pub-1654659979400507" async src="../dhfood/pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+    <!-- Global site tag (gtag.js) - Google Ads: 494695734 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-494695734"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<!-- Global site tag (gtag.js) - Google Ads: 494695734 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-494695734"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      gtag("config", "AW-494695734");
+    </script>
 
-  gtag('config', 'AW-494695734');
-</script>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "../../connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "970622426637745");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=970622426637745&amp;ev=PageView&amp;noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'../../connect.facebook.net/en_US/fbevents.js');
-fbq('init', '970622426637745');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=970622426637745&amp;ev=PageView&amp;noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+    <script>
+      !(function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = (w[t] = w[t] || []);
+        (ttq.methods = [
+          "page",
+          "track",
+          "identify",
+          "instances",
+          "debug",
+          "on",
+          "off",
+          "once",
+          "ready",
+          "alias",
+          "group",
+          "enableCookie",
+          "disableCookie",
+        ]),
+          (ttq.setAndDefer = function (t, e) {
+            t[e] = function () {
+              t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+            };
+          });
+        for (var i = 0; i < ttq.methods.length; i++)
+          ttq.setAndDefer(ttq, ttq.methods[i]);
+        (ttq.instance = function (t) {
+          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)
+            ttq.setAndDefer(e, ttq.methods[n]);
+          return e;
+        }),
+          (ttq.load = function (e, n) {
+            var i = "../../analytics.tiktok.com/i18n/pixel/events.js";
+            (ttq._i = ttq._i || {}),
+              (ttq._i[e] = []),
+              (ttq._i[e]._u = i),
+              (ttq._t = ttq._t || {}),
+              (ttq._t[e] = +new Date()),
+              (ttq._o = ttq._o || {}),
+              (ttq._o[e] = n || {});
+            var o = document.createElement("script");
+            (o.type = "text/javascript"),
+              (o.async = !0),
+              (o.src = i + "?sdkid=" + e + "&lib=" + t);
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(o, a);
+          });
 
-	<script>
-		!function (w, d, t) {
-		  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="../../analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-		
-		  ttq.load('C5VPD50QCDCTJUG0E29G');
-		  ttq.page();
-		}(window, document, 'ttq');
-	</script>
+        ttq.load("C5VPD50QCDCTJUG0E29G");
+        ttq.page();
+      })(window, document, "ttq");
+    </script>
 
-<!-- Messenger Plugin chat Code -->
+    <!-- Messenger Plugin chat Code -->
     <div id="fb-root"></div>
 
     <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
 
     <script>
-      var chatbox = document.getElementById('fb-customer-chat');
+      var chatbox = document.getElementById("fb-customer-chat");
       chatbox.setAttribute("page_id", "221625157979721");
       chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
     <!-- Your SDK code -->
     <script>
-      window.fbAsyncInit = function() {
+      window.fbAsyncInit = function () {
         FB.init({
-          xfbml            : true,
-          version          : 'v12.0'
+          xfbml: true,
+          version: "v12.0",
         });
       };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = '../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html';
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html";
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      })(document, "script", "facebook-jssdk");
     </script>
-<link rel="canonical" href="gioi-thieu-dh-foods.html" />
-<link rel="alternate" media="handheld" href="gioi-thieu-dh-foods.html"/>
-<meta property="og:site_name" content="dhfoods.com.vn"/>
-<meta property="og:locale" content="vi_VN" />
-<meta property="og:title" content="Giới thiệu Dh Foods"/>
-<meta property="og:url" content="https://dhfoods.com.vn/vn/gioi-thieu-dh-foods.html"/>
-<meta property="og:description" content="Tại Dh Foods chúng tôi tin rằng, những gia vị chất lượng sẽ làm cho các bữa ăn ngon miệng và mọi người cảm thấy hạnh phúc hơn. Chúng tôi tự hào giới thiệu những gia vị tuyệt vời nhất từ mọi miền Tổ quốc đến bên gian bếp gia đình bạn."/>
-<meta property="og:image" content="https://dhfoods.com.vn/vnt_upload/about/__Cau_chuyen_thuong_hieu_Dh_Foods.jpg"/>
-<meta property="fb:app_id" content="1305829822896074" />
-<meta property="og:image" content="https://dhfoods.com.vn/vnt_upload/about/__Cau_chuyen_thuong_hieu_Dh_Foods.jpg"/>
-	<link rel="SHORTCUT ICON" href="https://dhfoods.com.vn/vnt_upload/File/Image/favicon_1.ico" type="image/x-icon"/>
-	<link rel="icon" href="https://dhfoods.com.vn/vnt_upload/File/Image/favicon_1.ico" type="image/gif"/>
-	
-	<link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-	<link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link href="../static/css/slick.css" rel="stylesheet" type="text/css" />
-	<link href="../static/css/jquery.fancybox.css" type="text/css" rel="stylesheet"/>
-	<link href="../static/css/jquery.alerts.css" type="text/css" rel="stylesheet"/>
-	<link href="../static/css/menumobile.css" type="text/css" rel="stylesheet"/>
-	<link href="../static/css/animate.css" type="text/css" rel="stylesheet"/>
-	<link href="../static/css/screenc619.css?v=1.0" rel="stylesheet" type="text/css"/>
-	<script language="javascript">
-		var ROOT = "https://dhfoods.com.vn/";
-		var ROOT_MOD = "gioi-thieu.html";
-		var DIR_IMAGE = "https://dhfoods.com.vn/skins/default/images";
-		var cmd= "vnTRUST";
-		var lang = "vn";
-		var mem_id = 0;
-		var js_lang = new Array();
-		js_lang['announce'] ="Thông báo";
-		js_lang['error'] = "Có lỗi";
-		js_lang['success'] = "Thành công";
-	</script>
-	<script type="text/javascript" src="../static/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../static/js/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../static/js/slick.js"></script>
-	<script type="text/javascript" src="../static/js/menumobile.js"></script>
-	<script type="text/javascript" src="../static/js/jquery.fancybox.js"></script>
-	<script type="text/javascript" src="../static/js/my_effect_scroll.js"></script>
-	<script type="text/javascript" src="../static/js/jquery.alerts.js"></script>
-	<script type="text/javascript" src="../static/js/core.js"></script>
-	<script type="text/javascript" src="../static/js/style.js"></script>
-	<link rel="stylesheet" href="../static/css/about.css" type="text/css" />
-	<style type="text/css">#vnt-navation{ background: url('../vnt_upload/weblink/background_1-2.png') repeat center center; } .mainFoot { background: url('../vnt_upload/weblink/background_1-2.png') repeat center center;}.mainHead{background: url('../vnt_upload/weblink/background_1-2.png') repeat center center;}</style>
-</head>
-<body>
+    <link rel="canonical" href="gioi-thieu-dh-foods.html" />
+    <link rel="alternate" media="handheld" href="gioi-thieu-dh-foods.html" />
+    <meta property="og:site_name" content="dhfoods.com.vn" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:title" content="Giới thiệu Dh Foods" />
+    <meta
+      property="og:url"
+      content="https://dhfoods.com.vn/vn/gioi-thieu-dh-foods.html"
+    />
+    <meta
+      property="og:description"
+      content="Tại Dh Foods chúng tôi tin rằng, những gia vị chất lượng sẽ làm cho các bữa ăn ngon miệng và mọi người cảm thấy hạnh phúc hơn. Chúng tôi tự hào giới thiệu những gia vị tuyệt vời nhất từ mọi miền Tổ quốc đến bên gian bếp gia đình bạn."
+    />
+    <meta
+      property="og:image"
+      content="https://dhfoods.com.vn/vnt_upload/about/__Cau_chuyen_thuong_hieu_Dh_Foods.jpg"
+    />
+    <meta property="fb:app_id" content="1305829822896074" />
+    <meta
+      property="og:image"
+      content="https://dhfoods.com.vn/vnt_upload/about/__Cau_chuyen_thuong_hieu_Dh_Foods.jpg"
+    />
+    <link
+      rel="SHORTCUT ICON"
+      href="https://dhfoods.com.vn/vnt_upload/File/Image/favicon_1.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="https://dhfoods.com.vn/vnt_upload/File/Image/favicon_1.ico"
+      type="image/gif"
+    />
+
+    <link
+      href="../static/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../static/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="../static/css/slick.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../static/css/jquery.fancybox.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/css/jquery.alerts.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/css/menumobile.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link href="../static/css/animate.css" type="text/css" rel="stylesheet" />
+    <link
+      href="../static/css/screenc619.css?v=1.0"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script language="javascript">
+      var ROOT = "https://dhfoods.com.vn/";
+      var ROOT_MOD = "gioi-thieu.html";
+      var DIR_IMAGE = "https://dhfoods.com.vn/skins/default/images";
+      var cmd = "vnTRUST";
+      var lang = "vn";
+      var mem_id = 0;
+      var js_lang = new Array();
+      js_lang["announce"] = "Thông báo";
+      js_lang["error"] = "Có lỗi";
+      js_lang["success"] = "Thành công";
+    </script>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../static/js/jquery-migrate.min.js"
+    ></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/slick.js"></script>
+    <script type="text/javascript" src="../static/js/menumobile.js"></script>
+    <script
+      type="text/javascript"
+      src="../static/js/jquery.fancybox.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../static/js/my_effect_scroll.js"
+    ></script>
+    <script type="text/javascript" src="../static/js/jquery.alerts.js"></script>
+    <script type="text/javascript" src="../static/js/core.js"></script>
+    <script type="text/javascript" src="../static/js/style.js"></script>
+    <link rel="stylesheet" href="../static/css/about.css" type="text/css" />
+    <style type="text/css">
+      #vnt-navation {
+        background: url("../vnt_upload/weblink/background_1-2.png") repeat
+          center center;
+      }
+      .mainFoot {
+        background: url("../static/img/background_1-2.png") repeat center center;
+      }
+      .mainHead {
+        background: url("../static/img/background_1-2.png") repeat center center;
+      }
+    </style>
+  </head>
+  <body>
     <div id="vnt-wrapper">
-        <div id="vnt-container">
-            <div id="vnt-header">
-                <div class="topHead hidden-sm hidden-xs">
-                    <div class="wrapper">
-                        <!--<div class="hotlineTop">Hotline : <span><a href="tel: 0947442788">0947442788</a></span></div>-->
-                        <div class="languageTop">
-                            <ul>
-                                    <li><a href="gioi-thieu-dh-foods.html" title="Tiếng Việt" class="active" ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-vn.svg" title="Tiếng Việt"><span>Tiếng Việt</span></a></li><li><a href="https://dhfoods.com.vn/en/about-dh-foods.html" title="English"  ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-en.svg" title="English"><span>English</span></a></li><li><a href="https://dhfoods.com.vn/jp/introduce-html.html" title="日本語"  ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-jp.svg" title="日本語"><span>日本語</span></a></li><li><a href="https://dhfoods.com.vn/cn/--1698910007.html" title="Chinese"  ><img src="../dhfood/dhfoods.com.vn/vnt_upload/lang/flag_cn.png" title="Chinese"><span>Chinese</span></a></li><li><a href="https://dhfoods.com.vn/fr/about-dh-foods.html" title="Français"  ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-fr.svg" title="Français"><span>Français</span></a></li><li><a href="https://dhfoods.com.vn/kr/about-us.html" title="한국어"  ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-kr.svg" title="한국어"><span>한국어</span></a></li><li><a href="https://dhfoods.com.vn/de/einleitung.html" title="Deutsch"  ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-de.svg" title="Deutsch"><span>Deutsch</span></a></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mainHeadWrap">
-                    <div class="mainHead">
-                        <div class="wrapper">
-                            <div class="wrap">
-                                <div class="logo">
-                                    <a onmousedown="return rwt(this,'advertise',3)" href='index.html#' target='_self' title='Dh Foods'  ><img src='../dhfood/dhfoods.com.vn/vnt_upload/weblink/Logo_DhFoods_trang_2.png' alt='Dh Foods'   /></a>
-                                </div>
-                                <div class="header-tools hidden-sm hidden-xs">
-                                    <div class="menuTop">
-		<ul>
-			
-			<li class=""><a href="gioi-thieu-dh-foods.html" target="_self">Về DH FOODS</a><ul><li><a href='cot-moc-dang-nho.html' target='_self'>Cột mốc đáng nhớ</a></li><li><a href='https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html' target='_self'>Câu chuyện thương hiệu</a></li><li><a href='https://www.dhfoods.com.vn/loi-hua-cua-chung-toi.html' target='_self'>Lời hứa của chúng tôi</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html' target='_self'>Tôi muốn mua hàng</a></li></ul></li>
-			
-			<li class=""><a href="../dhfood/dhfoods.com.vn/vn/san-pham.html" target="_self">Sản phẩm</a><ul><li><a href='../dhfood/dhfoods.com.vn/vn/muoi-cham.html' target='_self'>Muối Chấm Tây Ninh</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/sot-cham.html' target='_self'>Sốt Chấm</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html' target='_self'>NATURAL Gia Vị Tự Nhiên</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html' target='_self'>NATURAL Gia Vị Nấu Và Ướp</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/sa-te.html' target='_self'>Sa Tế</a></li><li><a href='gia-vi-hoan-chinh.html' target='_self'>Gia Vị Hoàn Chỉnh</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html' target='_self'>Sản Phẩm Big Size</a></li><li><a href='hop-qua-gia-vi-dac-san.html' target='_self'>Hộp quà Gia vị Đặc sản</a></li></ul></li>
-			
-			<!-- <li class=""><a href="mon-ngon.html" target="_self">Món ngon</a></li> -->
-			
-			<!-- <li class=""><a href="kham-pha-gia-vi.html" target="_self">Khám phá gia vị</a></li> -->
-			
-			<li class=""><a href="../dhfood/dhfoods.com.vn/vn/tin-tuc.html" target="_self">Tin tức</a><ul><li><a href='../dhfood/dhfoods.com.vn/vn/tin-tuc-su-kien.html' target='_self'>Tin tức - Sự kiện</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/hoi-cho-trien-lam.html' target='_self'>Hội chợ - Triển lãm</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/san-pham-moi.html' target='_self'>Sản Phẩm Mới</a></li><li><a href='http://www.dhfoods.com.vn/vn/tuyen-dung.html' target='_self'>Tuyển dụng</a></li></ul></li>
-			
-			<!-- <li class=""><a href="goc-bao-chi-dhfoods.html" target="_self">Góc báo chí</a></li> -->
-			
-			<li class=""><a href="lien-he.html" target="_self">Liên hệ</a></li>
-			
-		</ul>
-	</div>
-                                    <div class="searchTop">
-                                        <div class="icon"><i class="fa fa-search"></i></div>
-                                        <div class="popup">
-                                            <form name="formSearch" method="POST" action="https://dhfoods.com.vn/vn/tim-kiem.html" class="box_search" onSubmit="return check_search(this)">
-		<input name="keyword" id="keyword" type="text" class="text_search form-control" placeholder="Nhập nội dung tìm kiếm" value="" />
-		<button id="do_submit" name="do_submit" type="submit" class="" value="" ><i class="fa fa-search"></i></button>
-		<input name="do_search" value="1" type="hidden" />
-	</form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="header-tools hidden-lg hidden-md">
-                                    <div class="languageMobile">
-                                        <ul>
-											<li><a href="gioi-thieu-dh-foods.html" title="Tiếng Việt" class="active"><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-vn.svg" title="Tiếng Việt"></a></li><li><a href="https://dhfoods.com.vn/en/about-dh-foods.html" title="English" ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-en.svg" title="English"></a></li><li><a href="https://dhfoods.com.vn/jp/introduce-html.html" title="日本語" ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-jp.svg" title="日本語"></a></li><li><a href="https://dhfoods.com.vn/cn/--1698910007.html" title="Chinese" ><img src="../dhfood/dhfoods.com.vn/vnt_upload/lang/flag_cn.png" title="Chinese"></a></li><li><a href="https://dhfoods.com.vn/fr/about-dh-foods.html" title="Français" ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-fr.svg" title="Français"></a></li><li><a href="https://dhfoods.com.vn/kr/about-us.html" title="한국어" ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-kr.svg" title="한국어"></a></li><li><a href="https://dhfoods.com.vn/de/einleitung.html" title="Deutsch" ><img src="https://dhfoods.com.vn/vnt_upload/lang/flag-de.svg" title="Deutsch"></a></li>
-										</ul>
-                                    </div>
-                                    <div class="menu_mobile hidden-lg hidden-md">
-                                        <div class="icon_menu"><span class="style_icon"></span>Menu</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div id="vnt-container">
+        <div id="vnt-header">
+          <div class="topHead hidden-sm hidden-xs">
+            <div class="wrapper">
+              <!--<div class="hotlineTop">Hotline : <span><a href="tel: 0947442788">0947442788</a></span></div>-->
+              <div class="languageTop">
+                <ul>
+                  <li>
+                    <a
+                      href="gioi-thieu-dh-foods.html"
+                      title="Tiếng Việt"
+                      class="active"
+                      ><img
+                        src="https://dhfoods.com.vn/vnt_upload/lang/flag-vn.svg"
+                        title="Tiếng Việt"
+                      /><span>Tiếng Việt</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://dhfoods.com.vn/en/about-dh-foods.html"
+                      title="English"
+                      ><img
+                        src="https://dhfoods.com.vn/vnt_upload/lang/flag-en.svg"
+                        title="English"
+                      /><span>English</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://dhfoods.com.vn/jp/introduce-html.html"
+                      title="日本語"
+                      ><img
+                        src="https://dhfoods.com.vn/vnt_upload/lang/flag-jp.svg"
+                        title="日本語"
+                      /><span>日本語</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://dhfoods.com.vn/cn/--1698910007.html"
+                      title="Chinese"
+                      ><img
+                        src="../dhfood/dhfoods.com.vn/vnt_upload/lang/flag_cn.png"
+                        title="Chinese"
+                      /><span>Chinese</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://dhfoods.com.vn/fr/about-dh-foods.html"
+                      title="Français"
+                      ><img
+                        src="https://dhfoods.com.vn/vnt_upload/lang/flag-fr.svg"
+                        title="Français"
+                      /><span>Français</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://dhfoods.com.vn/kr/about-us.html"
+                      title="한국어"
+                      ><img
+                        src="https://dhfoods.com.vn/vnt_upload/lang/flag-kr.svg"
+                        title="한국어"
+                      /><span>한국어</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://dhfoods.com.vn/de/einleitung.html"
+                      title="Deutsch"
+                      ><img
+                        src="https://dhfoods.com.vn/vnt_upload/lang/flag-de.svg"
+                        title="Deutsch"
+                      /><span>Deutsch</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div id="vnt-content">
-	<div class="vnt-main-top">
-		<div id="vnt-slide" class="slick-init">
-			<div class="item">
-				<div class="img">
-					<img src="../dhfood/dhfoods.com.vn/vnt_upload/about/__Cau_chuyen_thuong_hieu_Dh_Foods.jpg" />
-				</div>
-			</div>
-		</div>
-		<div id="vnt-navation" class="breadcrumb">
-	<div class="wrapper">
-		<div class="navation">
-			<ul>
-				<li><a href="https://dhfoods.com.vn/"><span>Trang chủ</span></a></li>
-				
-				<li><a href="../dhfood/dhfoods.com.vn/vn/gioi-thieu-2.html"><span>VỀ DH FOODS</span></a></li>
-				
-				<li><span>About Dh Foods</span></li>
-			</ul>
-		</div>
-	</div>
-</div>
-	</div>
-	<div id="vnt-background" class="v2">
-		<div class="wrapCont">
-			<div class="wrapper">
-				<div class="box_mid">
-					<div class="mid-title">
-						<div class="titleL"><h1>About Dh Foods</h1></div>
-						<div class="titleR"></div>
-						<div class="clear"></div>
-					</div>
-					<div class="mid-content">
-						<div class="the-content desc">
-							<p style="margin:0cm"><span style="font-size:22px;"><span style="background:white"><span style="line-height:17.25pt"><em><span style="font-family:Roboto"><span style="color:#1b5633">"Philip Kotler – cha đẻ của lý thuyết tiếp thị hiện đại đã khuyến khích: “Việt Nam hãy là nhà bếp của thế giới”. Và Dh Foods mong muốn trở thành góc gia vị trong nhà bếp đó."</span></span></em></span></span></span></p>
+          </div>
+          <div class="mainHeadWrap">
+            <div class="mainHead">
+              <div class="wrapper">
+                <div class="wrap">
+                  <!-- <div class="logo">
+                    <a
+                      onmousedown="return rwt(this,'advertise',3)"
+                      href="index.html#"
+                      target="_self"
+                      title="Dh Foods"
+                      ><img
+                        src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/Logo_DhFoods_trang_2.png"
+                        alt="Dh Foods"
+                    /></a>
+                  </div> -->
+                  <div class="header-tools hidden-sm hidden-xs">
+                    <div class="menuTop">
+                      <ul>
+                        <li class="">
+                          <a href="gioi-thieu-dh-foods.html" target="_self"
+                            >Về BISWELL</a
+                          >
+                          <ul>
+                            <!-- <li>
+                              <a href="cot-moc-dang-nho.html" target="_self"
+                                >Cột mốc đáng nhớ</a
+                              >
+                            </li> -->
+                            <li>
+                              <a
+                                href="https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html"
+                                target="_self"
+                                >Câu chuyện thương hiệu</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://www.dhfoods.com.vn/loi-hua-cua-chung-toi.html"
+                                target="_self"
+                                >Lời hứa của chúng tôi</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html"
+                                target="_self"
+                                >Tôi muốn mua hàng</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
 
-<p align="right" style="margin:0cm; text-align:right"><span style="font-size:22px;"><span style="margin:0cm;"><span style="font-family:Roboto,sans-serif;"><em><span lang="EN-US"><span style="color:#1b5633;">(Chủ tịch HĐQT kiêm TGĐ Dh Foods - Nguyễn Trung Dũng)</span></span></em></span></span></span></p>
+                        <li class="">
+                          <a
+                            href="../dhfood/dhfoods.com.vn/vn/san-pham.html"
+                            target="_self"
+                            >Sản phẩm</a
+                          >
+                          <ul>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/muoi-cham.html"
+                                target="_self"
+                                >Muối Chấm Tây Ninh</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/sot-cham.html"
+                                target="_self"
+                                >Sốt Chấm</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html"
+                                target="_self"
+                                >NATURAL Gia Vị Tự Nhiên</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html"
+                                target="_self"
+                                >NATURAL Gia Vị Nấu Và Ướp</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/sa-te.html"
+                                target="_self"
+                                >Sa Tế</a
+                              >
+                            </li>
+                            <li>
+                              <a href="gia-vi-hoan-chinh.html" target="_self"
+                                >Gia Vị Hoàn Chỉnh</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html"
+                                target="_self"
+                                >Sản Phẩm Big Size</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="hop-qua-gia-vi-dac-san.html"
+                                target="_self"
+                                >Hộp quà Gia vị Đặc sản</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
 
-<p style="margin:0cm">&nbsp;</p>
+                        <!-- <li class=""><a href="mon-ngon.html" target="_self">Món ngon</a></li> -->
 
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-size:22px;"><span style="background:white"><span style="line-height:17.25pt"><span style="font-family:Roboto"><span style="color:#333333">Tôi đi học đại học ở nước ngoài rồi ở lại sống bên châu Âu 30 năm. Suốt thời gian học tập và làm việc tại đó, Tôi rất nhớ món ăn, gia vị Việt Nam. Mặc dù xung quanh tôi tràn ngập gia vị của “người khác”: nhà bếp trong gia đình nào ở Ba Lan cũng có tủ gia vị với rất nhiều thảo mộc. Siêu thị Ba Lan, Đức hay Tiệp thì tràn ngập hàng ngàn loại gia vị bản địa, cũng như hàng trăm chủng loại gia vị Thái Lan. Nhưng vì nhớ vị đặc sản Việt, Tôi thường lái xe đi hàng trăm kilomet để mua được mấy chai nước mắm, mấy hũ cà pháo, và một số gia vị khác do người Việt Nam nhập qua rồi bán trong cộng đồng người Việt.</span></span></span></span></span></p>
+                        <!-- <li class=""><a href="kham-pha-gia-vi.html" target="_self">Khám phá gia vị</a></li> -->
 
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify">&nbsp;</p>
+                        <li class="">
+                          <a
+                            href="../dhfood/dhfoods.com.vn/vn/tin-tuc.html"
+                            target="_self"
+                            >Tin tức</a
+                          >
+                          <ul>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/tin-tuc-su-kien.html"
+                                target="_self"
+                                >Tin tức - Sự kiện</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/hoi-cho-trien-lam.html"
+                                target="_self"
+                                >Hội chợ - Triển lãm</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="../dhfood/dhfoods.com.vn/vn/san-pham-moi.html"
+                                target="_self"
+                                >Sản Phẩm Mới</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="http://www.dhfoods.com.vn/vn/tuyen-dung.html"
+                                target="_self"
+                                >Tuyển dụng</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
 
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-size:22px;"><span style="background:white"><span style="line-height:17.25pt"><span style="font-family:Roboto"><span style="color:#333333">Sau hơn 3 thập kỷ với 3 lần khởi nghiệp ở Ba Lan, Tôi quay về Việt Nam vào năm 2010. Nhìn thấy Việt Nam thay đổi, hiện đại, văn minh lên… và các sản phẩm gia vị tuổi thơ của Tôi cũng đã thay đổi: Có rất nhiều sản phẩm dùng phẩm màu, dùng chất bảo quản nhân tạo và hương liệu. Chính các phụ gia “hiện đại” đó làm mất đi mùi vị mộc mạc, tự nhiên của các món ăn đã gắn liền với tuổi thơ tôi. Trong những lần đi công tác từ Bắc đến Nam, Tôi nhận thấy 1 điều thú vị là ở Việt Nam thì vùng nào cũng có các gia vị đặc sản mang nét đặc trưng của vùng đất ấy, trải dài mấy ngàn kilomet từ Hà Giang đến Cà Mau nhưng chưa được bán rộng rãi, chủ yếu vẫn là kinh doanh nhỏ lẻ.</span></span></span></span></span></p>
+                        <!-- <li class=""><a href="goc-bao-chi-dhfoods.html" target="_self">Góc báo chí</a></li> -->
 
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify">&nbsp;</p>
-
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-size:22px;"><span style="background:white"><span style="line-height:17.25pt"><span style="font-family:Roboto"><span style="color:#333333">Chính những điều đó, đã thôi thúc tôi khởi nghiệp lại lần nữa với Dh Foods vào năm 2012, khi tròn 50 tuổi. Ước mơ rằng sản xuất được những sản phẩm gia vị Việt truyền thống mang nét đặc trưng của từng vùng miền, cải tiến chất lượng, quy trình sản xuất hiện đại, khép kín với quy mô lớn giúp năng suất tăng, và quan trọng - sản phẩm phải hoàn toàn tự nhiên, không dùng phẩm màu tổng hợp hay chất bảo quản nhân tạo để an toàn hơn cho sức khoẻ đến với những bữa ăn gia đình.</span></span></span></span></span></p>
-
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify">&nbsp;</p>
-
-<p style="margin:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-size:22px;"><span style="background:white"><span style="line-height:17.25pt"><span style="font-family:Roboto"><span style="color:#333333">Đến hôm nay, ước mơ của Tôi đã dần thành hiện thực, khi Dh Foods đã sản xuất được rất nhiều sản phẩm gia vị từ các vùng miền Bắc – Trung – Nam, cung cấp cho hầu hết các siêu thị tại Việt Nam và xuất khẩu đi rất nhiều nước như: Nhật Bản, Hàn Quốc, Hà Lan, Úc, Mỹ, Anh, Đức,… Tôi mong muốn một ngày nào đó, những gia vị Dh Foods sẽ góp phần vào bữa ăn của mỗi gia đình Việt Nam và có mặt trên khắp thế giới. Tôi luôn tin rằng những gia vị chất lượng, tiện dụng sẽ làm cho các bữa ăn ngon miệng và mọi người cảm thấy hạnh phúc hơn.</span></span></span></span></span></p>
-
-<p style="margin:0cm">&nbsp;</p>
-
-<p style="margin:0cm"><span style="font-size:22px;"><span style="font-family:Roboto,sans-serif;"><b><i>Bởi&nbsp;Chúng tôi luôn Tự Hào Gia Vị Việt!</i></b></span></span></p>
-
-<p style="margin:0cm">&nbsp;</p>
-
-<p style="margin: 0cm; text-align: center;"><iframe allowfullscreen="" frameborder="0" height="720" src="http://www.youtube.com/embed/ty7F03WfzoA" width="1280"></iframe></p>
-
-<p style="margin:0cm">&nbsp;</p>
-
-<p style="margin:0cm"><font face="Roboto, sans-serif"><span style="font-size: 22px;"><i>Đọc thêm:</i><b><i> <a href="dh-foods-va-hanh-trinh-dua-gia-vi-viet-vuon-ra-bien-lon.html"><span style="color:#000080;">Dh Foods và Hành trình đưa Gia vị Việt vươn ra Biển lớn</span></a></i></b></span></font></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-            <div id="vnt-footer">
-                <div class="mainFoot">
-                    <div class="wrapper">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="title">Thông tin liên hệ</div>
-                                <div class="grid">
-	
-	<div class="col">
-		<div class="name">Phòng Hành Chính Nhân Sự:</div>
-		<div class="be"></div>
-		<div class="be">Email: <a href="mailto:hr03@dhfoods.com.vn">hr03@dhfoods.com.vn</a></div>
-		<div class="be">SĐT/Telegram: <a href="tel:028 3922 5944">028 3922 5944</a></div>
-	</div>
-	
-	<div class="col">
-		<div class="name">Phòng Xuất Khẩu:</div>
-		<div class="be"></div>
-		<div class="be">Email: <a href="mailto:export@dhfoods.com.vn">export@dhfoods.com.vn</a></div>
-		<div class="be">SĐT/Telegram: <a href="tel:028 3922 5941">028 3922 5941</a></div>
-	</div>
-	
-	<div class="col">
-		<div class="name">Phòng Kinh Doanh:</div>
-		<div class="be"></div>
-		<div class="be">Email: <a href="mailto:tientt@dhfoods.com.vn">tientt@dhfoods.com.vn</a></div>
-		<div class="be">SĐT/Telegram: <a href="tel:028 3922 5940">028 3922 5940</a></div>
-	</div>
-	
-	<div class="col">
-		<div class="name">Phòng Thu Mua:</div>
-		<div class="be"></div>
-		<div class="be">Email: <a href="mailto:xoanbk@dhfoods.com.vn">xoanbk@dhfoods.com.vn</a></div>
-		<div class="be">SĐT/Telegram: <a href="tel:028 3922 5943">028 3922 5943</a></div>
-	</div>
-	
-</div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="title">Liên kết với Dh Foods</div>
-                                <div class="socialFoot">
-                                    <ul>
-		
-		<li><a href="https://www.facebook.com/DHFoods.com.vn/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-		
-		<li><a href="https://www.youtube.com/user/userGiaviDhfoods" target="_blank"><i class="fa fa-youtube"></i></a></li>
-		
-		<li><a href="http://google.com/" target="_blank"><i class="fa fa-google"></i></a></li>
-		
-		<li><a href="https://www.instagram.com/dhfoods_vn/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-		
-	</ul>
-                                </div>
-                            </div>
-                        </div>
+                        <li class="">
+                          <a href="lien-he.html" target="_self">Liên hệ</a>
+                        </li>
+                      </ul>
                     </div>
-                </div>
-                <div class="botFoot">
-                    <div class="wrapper">
-                        <div class="copyright">
-                            <div class="copy">Copyright © 2018 <strong>Dh Foods</strong></div>
-                            <div class="per">-</div>
-                            <div class="tkw"><a href='http://www.thietkeweb.com/' target='_blank' title='thiet ke web' rel='dofollow' class='thietkeweb' >Thiết kế web :</a> <strong><a href='http://www.trust.vn/' target='_blank' rel='dofollow' >TRUST.vn</a> </strong></div>
-                        </div>
-                        <ul class='box_statistics'>
-	<li class="be">Lượt truy cập: <b id='stats_totals'>0</b></li>
-	<li class="per">-</li>
-	<li>Online: <b id='stats_online'>0</b></li>
-</ul>
+                    <div class="searchTop">
+                      <div class="icon"><i class="fa fa-search"></i></div>
+                      <div class="popup">
+                        <form
+                          name="formSearch"
+                          method="POST"
+                          action="https://dhfoods.com.vn/vn/tim-kiem.html"
+                          class="box_search"
+                          onSubmit="return check_search(this)"
+                        >
+                          <input
+                            name="keyword"
+                            id="keyword"
+                            type="text"
+                            class="text_search form-control"
+                            placeholder="Nhập nội dung tìm kiếm"
+                            value=""
+                          />
+                          <button
+                            id="do_submit"
+                            name="do_submit"
+                            type="submit"
+                            class=""
+                            value=""
+                          >
+                            <i class="fa fa-search"></i>
+                          </button>
+                          <input name="do_search" value="1" type="hidden" />
+                        </form>
+                      </div>
                     </div>
+                  </div>
+                  <div class="header-tools hidden-lg hidden-md">
+                    <div class="languageMobile">
+                      <ul>
+                        <li>
+                          <a
+                            href="gioi-thieu-dh-foods.html"
+                            title="Tiếng Việt"
+                            class="active"
+                            ><img
+                              src="https://dhfoods.com.vn/vnt_upload/lang/flag-vn.svg"
+                              title="Tiếng Việt"
+                          /></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://dhfoods.com.vn/en/about-dh-foods.html"
+                            title="English"
+                            ><img
+                              src="https://dhfoods.com.vn/vnt_upload/lang/flag-en.svg"
+                              title="English"
+                          /></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://dhfoods.com.vn/jp/introduce-html.html"
+                            title="日本語"
+                            ><img
+                              src="https://dhfoods.com.vn/vnt_upload/lang/flag-jp.svg"
+                              title="日本語"
+                          /></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://dhfoods.com.vn/cn/--1698910007.html"
+                            title="Chinese"
+                            ><img
+                              src="../dhfood/dhfoods.com.vn/vnt_upload/lang/flag_cn.png"
+                              title="Chinese"
+                          /></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://dhfoods.com.vn/fr/about-dh-foods.html"
+                            title="Français"
+                            ><img
+                              src="https://dhfoods.com.vn/vnt_upload/lang/flag-fr.svg"
+                              title="Français"
+                          /></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://dhfoods.com.vn/kr/about-us.html"
+                            title="한국어"
+                            ><img
+                              src="https://dhfoods.com.vn/vnt_upload/lang/flag-kr.svg"
+                              title="한국어"
+                          /></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://dhfoods.com.vn/de/einleitung.html"
+                            title="Deutsch"
+                            ><img
+                              src="https://dhfoods.com.vn/vnt_upload/lang/flag-de.svg"
+                              title="Deutsch"
+                          /></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="menu_mobile hidden-lg hidden-md">
+                      <div class="icon_menu">
+                        <span class="style_icon"></span>Menu
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+        <div id="vnt-content">
+          <div class="vnt-main-top">
+            <div id="vnt-slide" class="slick-init">
+              <div class="item">
+                <div class="img">
+                  <img src="../static/img/imresizer-1735571157809.jpg" />
+                </div>
+              </div>
+            </div>
+            <div id="vnt-navation" class="breadcrumb">
+              <div class="wrapper">
+                <div class="navation">
+                  <ul>
+                    <li>
+                      <a href="https://dhfoods.com.vn/"
+                        ><span>Trang chủ</span></a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="../dhfood/dhfoods.com.vn/vn/gioi-thieu-2.html"
+                        ><span>VỀ DH FOODS</span></a
+                      >
+                    </li>
+
+                    <li><span>About Dh Foods</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="vnt-background" class="v2">
+            <div class="wrapCont">
+              <div class="wrapper">
+                <div class="box_mid">
+                  <div class="mid-title">
+                    <div class="titleL"><h1>About BISWELL</h1></div>
+                    <div class="titleR"></div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="mid-content">
+                    <div class="the-content desc">
+                      <p style="margin: 0cm">
+                        <span style="font-size: 22px"
+                          ><span style="background: white"
+                            ><span style="line-height: 17.25pt"
+                              ><em
+                                ><span style="font-family: Roboto"
+                                  ><span style="color: #1b5633"
+                                    >"Philip Kotler – cha đẻ của lý thuyết tiếp
+                                    thị hiện đại đã khuyến khích: “Việt Nam hãy
+                                    là nhà bếp của thế giới”. Và Dh Foods mong
+                                    muốn trở thành góc gia vị trong nhà bếp
+                                    đó."</span
+                                  ></span
+                                ></em
+                              ></span
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p align="right" style="margin: 0cm; text-align: right">
+                        <span style="font-size: 22px"
+                          ><span style="margin: 0cm"
+                            ><span style="font-family: Roboto, sans-serif"
+                              ><em
+                                ><span lang="EN-US"
+                                  ><span style="color: #1b5633"
+                                    >(Chủ tịch HĐQT kiêm TGĐ Dh Foods - Nguyễn
+                                    Trung Dũng)</span
+                                  ></span
+                                ></em
+                              ></span
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p style="margin: 0cm">&nbsp;</p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        <span style="font-size: 22px"
+                          ><span style="background: white"
+                            ><span style="line-height: 17.25pt"
+                              ><span style="font-family: Roboto"
+                                ><span style="color: #333333"
+                                  >Tôi đi học đại học ở nước ngoài rồi ở lại
+                                  sống bên châu Âu 30 năm. Suốt thời gian học
+                                  tập và làm việc tại đó, Tôi rất nhớ món ăn,
+                                  gia vị Việt Nam. Mặc dù xung quanh tôi tràn
+                                  ngập gia vị của “người khác”: nhà bếp trong
+                                  gia đình nào ở Ba Lan cũng có tủ gia vị với
+                                  rất nhiều thảo mộc. Siêu thị Ba Lan, Đức hay
+                                  Tiệp thì tràn ngập hàng ngàn loại gia vị bản
+                                  địa, cũng như hàng trăm chủng loại gia vị Thái
+                                  Lan. Nhưng vì nhớ vị đặc sản Việt, Tôi thường
+                                  lái xe đi hàng trăm kilomet để mua được mấy
+                                  chai nước mắm, mấy hũ cà pháo, và một số gia
+                                  vị khác do người Việt Nam nhập qua rồi bán
+                                  trong cộng đồng người Việt.</span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        &nbsp;
+                      </p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        <span style="font-size: 22px"
+                          ><span style="background: white"
+                            ><span style="line-height: 17.25pt"
+                              ><span style="font-family: Roboto"
+                                ><span style="color: #333333"
+                                  >Sau hơn 3 thập kỷ với 3 lần khởi nghiệp ở Ba
+                                  Lan, Tôi quay về Việt Nam vào năm 2010. Nhìn
+                                  thấy Việt Nam thay đổi, hiện đại, văn minh
+                                  lên… và các sản phẩm gia vị tuổi thơ của Tôi
+                                  cũng đã thay đổi: Có rất nhiều sản phẩm dùng
+                                  phẩm màu, dùng chất bảo quản nhân tạo và hương
+                                  liệu. Chính các phụ gia “hiện đại” đó làm mất
+                                  đi mùi vị mộc mạc, tự nhiên của các món ăn đã
+                                  gắn liền với tuổi thơ tôi. Trong những lần đi
+                                  công tác từ Bắc đến Nam, Tôi nhận thấy 1 điều
+                                  thú vị là ở Việt Nam thì vùng nào cũng có các
+                                  gia vị đặc sản mang nét đặc trưng của vùng đất
+                                  ấy, trải dài mấy ngàn kilomet từ Hà Giang đến
+                                  Cà Mau nhưng chưa được bán rộng rãi, chủ yếu
+                                  vẫn là kinh doanh nhỏ lẻ.</span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        &nbsp;
+                      </p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        <span style="font-size: 22px"
+                          ><span style="background: white"
+                            ><span style="line-height: 17.25pt"
+                              ><span style="font-family: Roboto"
+                                ><span style="color: #333333"
+                                  >Chính những điều đó, đã thôi thúc tôi khởi
+                                  nghiệp lại lần nữa với Dh Foods vào năm 2012,
+                                  khi tròn 50 tuổi. Ước mơ rằng sản xuất được
+                                  những sản phẩm gia vị Việt truyền thống mang
+                                  nét đặc trưng của từng vùng miền, cải tiến
+                                  chất lượng, quy trình sản xuất hiện đại, khép
+                                  kín với quy mô lớn giúp năng suất tăng, và
+                                  quan trọng - sản phẩm phải hoàn toàn tự nhiên,
+                                  không dùng phẩm màu tổng hợp hay chất bảo quản
+                                  nhân tạo để an toàn hơn cho sức khoẻ đến với
+                                  những bữa ăn gia đình.</span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        &nbsp;
+                      </p>
+
+                      <p
+                        style="
+                          margin: 0in;
+                          margin-bottom: 0.0001pt;
+                          text-align: justify;
+                        "
+                      >
+                        <span style="font-size: 22px"
+                          ><span style="background: white"
+                            ><span style="line-height: 17.25pt"
+                              ><span style="font-family: Roboto"
+                                ><span style="color: #333333"
+                                  >Đến hôm nay, ước mơ của Tôi đã dần thành hiện
+                                  thực, khi Dh Foods đã sản xuất được rất nhiều
+                                  sản phẩm gia vị từ các vùng miền Bắc – Trung –
+                                  Nam, cung cấp cho hầu hết các siêu thị tại
+                                  Việt Nam và xuất khẩu đi rất nhiều nước như:
+                                  Nhật Bản, Hàn Quốc, Hà Lan, Úc, Mỹ, Anh, Đức,…
+                                  Tôi mong muốn một ngày nào đó, những gia vị Dh
+                                  Foods sẽ góp phần vào bữa ăn của mỗi gia đình
+                                  Việt Nam và có mặt trên khắp thế giới. Tôi
+                                  luôn tin rằng những gia vị chất lượng, tiện
+                                  dụng sẽ làm cho các bữa ăn ngon miệng và mọi
+                                  người cảm thấy hạnh phúc hơn.</span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p style="margin: 0cm">&nbsp;</p>
+
+                      <p style="margin: 0cm">
+                        <span style="font-size: 22px"
+                          ><span style="font-family: Roboto, sans-serif"
+                            ><b
+                              ><i
+                                >Bởi&nbsp;Chúng tôi luôn Tự Hào Gia Vị Việt!</i
+                              ></b
+                            ></span
+                          ></span
+                        >
+                      </p>
+
+                      <p style="margin: 0cm">&nbsp;</p>
+
+                      <p style="margin: 0cm; text-align: center">
+                        <iframe
+                          allowfullscreen=""
+                          frameborder="0"
+                          height="720"
+                          src="http://www.youtube.com/embed/ty7F03WfzoA"
+                          width="1280"
+                        ></iframe>
+                      </p>
+
+                      <p style="margin: 0cm">&nbsp;</p>
+
+                      <p style="margin: 0cm">
+                        <font face="Roboto, sans-serif"
+                          ><span style="font-size: 22px"
+                            ><i>Đọc thêm:</i
+                            ><b
+                              ><i>
+                                <a
+                                  href="dh-foods-va-hanh-trinh-dua-gia-vi-viet-vuon-ra-bien-lon.html"
+                                  ><span style="color: #000080"
+                                    >Dh Foods và Hành trình đưa Gia vị Việt vươn
+                                    ra Biển lớn</span
+                                  ></a
+                                ></i
+                              ></b
+                            ></span
+                          ></font
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="vnt-footer">
+          <div class="mainFoot">
+            <div class="wrapper">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <div class="title">Thông tin liên hệ</div>
+                  <div class="grid">
+                    <div class="col">
+                      <div class="name">Phòng Hành Chính Nhân Sự:</div>
+                      <div class="be"></div>
+                      <div class="be">
+                        Email:
+                        <a href="mailto:hr03@dhfoods.com.vn"
+                          >hr03@dhfoods.com.vn</a
+                        >
+                      </div>
+                      <div class="be">
+                        SĐT/Telegram:
+                        <a href="tel:028 3922 5944">028 3922 5944</a>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="name">Phòng Xuất Khẩu:</div>
+                      <div class="be"></div>
+                      <div class="be">
+                        Email:
+                        <a href="mailto:export@dhfoods.com.vn"
+                          >export@dhfoods.com.vn</a
+                        >
+                      </div>
+                      <div class="be">
+                        SĐT/Telegram:
+                        <a href="tel:028 3922 5941">028 3922 5941</a>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="name">Phòng Kinh Doanh:</div>
+                      <div class="be"></div>
+                      <div class="be">
+                        Email:
+                        <a href="mailto:tientt@dhfoods.com.vn"
+                          >tientt@dhfoods.com.vn</a
+                        >
+                      </div>
+                      <div class="be">
+                        SĐT/Telegram:
+                        <a href="tel:028 3922 5940">028 3922 5940</a>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="name">Phòng Thu Mua:</div>
+                      <div class="be"></div>
+                      <div class="be">
+                        Email:
+                        <a href="mailto:xoanbk@dhfoods.com.vn"
+                          >xoanbk@dhfoods.com.vn</a
+                        >
+                      </div>
+                      <div class="be">
+                        SĐT/Telegram:
+                        <a href="tel:028 3922 5943">028 3922 5943</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <div class="title">Liên kết với Dh Foods</div>
+                  <div class="socialFoot">
+                    <ul>
+                      <li>
+                        <a
+                          href="https://www.facebook.com/DHFoods.com.vn/"
+                          target="_blank"
+                          ><i class="fa fa-facebook"></i
+                        ></a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="https://www.youtube.com/user/userGiaviDhfoods"
+                          target="_blank"
+                          ><i class="fa fa-youtube"></i
+                        ></a>
+                      </li>
+
+                      <li>
+                        <a href="http://google.com/" target="_blank"
+                          ><i class="fa fa-google"></i
+                        ></a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="https://www.instagram.com/dhfoods_vn/"
+                          target="_blank"
+                          ><i class="fa fa-instagram"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="botFoot">
+            <div class="wrapper">
+              <div class="copyright">
+                <div class="copy">
+                  Copyright © 2018 <strong>Dh Foods</strong>
+                </div>
+                <div class="per">-</div>
+                <div class="tkw">
+                  <a
+                    href="http://www.thietkeweb.com/"
+                    target="_blank"
+                    title="thiet ke web"
+                    rel="dofollow"
+                    class="thietkeweb"
+                    >Thiết kế web :</a
+                  >
+                  <strong
+                    ><a
+                      href="http://www.trust.vn/"
+                      target="_blank"
+                      rel="dofollow"
+                      >TRUST.vn</a
+                    >
+                  </strong>
+                </div>
+              </div>
+              <ul class="box_statistics">
+                <li class="be">Lượt truy cập: <b id="stats_totals">0</b></li>
+                <li class="per">-</li>
+                <li>Online: <b id="stats_online">0</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="menu_mobile">
-        <div class="divmm">
-            <div class="mmContent">
-                <div class="mmMenu">
-					<ul class="mmMain">
-		
-		<li><a href="gioi-thieu-dh-foods.html">Về DH FOODS</a><ul><li><a href='cot-moc-dang-nho.html' target='_self'>Cột mốc đáng nhớ</a></li><li><a href='https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html' target='_self'>Câu chuyện thương hiệu</a></li><li><a href='https://www.dhfoods.com.vn/loi-hua-cua-chung-toi.html' target='_self'>Lời hứa của chúng tôi</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html' target='_self'>Tôi muốn mua hàng</a></li></ul></li>
-		
-		<li><a href="../dhfood/dhfoods.com.vn/vn/san-pham.html">Sản phẩm</a><ul><li><a href='../dhfood/dhfoods.com.vn/vn/muoi-cham.html' target='_self'>Muối Chấm Tây Ninh</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/sot-cham.html' target='_self'>Sốt Chấm</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html' target='_self'>NATURAL Gia Vị Tự Nhiên</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html' target='_self'>NATURAL Gia Vị Nấu Và Ướp</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/sa-te.html' target='_self'>Sa Tế</a></li><li><a href='gia-vi-hoan-chinh.html' target='_self'>Gia Vị Hoàn Chỉnh</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html' target='_self'>Sản Phẩm Big Size</a></li><li><a href='hop-qua-gia-vi-dac-san.html' target='_self'>Hộp quà Gia vị Đặc sản</a></li></ul></li>
-		
-		<li><a href="../dhfood/dhfoods.com.vn/vn/mon-ngon.html">Món ngon</a></li>
-		
-		<li><a href="../dhfood/dhfoods.com.vn/vn/kham-pha-gia-vi.html">Khám phá gia vị</a></li>
-		
-		<li><a href="../dhfood/dhfoods.com.vn/vn/tin-tuc.html">Tin tức</a><ul><li><a href='../dhfood/dhfoods.com.vn/vn/tin-tuc-su-kien.html' target='_self'>Tin tức - Sự kiện</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/hoi-cho-trien-lam.html' target='_self'>Hội chợ - Triển lãm</a></li><li><a href='../dhfood/dhfoods.com.vn/vn/san-pham-moi.html' target='_self'>Sản Phẩm Mới</a></li><li><a href='http://www.dhfoods.com.vn/vn/tuyen-dung.html' target='_self'>Tuyển dụng</a></li></ul></li>
-		
-		<li><a href="../dhfood/dhfoods.com.vn/vn/goc-bao-chi-dhfoods.html">Góc báo chí</a></li>
-		
-		<li><a href="lien-he.html">Liên hệ</a></li>
-		
-	</ul>
-                    <div class="mmSearch">
-						<form name="formSearch" method="POST" action="https://dhfoods.com.vn/vn/tim-kiem.html" class="box_search" onSubmit="return check_search(this)">
-		<input name="keyword" id="keyword" type="text" class="text_search form-control" placeholder="Nhập nội dung tìm kiếm" value="" />
-		<button type="submit" name="do_submit" id="do_submit_mb" class=""><i class="fa fa-search"></i></button>
-	</form>
-                    </div>
-                </div>
-                <div class="close-mmenu"><i class="fa fa-times"></i></div>
-            </div>
-            <div class="divmmbg"></div>
-        </div>
-    </div>
-	<div id="vnt-tools-mobile" class=" hidden-lg hidden-md">
-        <ul>
-            <li><a href="tel:0947442788"><span class="fa-phone">Hotline</span></a></li>
-            <li><a href="lien-he.html"><span class="fa-map-marker">Xem bản đồ</span></a></li>
-        </ul>
-    </div>
-	<script language="javascript" >
-	function check_search(f) {
-		var keyword = f.keyword.value;		
-		var key_len = f.keyword.value.length;
-		if ((keyword == '') || (keyword == "Nhập nội dung tìm kiếm") || (keyword == "")) {
-			// jAlert("Vui lòng nhập từ khóa");
-			f.keyword.focus();
-			return false;
-		}
-		if (key_len < 2) {
-			jAlert("Từ khóa tới thiểu là 2 ký tự");
-			f.keyword.focus();
-			return false;
-		}
-		return true;
-	}	
-	</script>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH95T6W"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<script type="text/javascript" src="../static/js/plusone.js"></script>
-    <!-- Subiz --><script>
-    (function(s, u, b, i, z){
-        u[i]=u[i]||function(){
-            u[i].t=+new Date();
-            (u[i].q=u[i].q||[]).push(arguments);
-        };
-        z=s.createElement('script');
-        var zz=s.getElementsByTagName('script')[0];
-        z.async=1; z.src=b; z.id='subiz-script';
-        zz.parentNode.insertBefore(z,zz);
-    })(document, window, '../../widgetv4.subiz.com/static/js/app.js', 'subiz');
-    subiz('setAccount', 'acphsfnqnmoaxgid14f1');
-</script><!-- End Subiz -->
-<script>
-subiz('setLanguage', 'vi-VN');
-</script>
-</body>
+      <div class="divmm">
+        <div class="mmContent">
+          <div class="mmMenu">
+            <ul class="mmMain">
+              <li>
+                <a href="gioi-thieu-dh-foods.html">Về DH FOODS</a>
+                <ul>
+                  <li>
+                    <a href="cot-moc-dang-nho.html" target="_self"
+                      >Cột mốc đáng nhớ</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html"
+                      target="_self"
+                      >Câu chuyện thương hiệu</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dhfoods.com.vn/loi-hua-cua-chung-toi.html"
+                      target="_self"
+                      >Lời hứa của chúng tôi</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html"
+                      target="_self"
+                      >Tôi muốn mua hàng</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
+              <li>
+                <a href="../dhfood/dhfoods.com.vn/vn/san-pham.html">Sản phẩm</a>
+                <ul>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/muoi-cham.html"
+                      target="_self"
+                      >Muối Chấm Tây Ninh</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/sot-cham.html"
+                      target="_self"
+                      >Sốt Chấm</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html"
+                      target="_self"
+                      >NATURAL Gia Vị Tự Nhiên</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html"
+                      target="_self"
+                      >NATURAL Gia Vị Nấu Và Ướp</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/sa-te.html"
+                      target="_self"
+                      >Sa Tế</a
+                    >
+                  </li>
+                  <li>
+                    <a href="gia-vi-hoan-chinh.html" target="_self"
+                      >Gia Vị Hoàn Chỉnh</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html"
+                      target="_self"
+                      >Sản Phẩm Big Size</a
+                    >
+                  </li>
+                  <li>
+                    <a href="hop-qua-gia-vi-dac-san.html" target="_self"
+                      >Hộp quà Gia vị Đặc sản</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="../dhfood/dhfoods.com.vn/vn/mon-ngon.html">Món ngon</a>
+              </li>
+
+              <li>
+                <a href="../dhfood/dhfoods.com.vn/vn/kham-pha-gia-vi.html"
+                  >Khám phá gia vị</a
+                >
+              </li>
+
+              <li>
+                <a href="../dhfood/dhfoods.com.vn/vn/tin-tuc.html">Tin tức</a>
+                <ul>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/tin-tuc-su-kien.html"
+                      target="_self"
+                      >Tin tức - Sự kiện</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/hoi-cho-trien-lam.html"
+                      target="_self"
+                      >Hội chợ - Triển lãm</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../dhfood/dhfoods.com.vn/vn/san-pham-moi.html"
+                      target="_self"
+                      >Sản Phẩm Mới</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.dhfoods.com.vn/vn/tuyen-dung.html"
+                      target="_self"
+                      >Tuyển dụng</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="../dhfood/dhfoods.com.vn/vn/goc-bao-chi-dhfoods.html"
+                  >Góc báo chí</a
+                >
+              </li>
+
+              <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+            <div class="mmSearch">
+              <form
+                name="formSearch"
+                method="POST"
+                action="https://dhfoods.com.vn/vn/tim-kiem.html"
+                class="box_search"
+                onSubmit="return check_search(this)"
+              >
+                <input
+                  name="keyword"
+                  id="keyword"
+                  type="text"
+                  class="text_search form-control"
+                  placeholder="Nhập nội dung tìm kiếm"
+                  value=""
+                />
+                <button
+                  type="submit"
+                  name="do_submit"
+                  id="do_submit_mb"
+                  class=""
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="close-mmenu"><i class="fa fa-times"></i></div>
+        </div>
+        <div class="divmmbg"></div>
+      </div>
+    </div>
+    <div id="vnt-tools-mobile" class="hidden-lg hidden-md">
+      <ul>
+        <li>
+          <a href="tel:0947442788"><span class="fa-phone">Hotline</span></a>
+        </li>
+        <li>
+          <a href="lien-he.html"
+            ><span class="fa-map-marker">Xem bản đồ</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <script language="javascript">
+      function check_search(f) {
+        var keyword = f.keyword.value;
+        var key_len = f.keyword.value.length;
+        if (
+          keyword == "" ||
+          keyword == "Nhập nội dung tìm kiếm" ||
+          keyword == ""
+        ) {
+          // jAlert("Vui lòng nhập từ khóa");
+          f.keyword.focus();
+          return false;
+        }
+        if (key_len < 2) {
+          jAlert("Từ khóa tới thiểu là 2 ký tự");
+          f.keyword.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MH95T6W"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script type="text/javascript" src="../static/js/plusone.js"></script>
+    <!-- Subiz -->
+    <script>
+      (function (s, u, b, i, z) {
+        u[i] =
+          u[i] ||
+          function () {
+            u[i].t = +new Date();
+            (u[i].q = u[i].q || []).push(arguments);
+          };
+        z = s.createElement("script");
+        var zz = s.getElementsByTagName("script")[0];
+        z.async = 1;
+        z.src = b;
+        z.id = "subiz-script";
+        zz.parentNode.insertBefore(z, zz);
+      })(
+        document,
+        window,
+        "../../widgetv4.subiz.com/static/js/app.js",
+        "subiz"
+      );
+      subiz("setAccount", "acphsfnqnmoaxgid14f1");
+    </script>
+    <!-- End Subiz -->
+    <script>
+      subiz("setLanguage", "vi-VN");
+    </script>
+  </body>
 </html>

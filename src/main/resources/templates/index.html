@@ -457,89 +457,58 @@
     />
 
     <link
-      th:href="@{/css/font-awesome.min.css}"
+      href="/src/main/resources/static/css/font-awesome.min.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      th:href="@{/css/bootstrap.min.css}"
+      href="/src/main/resources/static/css/bootstrap.min.css" 
       rel="stylesheet"
       type="text/css"
     />
-    <link th:href="@{/css/slick.css}" rel="stylesheet" type="text/css" />
+    <link href="/src/main/resources/static/css/slick.css" rel="stylesheet" type="text/css" />
     <link
-      th:href="@{/css/jquery.fancybox.css}"
-      type="text/css"
-      rel="stylesheet"
-    />
-    <link
-      th:href="@{/css/jquery.alerts.css}"
+      href="/src/main/resources/static/css/jquery.fancybox.css"
       type="text/css"
       rel="stylesheet"
     />
     <link
-      th:href="@{/css/menumobile.css}"
+      th:href="/src/main/resources/static/css/jquery.alerts.css"
       type="text/css"
       rel="stylesheet"
     />
-    <link th:href="@{/css/animate.css}" type="text/css" rel="stylesheet" />
-    <link
-      th:href="@{/css/screenc619.css}"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script language="javascript">
-      var ROOT = "https://dhfoods.com.vn/";
-      var ROOT_MOD = "trang-chu-2.html";
-      var DIR_IMAGE = "https://dhfoods.com.vn/skins/default/images";
-      var cmd = "vnTRUST";
-      var lang = "vn";
-      var mem_id = 0;
-      var js_lang = new Array();
-      js_lang["announce"] = "Thông báo";
-      js_lang["error"] = "Có lỗi";
-      js_lang["success"] = "Thành công";
+    <link href="/src/main/resources/static/css/menumobile.css" type="text/css" rel="stylesheet" />
+    <link href="/src/main/resources/static/css/animate.css" type="text/css" rel="stylesheet" />
+    <link href="/src/main/resources/static/css/screenc619.css" type="text/css" rel="stylesheet" type="text/css" />
+     
     </script>
-    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/jquery.min.js"></script>
     <script
       type="text/javascript"
-      th:src="@{/js/jquery-migrate.min.js}"
+      src="/src/main/resources/static/js/jquery-migrate.min.js"
     ></script>
-    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/slick.js}"></script>
-    <script type="text/javascript" th:src="@{/js/menumobile.js}"></script>
-    <script
-      type="text/javascript"
-      th:src="@{/js/jquery.fancybox.js}"
-    ></script>
-    <script
-      type="text/javascript"
-      th:src="@{/js/my_effect_scroll.js}"
-    ></script>
-    <script type="text/javascript" th:src="@{/js/jquery.alerts.js}"></script>
-    <script type="text/javascript" th:src="@{/js/core.js}"></script>
-    <script type="text/javascript" th:src="@{/js/style.js}"></script>
-    <link rel="stylesheet" th:href="@{/css/product.css}" type="text/css" />
-    <link
-      rel="stylesheet"
-      th:href="@{/css/mainc619.css}"
-      type="text/css"
-    />
-    <script
-      type="text/javascript"
-      th:src="@{/js/mainc619.js}"
-    ></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/slick.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/menumobile.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/my_effect_scroll.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/jquery.alerts.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/core.js"></script>
+    <script type="text/javascript" src="/src/main/resources/static/js/style.js"></script>
+    <link rel="stylesheet" href="/src/main/resources/static/css/product.css" type="text/css" />
+    <link rel="stylesheet" href="/src/main/resources/static/css/mainc619.css" type="text/css" />
+    <script type="text/javascript" src="/src/main/resources/static/js/mainc619.js"></script>
     <style type="text/css">
       #vnt-navation {
         background: url("../vnt_upload/weblink/background_1-2.png") repeat
           center center;
       }
       .mainFoot {
-        background: url("../vnt_upload/weblink/background_1-2.png") repeat
+        background: url("../static/img/background_1-2.png") repeat
           center center;
       }
       .mainHead {
-        background: url("../vnt_upload/weblink/background_1-2.png") repeat
+        background: url("../static/img/background_1-2.png") repeat
           center center;
       }
     </style>
@@ -634,10 +603,12 @@
                       href="index.html#"
                       target="_self"
                       title="Dh Foods"
-                      ><img
+                      >
+                      <!-- <img
                         src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/Logo_DhFoods_trang_2.png"
                         alt="Dh Foods"
-                    /></a>
+                    /> -->
+                  </a>
                     <h1 style="display: none">Dh Foods</h1>
                   </div>
                   <div class="header-tools hidden-sm hidden-xs">
@@ -645,16 +616,16 @@
                       <ul>
                         <li class="">
                           <a href="gioi-thieu-dh-foods.html" target="_self"
-                            >Về DH FOODS</a
+                            >Về BISWELL</a
                           >
                           <ul>
-                            <li>
+                            <!-- <li>
                               <a
                                 href="../dhfood/dhfoods.com.vn/vn/cot-moc-dang-nho.html"
                                 target="_self"
                                 >Cột mốc đáng nhớ</a
                               >
-                            </li>
+                            </li> -->
                             <li>
                               <a
                                 href="https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html"
@@ -745,21 +716,21 @@
                           </ul>
                         </li>
 
-                        <li class="">
+                        <!-- <li class="">
                           <a
                             href="../dhfood/dhfoods.com.vn/vn/mon-ngon.html"
                             target="_self"
                             >Món ngon</a
                           >
-                        </li>
+                        </li> -->
 
-                        <li class="">
+                        <!-- <li class="">
                           <a
                             href="../dhfood/dhfoods.com.vn/vn/kham-pha-gia-vi.html"
                             target="_self"
                             >Khám phá gia vị</a
                           >
-                        </li>
+                        </li> -->
 
                         <li class="">
                           <a
@@ -799,13 +770,13 @@
                           </ul>
                         </li>
 
-                        <li class="">
+                        <!-- <li class="">
                           <a
                             href="../dhfood/dhfoods.com.vn/vn/goc-bao-chi-dhfoods.html"
                             target="_self"
                             >Góc báo chí</a
                           >
-                        </li>
+                        </li> -->
 
                         <li class="">
                           <a href="lien-he.html" target="_self">Liên hệ</a>
@@ -935,13 +906,13 @@
                     onmousedown="return rwt(this,'advertise','1432')"
                     target="_blank"
                     ><img
-                      src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/2024-CP03.53.Web_Desktop.png"
+                      src="../static/img/anh-que-huong-mien-tay-yen-binh.jpg"
                       alt="banner"
                   /></a>
                 </div>
               </div>
 
-              <div class="item">
+              <!-- <div class="item">
                 <div class="thumb">
                   <a
                     href="http://"
@@ -949,13 +920,13 @@
                     onmousedown="return rwt(this,'advertise','1332')"
                     target="_blank"
                     ><img
-                      src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/gia_vi_tu_nhien.jpg"
+                      src="../static/img/anh-que-huong-mien-tay-yen-binh.jpg"
                       alt="banner"
                   /></a>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="item">
+              <!-- <div class="item">
                 <div class="thumb">
                   <a
                     href="http://"
@@ -963,13 +934,13 @@
                     onmousedown="return rwt(this,'advertise','1263')"
                     target="_blank"
                     ><img
-                      src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/sot-cham.png"
+                      src="../static/img/anh-que-huong-mien-tay-yen-binh.jpg"
                       alt="banner"
                   /></a>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="item">
+              <!-- <div class="item">
                 <div class="thumb">
                   <a
                     href="../dhfood/dhfoods.com.vn/vn/gia-vi-hoan-chinh.html"
@@ -977,13 +948,13 @@
                     onmousedown="return rwt(this,'advertise','1070')"
                     target="_blank"
                     ><img
-                      src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/WEB_1.png"
+                      src="../static/img/anh-que-huong-mien-tay-yen-binh.jpg"
                       alt="banner"
                   /></a>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="item">
+              <!-- <div class="item">
                 <div class="thumb">
                   <a
                     href="../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html"
@@ -991,13 +962,13 @@
                     onmousedown="return rwt(this,'advertise','436')"
                     target="_blank"
                     ><img
-                      src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/banner_phan_phoi-02.jpg"
+                      src="../static/img/anh-que-huong-mien-tay-yen-binh.jpg"
                       alt="banner"
                   /></a>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="item">
+              <!-- <div class="item">
                 <div class="thumb">
                   <a
                     href="http://"
@@ -1005,21 +976,21 @@
                     onmousedown="return rwt(this,'advertise','826')"
                     target="_blank"
                     ><img
-                      src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/banner_phan_phoi-01.jpg"
+                      src="../static/img/anh-que-huong-mien-tay-yen-binh.jpg"
                       alt="banner"
                   /></a>
                 </div>
-              </div>
+              </div> -->
             </div>
 
-            <a
+            <!-- <a
               href="javascript:;"
               class="go_bot"
               onclick="jQuery('html,body').animate({scrollTop: $('.aboutHome').offset().top},1000);"
             >
               <span>scroll</span>
               <i class="fa fa-caret-down"></i>
-            </a>
+            </a> -->
           </div>
 
           <div class="vnt-slide-home hidden-lg hidden-md">
@@ -1237,7 +1208,7 @@
                                                                                                     <img
                                                                                                       alt="Giỏ quà Tết Dh Foods - Tự Hào Gia Vị Việt"
                                                                                                       data-ck-zoom="yes"
-                                                                                                      src="../dhfood/dhfoods.com.vn/vnt_upload/File/Image/Thumnails_Landing_page.png"
+                                                                                                      src="../static/img/imresizer-1735570351135.jpg"
                                                                                                     />
                                                                                                   </div>
                                                                                                 </div>
@@ -1285,18 +1256,14 @@
                     <div class="title" style="animation-delay: 0.3s">
                       <span>Đôi nét về</span>
 
-                      <h4><span style="font-size: 36px">Dh Foods</span></h4>
+                      <h4><span style="font-size: 36px">BisWell</span></h4>
                     </div>
 
                     <div class="des" style="animation-delay: 0.3s">
                       <p>
                         <span style="font-size: 20px"
                           ><span style="font-family: Roboto, sans-serif"
-                            >Tại Dh Foods chúng tôi tin rằng, những gia vị chất
-                            lượng sẽ làm cho các bữa ăn ngon miệng và mọi người
-                            cảm thấy hạnh phúc hơn. Những gia vị của Dh Foods
-                            cũng là những đặc sản mang nét văn hóa đặc trưng của
-                            các vùng miền Việt Nam.</span
+                            >Tại BisWell, chúng tôi tin rằng, những gia vị chất lượng sẽ làm cho các bữa ăn ngon miệng và mọi người cảm thấy hạnh phúc hơn. Những gia vị của BisWell cũng là những đặc sản mang nét văn hóa đặc trưng của các vùng miền Việt Nam.</span
                           ></span
                         >
                       </p>
@@ -1342,7 +1309,7 @@
                       <div class="wrap">
                         <div class="img">
                           <img
-                            src="../dhfood/dhfoods.com.vn/vnt_upload/product/08_2021/thumbs/350_fw_Muoi_tom_Tay_ninh_110g.png"
+                            src="../static/img/imresizer-1735570976415.jpg"
                           />
                         </div>
                         <div class="tend"><h3>Muối Chấm Tây Ninh</h3></div>
@@ -1482,7 +1449,7 @@
                     <div class="img">
                       <a href="../dhfood/dhfoods.com.vn/vn/mon-ngon.html"
                         ><img
-                          src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/MAM_CYM_TYT_-_DH_FOODS_TYT.jpg"
+                          src="../static/img/imresizer-1735571157809.jpg"
                           alt="MÓN NGON"
                       /></a>
                     </div>
@@ -1493,7 +1460,7 @@
                     <div class="img">
                       <a href="../dhfood/dhfoods.com.vn/vn/kham-pha-gia-vi.html"
                         ><img
-                          src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/Gio_qua_gia_vi_Vi_Phuong_4.jpg"
+                          src="../static/img/imresizer-1735571157809.jpg"
                           alt="Khám phá gia vị"
                       /></a>
                     </div>
@@ -1536,7 +1503,7 @@
                         <a
                           href="../dhfood/dhfoods.com.vn/vn/dh-foods-tiep-tuc-nhan-giai-thuong-hang-viet-nam-chat-luong-cao-2024.html"
                           ><img
-                            src="../dhfood/dhfoods.com.vn/vnt_upload/news/03_2024/thumbs/750_fw_hvnclc.jpg"
+                            src="../static/img/imresizer-1735571409275.jpg"
                         /></a>
                       </div>
                       <div class="caption">
@@ -1557,7 +1524,7 @@
                         <a
                           href="../dhfood/dhfoods.com.vn/vn/le-khanh-thanh-nha-may-san-xuat-cong-ty-co-phan-dh-foods-chi-nhanh-long-an.html"
                           ><img
-                            src="../dhfood/dhfoods.com.vn/vnt_upload/news/03_2024/thumbs/750_fw_Untitled-2.png"
+                            src="../static/img/imresizer-1735571409275.jpg"
                         /></a>
                       </div>
                       <div class="caption">
@@ -1578,7 +1545,7 @@
                         <a
                           href="../dhfood/dhfoods.com.vn/vn/thu-moi-nha-phan-phoi-va-tong-dai-ly-hop-tac-phan-phoi-gia-vi-dac-san-dh-foods.html"
                           ><img
-                            src="../dhfood/dhfoods.com.vn/vnt_upload/news/04_2024/thumbs/750_fw_NPP_2.png"
+                            src="../static/img/imresizer-1735571409275.jpg"
                         /></a>
                       </div>
                       <div class="caption">
