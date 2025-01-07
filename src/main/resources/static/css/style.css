@@ -259,7 +259,8 @@ div#vnt-slide-home img {
     margin-right: 5px;
 }
 .mainHead {
-    background:#2b587f;
+    background-image: url('../images/bg2.png');
+    /* background:#2b587f; */
 }
 .mainHead .wrap{
     position: relative;
@@ -268,7 +269,7 @@ div#vnt-slide-home img {
     display: -ms-flexbox;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .mainHead .header-tools{
     display: -webkit-box;
