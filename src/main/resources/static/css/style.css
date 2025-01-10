@@ -15,13 +15,13 @@ body,html{
     outline: 0;
 }
 a{
-    color:#333333;
+    color: #008DDA;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
 a:hover{
-    color: #1b5633;
+    color: #008DDA;
 }
 #vnt-container{
     max-width: 1920px;
@@ -696,7 +696,7 @@ div#vnt-slide-home img {
     font-size: 45px;
     line-height: 55px;
     font-weight: bold;
-    color:#1cbaba;
+    color: #008DDA;
     font-family: 'Roboto Condensed', sans-serif;
 }
 .box_mid .mid-title .titleL h1,

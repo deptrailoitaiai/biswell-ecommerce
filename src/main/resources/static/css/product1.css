@@ -130,7 +130,7 @@ display:none;
 	font-size: 24px;
 	line-height: 30px;
 	height: 65px;
-	color: #1b5633;
+	color: #008DDA;
 	text-transform: uppercase;
 	font-weight: 400;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -147,7 +147,7 @@ display:none;
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
-    color: #000;
+    color: #008DDA;
     border-radius: 5px;
     border: solid 1px #000;
     padding: 9px 23px;
@@ -338,7 +338,7 @@ div#vnt-thumbnail-nav .slick-slide.slick-current .img {
 .productTitle h2{
 	font-size: 38px;
 	line-height: 46px;
-	color: #1b5633;
+	color: #008DDA;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -348,7 +348,7 @@ div#vnt-thumbnail-nav .slick-slide.slick-current .img {
 }
 .productTitle h1:after, .productTitle h2:after{
 	content:'';
-	background:#1b5633;
+	background:#008DDA;
 	width:80px;
 	height:3px;
 	position:absolute;
@@ -384,7 +384,7 @@ div#vnt-thumbnail-nav .slick-slide.slick-current .img {
      text-transform: uppercase;
      color: #fff;
      border-radius: 5px;
-     border: solid 1px #1b5633;
+     border: solid 1px #008DDA;
      padding: 12px 30px;
      -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -508,12 +508,12 @@ div#vnt-thumbnail-nav .slick-slide.slick-current .img {
 	background:none;
 }
 .box_mid.v2 .mid-title .titleL {
-    color: #164a2c;
+    color: #008DDA;
     font-size: 45px;
     text-transform: uppercase;
 }
 .box_mid.v2 .mid-title .titleL.white{
-	color: #1b5633;
+	color: #008DDA;
 }
 #vnt-background.bg:before,#vnt-background.bg:after{
 	content:'';
