@@ -26,7 +26,7 @@
 	transition: all 0.3s linear;
 }
 .productCat:hover .wrap{
-	/*background:#1b5633 ;*/
+	/*background:#2b587f ;*/
 }
 .productCat .img {
     padding-top: 108.333333%;
@@ -64,7 +64,7 @@
 .productCat .tend h3{
 	font-size: 30px;
 	line-height: 40px;
-	color: #1b5633;
+	color: #2b587f;
 	text-transform: uppercase;
 	font-weight: 400;
 	text-align: center;
@@ -166,7 +166,7 @@
     line-height: 23px;
     font-weight: bold;
     text-transform: uppercase;
-    background: #1b5633 ;
+    background: #2b587f ;
     border-radius: 6px;
     color: #ffffff;
     padding: 16px 37px;
@@ -328,7 +328,7 @@ div#vnt-thumbnail-for img {
     display: inline-block;
     width: 100%;
     max-width: 380px;
-    background: #1b5633 ;
+    background: #2b587f ;
     color: #ffffff;
     font-size: 22px;
     line-height: 30px;
@@ -369,7 +369,7 @@ div#vnt-thumbnail-for img {
 #slideOther .slick-arrow{
 	width:50px;
 	height:50px;
-	background: #1b5633 ;
+	background: #2b587f ;
 	border:none;
 	border-radius: 100%;
 	position: absolute;

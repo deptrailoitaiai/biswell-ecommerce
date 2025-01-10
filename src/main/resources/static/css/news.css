@@ -19,7 +19,7 @@
 	transform: translateX(-50%);
 	bottom: 0;
 	width: 50px;
-	border-bottom: solid 1px #1b5633 ;
+	border-bottom: solid 1px #2b587f ;
 }
 .theTitle h1{
 	font-size: 30px;
@@ -76,7 +76,7 @@
 .newsOther .title h2{
 	font-size: 30px;
 	line-height: 40px;
-	color:#1b5633 ;
+	color:#2b587f ;
 	font-family: 'Roboto Condensed', sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -90,7 +90,7 @@
 #slideOther .slick-arrow{
 	width:50px;
 	height:50px;
-	background: #1b5633 ;
+	background: #2b587f ;
 	border:none;
 	border-radius: 100%;
 	position: absolute;

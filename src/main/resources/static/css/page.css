@@ -4,7 +4,7 @@
 .boxCart .t1{
 	font-size: 25px;
 	line-height: 33px;
-	color:#1b5633 ;
+	color:#2b587f ;
 	font-weight: bold;
 	font-family: 'Roboto Condensed', sans-serif;
 	margin-bottom: 10px;
@@ -24,7 +24,7 @@
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 500;
-    background: #1b5633 ;
+    background: #2b587f ;
     border-radius: 5px;
     padding: 13px 28px;
 }
@@ -46,7 +46,7 @@
 .boxCart .t2{
 	font-size: 25px;
 	line-height: 33px;
-	color:#1b5633 ;
+	color:#2b587f ;
 	font-weight: bold;
 	font-family: 'Roboto Condensed', sans-serif;
 	margin-bottom: 10px;
@@ -70,5 +70,5 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	color:#1b5633 ;
+	color:#2b587f ;
 }

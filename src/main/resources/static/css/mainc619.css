@@ -22,7 +22,7 @@
 #vnt-slide-home-mobile .slick-arrow{
 	width:45px;
 	height:45px;
-	background: #1b5633 ;
+	background: #2b587f ;
 	border:none;
 	position: absolute;
 	border-radius: 5px;
@@ -187,7 +187,7 @@
 #vnt-slide-home .slick-arrow{
 	width:45px;
 	height:45px;
-	background: #1b5633 ;
+	background: #2b587f ;
 	border:none;
 	position: absolute;
 	border-radius: 5px;
@@ -341,7 +341,7 @@ a.go_bot{
 	bottom: 0;
 	left: 0;
 	width: 55px;
-	border-bottom: solid 3px #1b5633;
+	border-bottom: solid 3px #2b587f;
 }
 .aboutHome .des{
 	font-size: 16px;
@@ -359,7 +359,7 @@ a.go_bot{
     left: 0%;
     bottom: 0;
     height: 3px;
-    background: #1b5633;
+    background: #2b587f;
     height: 100%;
     left: 0;
     z-index: -1;
@@ -370,7 +370,7 @@ a.go_bot{
      text-transform: uppercase;
      color: #fff;
      border-radius: 5px;
-     border: solid 1px #1b5633;
+     border: solid 1px #2b587f;
      padding: 9px 23px;
      -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -396,10 +396,10 @@ a.go_bot{
 	position:relative;
 }
 .aboutHome .link a:hover{
-	border: solid 1px #1b5633;
+	border: solid 1px #2b587f;
 }
 .aboutHome .link a:hover span{
-	color:#1b5633;
+	color:#2b587f;
 }
 .aboutHome .link a:hover:after {
     left: -10%;
@@ -447,7 +447,7 @@ a.go_bot{
 	left: 0;
 }
 .productHome .title{
-	color: #1b5633;
+	color: #2b587f;
 	/* text-shadow: 0px 0px 5px rgba(0,0,0,0.35); */
 	padding-bottom: 20px;
 	margin-bottom: 25px;
@@ -464,7 +464,7 @@ a.go_bot{
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 	width: 55px;
-	border-bottom: solid 3px #1b5633;
+	border-bottom: solid 3px #2b587f;
 }
 .productHome .title h2{
 	font-size: 50px;
@@ -511,7 +511,7 @@ a.go_bot{
     font-weight: bold;
     text-transform: uppercase;
     font-family: 'Roboto Condensed', sans-serif;
-    color: #1b5633;
+    color: #2b587f;
     padding-bottom: 20px;
     margin-bottom: 25px;
     position: relative;
@@ -528,7 +528,7 @@ a.go_bot{
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 55px;
-    border-bottom: solid 3px #1b5633;
+    border-bottom: solid 3px #2b587f;
 
 }
 /*================================================================*/
@@ -557,7 +557,7 @@ a.go_bot{
 	left: 0;
 }
 .newsHome .title{
-	color: #1b5633;
+	color: #2b587f;
 	/* text-shadow: 0px 0px 5px rgba(0,0,0,0.35); */
 	padding-bottom: 20px;
 	margin-bottom: 25px;
@@ -655,7 +655,7 @@ a.go_bot{
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
-	color:#1b5633 ;
+	color:#2b587f ;
 }
 
 
@@ -668,7 +668,7 @@ a.go_bot{
     left: 0%;
     bottom: 0;
     height: 3px;
-    background: #1b5633;
+    background: #2b587f;
     height: 100%;
     left: 0;
     z-index: -1;
@@ -679,7 +679,7 @@ a.go_bot{
      text-transform: uppercase;
      color: #fff;
      border-radius: 5px;
-     border: solid 1px #1b5633;
+     border: solid 1px #2b587f;
      padding: 9px 23px;
      -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -697,10 +697,10 @@ a.go_bot{
 	margin: 0 auto;
 }
 .newsHome .link a:hover{
-	border: solid 1px #1b5633;
+	border: solid 1px #2b587f;
 }
 .newsHome .link a:hover span{
-	color:#1b5633;
+	color:#2b587f;
 }
 .newsHome .link a:hover:after {
     left: -10%;
