@@ -49,7 +49,7 @@
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 45px;
-    color: #1b5633;
+    color: #41C9E2;
 }
 .info-contact {
     position: relative;
@@ -108,7 +108,7 @@
     width: 100%;
     left: 0%;
     bottom: 0;
-    background: #1b5633;
+    background: #008DDA;
     height: 100%;
     left: 0;
     z-index: 1;
@@ -315,7 +315,7 @@
 .form-contact button {
     font-size: 16px;
     line-height: 24px;
-    background: #1b5633 ;
+    background: #008DDA ;
     border: none;
     color: #ffffff;
     text-transform: uppercase;
