@@ -7,7 +7,7 @@
 .recruit {
     position: relative;
     border: solid 1px #ffffff;
-    border-bottom: solid 2px #1b5633;
+    border-bottom: solid 2px #2b587f;
     overflow: hidden;
     height: 449px;
     width: 33.333%;
@@ -84,7 +84,7 @@
 	transform: translateX(-50%);
 	bottom: 0;
 	width: 50px;
-	border-bottom: solid 1px #1b5633 ;
+	border-bottom: solid 1px #2b587f ;
 }
 .recruitTitle h1{
 	font-size: 30px;
@@ -145,7 +145,7 @@
     left: 0;
     font-size: 16px;
     line-height: 24px;
-    color:#1b5633 ;
+    color:#2b587f ;
 }
 .info .at{
     font-weight: bold;
@@ -178,7 +178,7 @@
     transform: translateY(-50%);
     font-size: 26px;
     line-height: 34px;
-    color: #1b5633 ;
+    color: #2b587f ;
 }
 .boxRecruit{
     margin-bottom: 15px;
@@ -195,7 +195,7 @@
     font-size: 18px;
     line-height: 26px;
     font-weight: bold;
-    color: #1b5633 ;
+    color: #2b587f ;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -222,7 +222,7 @@
 .recruitOther .title h2{
 	font-size: 30px;
 	line-height: 40px;
-	color:#1b5633 ;
+	color:#2b587f ;
 	font-family: 'Roboto Condensed', sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -236,7 +236,7 @@
 #slideOther .slick-arrow{
 	width:50px;
 	height:50px;
-	background: #1b5633 ;
+	background: #2b587f ;
 	border:none;
 	border-radius: 100%;
 	position: absolute;
@@ -287,7 +287,7 @@
 	.recruit {
 		position: relative;
 		border: solid 1px #ffffff;
-		border-bottom: solid 2px #1b5633;
+		border-bottom: solid 2px #2b587f;
 		overflow: hidden;
 		height: 340px;
 		width: 33.333%;

@@ -144,7 +144,7 @@ html.openmenu body{
 }
 .mmMenu>ul>li:hover>a,
 .mmMenu>ul>li:hover>.m-sub>a{
-    background: #1b5633;
+    background: #2b587f;
     color:#ffffff;
 }
 .mmMenu>ul>li>.m-sub{
@@ -196,7 +196,7 @@ html.openmenu body{
 }
 .mmMenu>ul>li>ul>li:hover>a,
 .mmMenu>ul>li>ul>li:hover>.m-sub>a {
-    color: #1b5633;
+    color: #2b587f;
 }
 .mmMenu>ul>li>ul>li{
     border-top: solid 1px rgba(0,0,0,0.2);
@@ -247,7 +247,7 @@ html.openmenu body{
 }
 .mmMenu>ul>li>ul>li>ul>li:hover>a,
 .mmMenu>ul>li>ul>li>ul>li:hover>.m-sub>a {
-    color: #1b5633;
+    color: #2b587f;
 }
 /*======================================================================*/
 /*======================MENU LOAI 2=====================================*/
@@ -473,5 +473,5 @@ html.openmenu body{
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
-    color:#1b5633;
+    color:#2b587f;
 }

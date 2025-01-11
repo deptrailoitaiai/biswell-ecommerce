@@ -49,7 +49,7 @@
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 45px;
-    color: #41C9E2;
+    color: #2b587f;
 }
 .info-contact {
     position: relative;
@@ -108,7 +108,7 @@
     width: 100%;
     left: 0%;
     bottom: 0;
-    background: #008DDA;
+    background: #2b587f;
     height: 100%;
     left: 0;
     z-index: 1;
@@ -119,7 +119,7 @@
      text-transform: uppercase;
      color: #fff;
      border-radius: 5px;
-     border: solid 1px #1b5633;
+     border: solid 1px #2b587f;
      padding: 9px 23px;
      -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -152,10 +152,10 @@
     right: 15px;
 }
 .info-contact .view-map-contact a:hover{
-	border: solid 1px #1b5633;
+	border: solid 1px #2b587f;
 }
 .info-contact .view-map-contact a:hover span{
-	color:#1b5633;
+	color:#2b587f;
 }
 .info-contact .view-map-contact a:hover:after {
     left: -10%;
@@ -315,7 +315,7 @@
 .form-contact button {
     font-size: 16px;
     line-height: 24px;
-    background: #008DDA ;
+    background: #2b587f ;
     border: none;
     color: #ffffff;
     text-transform: uppercase;

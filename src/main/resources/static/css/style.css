@@ -15,13 +15,13 @@ body,html{
     outline: 0;
 }
 a{
-    color: #008DDA;
+    color:#333333;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
 a:hover{
-    color: #008DDA;
+    color: #2b587f;
 }
 #vnt-container{
     max-width: 1920px;
@@ -246,10 +246,10 @@ div#vnt-slide-home img {
 }
 
 .languageTop  ul li a.active {
-   color: #1b5633;
+   color: #2b587f;
 }
 .languageTop  ul li:hover a{
-    background:#1b5633;
+    background:#2b587f;
     color:#ffffff;
 }
 
@@ -259,8 +259,8 @@ div#vnt-slide-home img {
     margin-right: 5px;
 }
 .mainHead {
-    background-image: url('../images/bg2.png');
-    /* background:#2b587f; */
+    /* background-image: url('../images/bg2.png'); */
+    background:#2b587f;
 }
 .mainHead .wrap{
     position: relative;
@@ -344,7 +344,7 @@ div#vnt-slide-home img {
     top: 100%;
     left: 0;
     background: rgba(255,255,255,0.85);
-    border-bottom: solid 2px #1b5633;
+    border-bottom: solid 2px #2b587f;
     min-width: 250px;
     pointer-events: none;
     -webkit-transition: all 0.3s linear;
@@ -372,7 +372,7 @@ div#vnt-slide-home img {
 }
 .menuTop>ul>li>ul>li:hover>a{
     background: rgba(255,255,255,0.75);
-    color:#1b5633;
+    color:#2b587f;
 }
 .menuTop>ul>li>ul>li:hover>ul{
     opacity: 1;
@@ -388,7 +388,7 @@ div#vnt-slide-home img {
     top: 0;
     left: 100%;
     background: rgba(255,255,255,0.85);
-    border-bottom: solid 2px #1b5633;
+    border-bottom: solid 2px #2b587f;
     min-width: 250px;
     pointer-events: none;
     -webkit-transition: all 0.3s linear;
@@ -415,7 +415,7 @@ div#vnt-slide-home img {
 }
 .menuTop>ul>li>ul>li>ul>li:hover>a{
     background: rgba(255,255,255,0.75);
-    color:#1b5633;
+    color:#2b587f;
 }
 .searchTop{
     position: relative;
@@ -696,7 +696,7 @@ div#vnt-slide-home img {
     font-size: 45px;
     line-height: 55px;
     font-weight: bold;
-    color: #008DDA;
+    color:#2b587f;
     font-family: 'Roboto Condensed', sans-serif;
 }
 .box_mid .mid-title .titleL h1,
@@ -747,7 +747,7 @@ div#vnt-slide-home img {
     padding: 9px 20px;
 }
 .menuTab ul li a:hover, .menuTab ul li.current a {
-    background: #1b5633;
+    background: #2b587f;
     color:#ffffff;
 }
 /*=================END MENU TAB====================*/
@@ -880,8 +880,8 @@ div#vnt-slide-home img {
     border-radius: 5px;
 }
 .pagination ul li a:hover, .pagination ul li span.pagecur{
-    background: #1b5633;
-    border-color:#1b5633;
+    background: #2b587f;
+    border-color:#2b587f;
     color:#ffffff;
 }
 /*================END PAGINATION===================*/
@@ -1345,7 +1345,7 @@ div#vnt-slide-home img {
 /*==================END FOOTER=====================*/
 /*==================BEGIN TOOL MOBILE==============*/
 #vnt-tools-mobile{
-    background: #1b5633;
+    background: #2b587f;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -1396,11 +1396,11 @@ div#vnt-slide-home img {
 a.go_top:before:hover{
     content: "\f106";
     color:#ffffff;
-    background:#1b5633;
+    background:#2b587f;
 }
 a.go_top:hover{
     color:#ffffff;
-    background:#1b5633;
+    background:#2b587f;
 }
 a.go_top {
     width: 45px;
@@ -1411,9 +1411,9 @@ a.go_top {
     right: 15px;
     border-radius: 100%;
     z-index: 11;
-    color:#1b5633;
+    color:#2b587f;
     font-size: 20px;
-    border: solid 1px #1b5633;
+    border: solid 1px #2b587f;
 }
 a.go_top:before {
     content: "\f106";
@@ -1500,11 +1500,11 @@ div#vnt-slide .img img{
     padding: 0 10px;
 }
 #vnt-header{
-    background: #1b5633;
+    background: #2b587f;
     position: initial;
 }
 .mainHead {
-    background: rgba(0, 143, 69, 0.8);
+    background: #2b587f;
     padding: 5px 0px;
 }
 .mainHead .wrap{
