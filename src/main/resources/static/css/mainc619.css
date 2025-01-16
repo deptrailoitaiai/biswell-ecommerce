@@ -223,10 +223,10 @@
 	line-height: 30px;
 }
 #vnt-slide-home .slick-prev:before{
-	content: "\f104";
+	content: "❮";
 }
 #vnt-slide-home .slick-next:before{
-	content: "\f105";
+	content: "❯";
 }
 #vnt-slide-home .slick-arrow:hover{
 	opacity: 1;
@@ -382,7 +382,7 @@ a.go_bot{
 	position: relative;
 }
 .aboutHome .link a span:before{
-	content: "\f105";
+	content: "❯";
 	font-family: fontAwesome;
 	position: absolute;
 	right:0;

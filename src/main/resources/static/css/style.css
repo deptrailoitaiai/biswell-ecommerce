@@ -1309,7 +1309,7 @@ div#vnt-slide-home img {
     color:#999999;
 }
 .botFoot {
-    background: #333333;
+    background: #ffffff;
     padding: 10px 0px;
 }
 .box_statistics{
@@ -1416,7 +1416,7 @@ a.go_top {
     border: solid 1px #2b587f;
 }
 a.go_top:before {
-    content: "\f106";
+    content: "↑";
     font-family: FontAwesome;
     position: absolute;
     top: 50%;
