@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Saved</title>
+</head>
+<body>
+    <h1 th:text="${product.pname}"></h1>
+    <p th:text="${product.pdesc}"></p>
+
+    <div>
+        <h3>Images:</h3>
+        <!-- Hiển thị tất cả các ảnh -->
+        <div th:each="image : ${product.pimages}">
+            <img th:src="@{${image}}" alt="Product Image" />
+        </div>
+    </div>
+</body>
+</html>

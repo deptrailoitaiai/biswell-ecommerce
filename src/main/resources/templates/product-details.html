@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="">
-
-<!-- Mirrored from dhfoods.com.vn/vn//categories by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 11:45:59 GMT -->
+<!-- Mirrored from dhfoods.com.vn/vn/productOfCategory1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 11:51:51 GMT -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-  <title>Sản phẩm</title>
-  <meta name="keywords" CONTENT="Sản phẩm" />
+  <title th:text="${product.pname}"></title>
+  <meta name="keywords" content="tên sp" />
   <meta name="description"
-    CONTENT="Sản phẩm Dh Foods cam kết chất lượng hàng đầu với tiêu chí: KHÔNG Màu Tổng Hợp - KHÔNG Chất Bảo Quản Nhân Tạo. Dh Foods - Tự hào Gia vị Việt." />
+    content="Với thành phần lá Chanh mang lại hương thơm dễ chịu và vị chua nhẹ, kết hợpvị cay thơm của tiêu đã tạo ra loại thức chấm tuyệt vời. Đặc biệt, với tiêu chí 4 KHÔNG, NATURAL Muối Tiêu Lá Chanh hoàn toàn tự nhiên, an toàn cho sức khoẻ." />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="aEmUg-7Z0H8FynZTBTzycgen1XIhJ8ExKGPLjmo2XfM" />
-  <meta name="author" content="Dh Foods" />
+  <meta name="author" content="Biswell" />
   <style type="text/css">
     .wrap>a:focus {
       outline: none;
@@ -135,7 +134,7 @@
 
       .mmMenu>ul>li:focus-within>a,
       .mmMenu>ul>li:focus-within>.m-sub>a {
-        background: #1b5633;
+        background: #2b587f;
         color: #ffffff;
       }
 
@@ -258,32 +257,33 @@
       /*.wrap>.logo {    bottom: 0px;    max-width: 70px;}}*/
       div#vnt-header>.topHead {
         background: rgb(51, 51, 51);
-      }}
+      }
+    }
 
-      @media all and (max-width: 767px) {
-        .vnt-slide-home>#vnt-slide-home .item .img {
-          height: 250px;
-        }
-
-        div#vnt-background>.aboutHome {
-          padding: 30px 0 35px;
-        }
+    @media all and (max-width: 767px) {
+      .vnt-slide-home>#vnt-slide-home .item .img {
+        height: 250px;
       }
 
-      @media all and (max-width: 375px) {
-        .vnt-slide-home>#vnt-slide-home .item .img {
-          height: 250px;
-        }
+      div#vnt-background>.aboutHome {
+        padding: 30px 0 35px;
       }
+    }
 
-      /*khảng cách tiêu đề bài viết*/
-      .wrapConts .box_mid .mid-title .titleL {
-        margin-top: 30px
+    @media all and (max-width: 375px) {
+      .vnt-slide-home>#vnt-slide-home .item .img {
+        height: 250px;
       }
+    }
 
-      .productWrap_c {
-        margin-top: 30px;
-      }
+    /*khảng cách tiêu đề bài viết*/
+    .wrapConts .box_mid .mid-title .titleL {
+      margin-top: 30px
+    }
+
+    .productWrap_c {
+      margin-top: 30px;
+    }
   </style>
 
   <style type="text/css">
@@ -307,52 +307,79 @@
   </style>
 
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MH95T6W');</script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "../../www.googletagmanager.com/gtm5445.html?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-MH95T6W");
+  </script>
   <!-- End Google Tag Manager -->
 
   <!-- Messenger Plugin chat Code -->
   <div id="fb-root"></div>
 
   <!-- Your Plugin chat code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
 
   <script>
-    var chatbox = document.getElementById('fb-customer-chat');
+    var chatbox = document.getElementById("fb-customer-chat");
     chatbox.setAttribute("page_id", "221625157979721");
     chatbox.setAttribute("attribution", "biz_inbox");
     window.fbAsyncInit = function () {
       FB.init({
         xfbml: true,
-        version: 'v10.0'
+        version: "v10.0",
       });
     };
 
     (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = '../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html';
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    })(document, "script", "facebook-jssdk");
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Lấy tất cả các ảnh thumbnail
+    const thumbnails = document.querySelectorAll("#vnt-thumbnail-nav .thumbnail");
+
+    // Lấy phần tử ảnh chính
+    const mainImage = document.getElementById("main-image");
+
+    // Thêm sự kiện click cho từng ảnh thumbnail
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", function () {
+            // Lấy đường dẫn ảnh từ thumbnail
+            const newSrc = this.getAttribute("src");
+
+            // Gán đường dẫn mới cho ảnh chính
+            mainImage.setAttribute("src", newSrc);
+        });
+    });
+});
+  </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131752892-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'UA-131752892-1');
+    gtag("config", "UA-131752892-1");
   </script>
 
   <script data-ad-client="ca-pub-1654659979400507" async
@@ -362,50 +389,107 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-494695734"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'AW-494695734');
+    gtag("config", "AW-494695734");
   </script>
 
   <!-- Facebook Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
       };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      '../../connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '970622426637745');
-    fbq('track', 'PageView');
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "../../connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "970622426637745");
+    fbq("track", "PageView");
   </script>
-  <noscript><img height="1" width="1" style="display:none"
+  <noscript><img height="1" width="1" style="display: none"
       src="https://www.facebook.com/tr?id=970622426637745&amp;ev=PageView&amp;noscript=1" /></noscript>
   <!-- End Facebook Pixel Code -->
 
   <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) { for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e }, ttq.load = function (e, n) { var i = "../../analytics.tiktok.com/i18n/pixel/events.js"; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; var o = document.createElement("script"); o.type = "text/javascript", o.async = !0, o.src = i + "?sdkid=" + e + "&lib=" + t; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(o, a) };
+    !(function (w, d, t) {
+      w.TiktokAnalyticsObject = t;
+      var ttq = (w[t] = w[t] || []);
+      (ttq.methods = [
+        "page",
+        "track",
+        "identify",
+        "instances",
+        "debug",
+        "on",
+        "off",
+        "once",
+        "ready",
+        "alias",
+        "group",
+        "enableCookie",
+        "disableCookie",
+      ]),
+        (ttq.setAndDefer = function (t, e) {
+          t[e] = function () {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        });
+      for (var i = 0; i < ttq.methods.length; i++)
+        ttq.setAndDefer(ttq, ttq.methods[i]);
+      (ttq.instance = function (t) {
+        for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)
+          ttq.setAndDefer(e, ttq.methods[n]);
+        return e;
+      }),
+        (ttq.load = function (e, n) {
+          var i = "../../analytics.tiktok.com/i18n/pixel/events.js";
+          (ttq._i = ttq._i || {}),
+            (ttq._i[e] = []),
+            (ttq._i[e]._u = i),
+            (ttq._t = ttq._t || {}),
+            (ttq._t[e] = +new Date()),
+            (ttq._o = ttq._o || {}),
+            (ttq._o[e] = n || {});
+          var o = document.createElement("script");
+          (o.type = "text/javascript"),
+            (o.async = !0),
+            (o.src = i + "?sdkid=" + e + "&lib=" + t);
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(o, a);
+        });
 
-      ttq.load('C5VPD50QCDCTJUG0E29G');
+      ttq.load("C5VPD50QCDCTJUG0E29G");
       ttq.page();
-    }(window, document, 'ttq');
+    })(window, document, "ttq");
   </script>
 
   <!-- Messenger Plugin chat Code -->
   <div id="fb-root"></div>
 
   <!-- Your Plugin chat code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
 
   <script>
-    var chatbox = document.getElementById('fb-customer-chat');
+    var chatbox = document.getElementById("fb-customer-chat");
     chatbox.setAttribute("page_id", "221625157979721");
     chatbox.setAttribute("attribution", "biz_inbox");
   </script>
@@ -415,27 +499,30 @@
     window.fbAsyncInit = function () {
       FB.init({
         xfbml: true,
-        version: 'v12.0'
+        version: "v12.0",
       });
     };
 
     (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = '../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html';
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "../../connect.facebook.net/vi_VN/sdk/xfbml.customerchat.html";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    })(document, "script", "facebook-jssdk");
   </script>
-  <link rel="canonical" href="/categories" />
-  <link rel="alternate" media="handheld" href="/categories" />
+  <link rel="canonical" href="productOfCategory1.html" />
+  <link rel="alternate" media="handheld" href="productOfCategory1.html" />
   <meta property="og:site_name" content="dhfoods.com.vn" />
   <meta property="og:locale" content="vi_VN" />
-  <meta property="og:title" content="Sản phẩm" />
-  <meta property="og:url" content="https://dhfoods.com.vn/vn/san-pham.html" />
+  <meta property="og:title" content="tên sp" />
+  <meta property="og:url" content="https://dhfoods.com.vn/vn/natural-muoi-tieu-la-chanh.html" />
   <meta property="og:description"
-    content="Sản phẩm Dh Foods cam kết chất lượng hàng đầu với tiêu chí: KHÔNG Màu Tổng Hợp - KHÔNG Chất Bảo Quản Nhân Tạo. Dh Foods - Tự hào Gia vị Việt." />
-  <meta property="og:image" content="https://dhfoods.com.vn/vnt_upload/weblink/banner_phan_phoi-09.jpg" />
+    content="Với thành phần lá Chanh mang lại hương thơm dễ chịu và vị chua nhẹ, kết hợpvị cay thơm của tiêu đã tạo ra loại thức chấm tuyệt vời. Đặc biệt, với tiêu chí 4 KHÔNG, NATURAL Muối Tiêu Lá Chanh hoàn toàn tự nhiên, an toàn cho sức khoẻ." />
+  <meta property="og:image"
+    content="https://dhfoods.com.vn/vnt_upload/product/07_2021/thumbs/500_crop_NATURAL_Muoi_tieu_la_chanh_110g.png" />
   <meta property="fb:app_id" content="1305829822896074" />
   <link rel="SHORTCUT ICON" href="https://dhfoods.com.vn/vnt_upload/File/Image/favicon_1.ico" type="image/x-icon" />
   <link rel="icon" href="https://dhfoods.com.vn/vnt_upload/File/Image/favicon_1.ico" type="image/gif" />
@@ -457,9 +544,9 @@
     var lang = "vn";
     var mem_id = 0;
     var js_lang = new Array();
-    js_lang['announce'] = "Thông báo";
-    js_lang['error'] = "Có lỗi";
-    js_lang['success'] = "Thành công";
+    js_lang["announce"] = "Thông báo";
+    js_lang["error"] = "Có lỗi";
+    js_lang["success"] = "Thành công";
   </script>
   <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
   <script type="text/javascript" th:src="@{/js/jquery-migrate.min.js}"></script>
@@ -485,14 +572,14 @@
             <div class="wrapper">
               <div class="wrap">
                 <div class="logo">
-                  <a onmousedown="return rwt(this,'advertise',3)" href="index.html#" target="_self"
-                    title="Dh Foods"><img th:src="@{/img/biswell-logo.png}" alt="Dh Foods" /></a>
+                  <a onmousedown="return rwt(this,'advertise',3)" href="index.html#" target="_self" title="Biswell"><img
+                      th:src="@{/img/biswell-logo.png}" alt="Biswell" /></a>
                 </div>
                 <div class="header-tools hidden-sm hidden-xs">
                   <div class="menuTop">
                     <ul>
                       <li class="">
-                        <a href="/introduction" target="_self">Về BISWELL</a>
+                        <a href="introduction.html" target="_self">Về BISWELL</a>
                         <ul>
                           <!-- <li>
                                 <a href="cot-moc-dang-nho.html" target="_self"
@@ -518,7 +605,7 @@
                         <a href="/categories" target="_self">Sản phẩm</a>
                         <ul>
                           <li>
-                            <a href="/productOfCategory1" target="_self">SP1</a>
+                            <a href="/category1" target="_self">SP1</a>
                           </li>
                           <li>
                             <a href="../dhfood/dhfoods.com.vn/vn/sot-cham.html" target="_self">SP2</a>
@@ -634,7 +721,7 @@
           <div id="vnt-slide" class="slick-init">
             <div class="item">
               <div class="img">
-                <img th:src="@{/images/banner.jpg}" />
+                <img th:src="@{/images/product/Lux01/Lux01_1.jpg}" />
               </div>
             </div>
           </div>
@@ -642,172 +729,176 @@
             <div class="wrapper">
               <div class="navation">
                 <ul>
-                  <li><a href="https://dhfoods.com.vn/"><span>Trang chủ</span></a></li>
+                  <li>
+                    <a href="https://dhfoods.com.vn/"><span>Trang chủ</span></a>
+                  </li>
 
-                  <li><span>Sản phẩm</span></li>
+                  <li>
+                    <a href="/categories"><span>Sản phẩm</span></a>
+                  </li>
+
+                  <li><span>tên sp</span></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div id="vnt-background" class="bg bgp">
-          <div class="wrapConts">
-            <div class="">
+        <div id="vnt-background" class="bg" style="padding-top: 60px">
+          <div class="wrapCont">
+            <div class="wrapper">
+              <div class="productWrap">
+                <div class="productWrap_c">
+                  <div class="productWrap_l">
+                    <!-- <div class="productThumbnail">
+
+                        <div id="vnt-thumbnail-for">
+                          <div class="item">
+                            <div class="img">
+                              <img th:src="@{${product.mainImagePath}}" />
+                            </div>
+                          </div>
+
+                          <div class="item">
+                            <div class="img">
+                              <img
+                                src="../dhfood/dhfoods.com.vn/vnt_upload/product/07_2021/MUOI_TIEU_LA_CHANH_55G.png" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="vnt-thumbnail-nav" th:each="item : ${product.pimages}">
+                          <div class="item">
+                            <div class="img">
+                              <img th:src="@{${item}}" />
+                            </div>
+                          </div>
+
+                          <div class="item">
+                            <div class="img">
+                              <img th:src="@{${item}}" />
+                            </div>
+                          </div>
+                        </div>
+                    </div> -->
+                    <div class="productThumbnail">
+                      <!-- Hiển thị ảnh lớn -->
+                      <div id="vnt-thumbnail-for">
+                        <div class="item">
+                          <div class="img">
+                            <!-- Hiển thị ảnh chính ban đầu -->
+                            <img id="main-image" th:src="@{${product.mainImagePath}}" alt="Main Image" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Hiển thị danh sách ảnh nhỏ -->
+                      <div id="vnt-thumbnail-nav">
+                        <div class="item" th:each="item : ${product.pimages}">
+                          <div class="img">
+                            <img th:src="@{${item}}" alt="Thumbnail Image" class="thumbnail" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="productWrap_r">
+                    <div class="productTitle">
+                      <h1 th:text="${product.pname}"></h1>
+                    </div>
+                    <div class="productDes">GIỚI THIỆU SẢN PHẨM</div>
+                    <div class="productCart">
+                      <a href="../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html"><span>Tôi muốn mua hàng</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="description">
+                  <p>
+                    <span style="font-size: 20px"><span style="font-family: Roboto, sans-serif">GIỚI THIỆU SẢN
+                        PHẨM&nbsp;</span></span><span style="font-size: 20px"><span
+                        style="font-family: Roboto, sans-serif"></span></span>
+                  </p>
+
+                  <p>
+                    <span style="font-family: Roboto, sans-serif"><strong><span style="font-size: 22px">Thành
+                          phần:</span></strong><span style="font-size: 20px">&nbsp;</span></span>
+                  </p>
+
+                  <p>
+                    <strong><span style="font-family: Roboto, sans-serif"><span style="font-size: 22px">Hướng dẫn sử
+                          dụng:</span></span></strong><b
+                      style="font-size: 20px; font-family: Roboto, sans-serif">&nbsp;</b>
+                    <font face="Roboto, sans-serif"><span style="font-size: 20px"></span></font>
+                  </p>
+
+                  <p>
+                    <strong><span style="font-family: Roboto, sans-serif"><span style="font-size: 22px">Trọng
+                          lượng:</span></span></strong><span
+                      style="font-size: 20px; font-family: Roboto, sans-serif">&nbsp;</span>
+                  </p>
+
+                  <p>
+                    <strong><span style="font-family: Roboto, sans-serif"><span style="font-size: 22px">Quy cách đóng
+                          gói:</span></span></strong>
+                  </p>
+
+                  <ul>
+                    <li>
+                      <span style="font-family: Roboto, sans-serif"><span style="font-size: 20px"></span></span>
+                    </li>
+                    <li>
+                      <span style="font-family: Roboto, sans-serif"><span style="font-size: 20px"></span></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               <div class="box_mid v2">
                 <div class="mid-title">
-                  <div class="titleL">
-                    <h1>Sản phẩm</h1>
+                  <div class="titleL white">
+                    <h1>Sản phẩm cùng loại</h1>
                   </div>
                   <div class="titleR"></div>
                   <div class="clear"></div>
                 </div>
-
                 <div class="mid-content">
-                  <div class="gridCat">
+                  <div id="slideOther" class="slick-init">
 
-                    <div class="col ">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a th:href="@{/product}">
-                              <img th:src="@{/images/product/Lux03/Lux03_1-Photoroom.png}"
-                                class="hidden-sm hidden-xs" />
-                              <img th:src="@{/images/product/Lux03/Lux03_1-Photoroom.png}"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="@{/product}">Muối Chấm Tây Ninh</h3></a>
-                          </div>
-
+                    <div class="item" th:each="item : ${dataList}">
+                      <div class="product">
+                        <div class="img">
+                          <a th:href="@{/product/{id}(id=${item.id})}">
+                            <img th:src="@{${item.mainImagePath}}" /></a>
+                        </div>
+                        <div class="tend">
+                          <h3>
+                            <a th:href="@{/product/{id}(id=${item.id})}" th:text="${item.pname}"></a>
+                          </h3>
+                        </div>
+                        <div class="link">
+                          <a th:href="@{/product/{id}(id=${item.id})}"><span>Xem chi
+                              tiết</span></a>
                         </div>
                       </div>
                     </div>
 
-                    <div class="col ">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="../dhfood/dhfoods.com.vn/vn/sot-cham.html">
-                              <img th:src="@{/images/product/Lux05/Lux05-1.png}" class="hidden-sm hidden-xs" />
-                              <img th:src="@{/images/product/Lux05/Lux05-1.png}" class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="../dhfood/dhfoods.com.vn/vn/sot-cham.html">Sốt Chấm &amp; Tương Ớt</h3></a>
-                          </div>
-
+                      <div class="product">
+                        <div class="img">
+                          <a href="../dhfood/dhfoods.com.vn/vn/muoi-ot-tay-ninh.html"><img
+                              src="../dhfood/dhfoods.com.vn/vnt_upload/product/01_2024/thumbs/350_fw_Muoi_ot_Tay_ninh_110g.png" /></a>
+                        </div>
+                        <div class="tend">
+                          <h3>
+                            <a href="../dhfood/dhfoods.com.vn/vn/muoi-ot-tay-ninh.html">tên sp</a>
+                          </h3>
+                        </div>
+                        <div class="link">
+                          <a href="../dhfood/dhfoods.com.vn/vn/muoi-ot-tay-ninh.html"><span>Xem chi tiết</span></a>
                         </div>
                       </div>
                     </div>
-
-                    <div class="col ">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html">
-                              <img
-                                src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__NATURAL_Gia_vi_Tu_Nhien.jpg"
-                                class="hidden-sm hidden-xs" />
-                              <img
-                                src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__NATURAL_Gia_vi_Tu_Nhien.jpg"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html">NATURAL Gia Vị Tự
-                                Nhiên</h3></a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col ">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html">
-                              <img
-                                src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__NATURAL_Gia_vi_Nau_Uop_1.jpg"
-                                class="hidden-sm hidden-xs" />
-                              <img
-                                src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__NATURAL_Gia_vi_Nau_Uop_1.jpg"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html">NATURAL Gia Vị Nấu Và Ướp
-                            </h3></a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col ">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="../dhfood/dhfoods.com.vn/vn/sa-te.html">
-                              <img src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__NATURAL_Tom_Chua.jpg"
-                                class="hidden-sm hidden-xs" />
-                              <img src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__NATURAL_Tom_Chua.jpg"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="../dhfood/dhfoods.com.vn/vn/sa-te.html">Sa Tế</h3></a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col ">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="gia-vi-hoan-chinh.html">
-                              <img src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__Sot_Cham_copy_2.jpg"
-                                class="hidden-sm hidden-xs" />
-                              <img src="../dhfood/dhfoods.com.vn/vnt_upload/product/10_2022/__Sot_Cham_copy_2.jpg"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="gia-vi-hoan-chinh.html">Gia Vị Hoàn Chỉnh</h3></a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col full">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html">
-                              <img th:src="@{/images/product/TamChi/TamChi_01-Photoroom.png}"
-                                class="hidden-sm hidden-xs" />
-                              <img th:src="@{/images/product/TamChi/TamChi_01-Photoroom.png}"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html">Sản Phẩm Big Size</h3></a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col full">
-                      <div class="productCat">
-                        <div class="wrap">
-                          <div class="img"><a href="hop-qua-gia-vi-dac-san.html">
-                              <img src="../dhfood/dhfoods.com.vn/vnt_upload/product/11_2023/Hop_qua_gia_vi_Dh_Foods.jpg"
-                                class="hidden-sm hidden-xs" />
-                              <img src="../dhfood/dhfoods.com.vn/vnt_upload/product/11_2023/Hop_qua_gia_vi_Dh_Foods.jpg"
-                                class="hidden-lg hidden-md" />
-                            </a></div>
-                          <div class="tend hidden">
-                            <h3><a href="hop-qua-gia-vi-dac-san.html">Hộp quà Gia vị đặc sản</h3></a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -820,53 +911,81 @@
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="title">Thông tin liên hệ</div>
                 <div class="grid">
-
                   <div class="col">
                     <div class="name">Phòng Hành Chính Nhân Sự:</div>
                     <div class="be"></div>
-                    <div class="be">Email: <a href="mailto:hr03@dhfoods.com.vn">hr03@dhfoods.com.vn</a></div>
-                    <div class="be">SĐT/Telegram: <a href="tel:028 3922 5944">028 3922 5944</a></div>
+                    <div class="be">
+                      Email:
+                      <a href="mailto:hr03@dhfoods.com.vn">hr03@dhfoods.com.vn</a>
+                    </div>
+                    <div class="be">
+                      SĐT/Telegram:
+                      <a href="tel:028 3922 5944">028 3922 5944</a>
+                    </div>
                   </div>
 
                   <div class="col">
                     <div class="name">Phòng Xuất Khẩu:</div>
                     <div class="be"></div>
-                    <div class="be">Email: <a href="mailto:export@dhfoods.com.vn">export@dhfoods.com.vn</a></div>
-                    <div class="be">SĐT/Telegram: <a href="tel:028 3922 5941">028 3922 5941</a></div>
+                    <div class="be">
+                      Email:
+                      <a href="mailto:export@dhfoods.com.vn">export@dhfoods.com.vn</a>
+                    </div>
+                    <div class="be">
+                      SĐT/Telegram:
+                      <a href="tel:028 3922 5941">028 3922 5941</a>
+                    </div>
                   </div>
 
                   <div class="col">
                     <div class="name">Phòng Kinh Doanh:</div>
                     <div class="be"></div>
-                    <div class="be">Email: <a href="mailto:tientt@dhfoods.com.vn">tientt@dhfoods.com.vn</a></div>
-                    <div class="be">SĐT/Telegram: <a href="tel:028 3922 5940">028 3922 5940</a></div>
+                    <div class="be">
+                      Email:
+                      <a href="mailto:tientt@dhfoods.com.vn">tientt@dhfoods.com.vn</a>
+                    </div>
+                    <div class="be">
+                      SĐT/Telegram:
+                      <a href="tel:028 3922 5940">028 3922 5940</a>
+                    </div>
                   </div>
 
                   <div class="col">
                     <div class="name">Phòng Thu Mua:</div>
                     <div class="be"></div>
-                    <div class="be">Email: <a href="mailto:xoanbk@dhfoods.com.vn">xoanbk@dhfoods.com.vn</a></div>
-                    <div class="be">SĐT/Telegram: <a href="tel:028 3922 5943">028 3922 5943</a></div>
+                    <div class="be">
+                      Email:
+                      <a href="mailto:xoanbk@dhfoods.com.vn">xoanbk@dhfoods.com.vn</a>
+                    </div>
+                    <div class="be">
+                      SĐT/Telegram:
+                      <a href="tel:028 3922 5943">028 3922 5943</a>
+                    </div>
                   </div>
-
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="title">Liên kết với Biswell</div>
                 <div class="socialFoot">
                   <ul>
+                    <li>
+                      <a href="https://www.facebook.com/DHFoods.com.vn/" target="_blank"><i
+                          class="fa fa-facebook"></i></a>
+                    </li>
 
-                    <li><a href="https://www.facebook.com/DHFoods.com.vn/" target="_blank"><i
-                          class="fa fa-facebook"></i></a></li>
+                    <li>
+                      <a href="https://www.youtube.com/user/userGiaviDhfoods" target="_blank"><i
+                          class="fa fa-youtube"></i></a>
+                    </li>
 
-                    <li><a href="https://www.youtube.com/user/userGiaviDhfoods" target="_blank"><i
-                          class="fa fa-youtube"></i></a></li>
+                    <li>
+                      <a href="http://google.com/" target="_blank"><i class="fa fa-google"></i></a>
+                    </li>
 
-                    <li><a href="http://google.com/" target="_blank"><i class="fa fa-google"></i></a></li>
-
-                    <li><a href="https://www.instagram.com/dhfoods_vn/" target="_blank"><i
-                          class="fa fa-instagram"></i></a></li>
-
+                    <li>
+                      <a href="https://www.instagram.com/dhfoods_vn/" target="_blank"><i
+                          class="fa fa-instagram"></i></a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -881,60 +1000,98 @@
       <div class="mmContent">
         <div class="mmMenu">
           <ul class="mmMain">
-
-            <li><a href="introduction.html">Về DH FOODS</a>
+            <li>
+              <a href="introduction.html">Về Biswell</a>
               <ul>
-                <li><a href='cot-moc-dang-nho.html' target='_self'>Cột mốc đáng nhớ</a></li>
-                <li><a href='https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html' target='_self'>Câu chuyện thương
-                    hiệu</a></li>
-                <li><a href='https://www.dhfoods.com.vn/loi-hua-cua-chung-toi.html' target='_self'>Lời hứa của chúng
-                    tôi</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html' target='_self'>Tôi muốn mua hàng</a>
+                <li>
+                  <a href="cot-moc-dang-nho.html" target="_self">Cột mốc đáng nhớ</a>
+                </li>
+                <li>
+                  <a href="https://www.dhfoods.com.vn/gioi-thieu-dh-foods.html" target="_self">Câu chuyện thương
+                    hiệu</a>
+                </li>
+                <li>
+                  <a href="https://www.dhfoods.com.vn/loi-hua-cua-chung-toi.html" target="_self">Lời hứa của chúng
+                    tôi</a>
+                </li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html" target="_self">Tôi muốn mua hàng</a>
                 </li>
               </ul>
             </li>
 
-            <li><a href="/categories">Sản phẩm</a>
+            <li>
+              <a href="/categories">Sản phẩm</a>
               <ul>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/muoi-cham.html' target='_self'>Muối Chấm Tây Ninh</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/sot-cham.html' target='_self'>Sốt Chấm</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html' target='_self'>NATURAL Gia Vị Tự
-                    Nhiên</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html' target='_self'>NATURAL Gia Vị Nấu Và
-                    Ướp</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/sa-te.html' target='_self'>Sa Tế</a></li>
-                <li><a href='gia-vi-hoan-chinh.html' target='_self'>Gia Vị Hoàn Chỉnh</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html' target='_self'>Sản Phẩm Big Size</a>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/muoi-cham.html" target="_self">Muối Chấm Tây Ninh</a>
                 </li>
-                <li><a href='hop-qua-gia-vi-dac-san.html' target='_self'>Hộp quà Gia vị Đặc sản</a></li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/sot-cham.html" target="_self">Sốt Chấm</a>
+                </li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-tu-nhien.html" target="_self">NATURAL Gia Vị Tự
+                    Nhiên</a>
+                </li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/natural-gia-vi-nau.html" target="_self">NATURAL Gia Vị Nấu Và
+                    Ướp</a>
+                </li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/sa-te.html" target="_self">Sa Tế</a>
+                </li>
+                <li>
+                  <a href="gia-vi-hoan-chinh.html" target="_self">Gia Vị Hoàn Chỉnh</a>
+                </li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/san-pham-big-size.html" target="_self">Sản Phẩm Big Size</a>
+                </li>
+                <li>
+                  <a href="hop-qua-gia-vi-dac-san.html" target="_self">Hộp quà Gia vị Đặc sản</a>
+                </li>
               </ul>
             </li>
 
-            <li><a href="../dhfood/dhfoods.com.vn/vn/mon-ngon.html">Món ngon</a></li>
+            <li>
+              <a href="../dhfood/dhfoods.com.vn/vn/mon-ngon.html">Món ngon</a>
+            </li>
 
-            <li><a href="../dhfood/dhfoods.com.vn/vn/kham-pha-gia-vi.html">Khám phá gia vị</a></li>
+            <li>
+              <a href="../dhfood/dhfoods.com.vn/vn/kham-pha-gia-vi.html">Khám phá gia vị</a>
+            </li>
 
-            <li><a href="../dhfood/dhfoods.com.vn/vn/tin-tuc.html">Tin tức</a>
+            <li>
+              <a href="../dhfood/dhfoods.com.vn/vn/tin-tuc.html">Tin tức</a>
               <ul>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/tin-tuc-su-kien.html' target='_self'>Tin tức - Sự kiện</a></li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/hoi-cho-trien-lam.html' target='_self'>Hội chợ - Triển lãm</a>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/tin-tuc-su-kien.html" target="_self">Tin tức - Sự kiện</a>
                 </li>
-                <li><a href='../dhfood/dhfoods.com.vn/vn/san-pham-moi.html' target='_self'>Sản Phẩm Mới</a></li>
-                <li><a href='http://www.dhfoods.com.vn/vn/tuyen-dung.html' target='_self'>Tuyển dụng</a></li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/hoi-cho-trien-lam.html" target="_self">Hội chợ - Triển lãm</a>
+                </li>
+                <li>
+                  <a href="../dhfood/dhfoods.com.vn/vn/san-pham-moi.html" target="_self">Sản Phẩm Mới</a>
+                </li>
+                <li>
+                  <a href="http://www.dhfoods.com.vn/vn/tuyen-dung.html" target="_self">Tuyển dụng</a>
+                </li>
               </ul>
             </li>
 
-            <li><a href="../dhfood/dhfoods.com.vn/vn/goc-bao-chi-dhfoods.html">Góc báo chí</a></li>
+            <li>
+              <a href="../dhfood/dhfoods.com.vn/vn/goc-bao-chi-dhfoods.html">Góc báo chí</a>
+            </li>
 
-            <li><a href="contact.html">Liên hệ</a></li>
-
+            <li><a href="/contact">Liên hệ</a></li>
           </ul>
           <div class="mmSearch">
             <form name="formSearch" method="POST" action="https://dhfoods.com.vn/vn/tim-kiem.html" class="box_search"
               onSubmit="return check_search(this)">
               <input name="keyword" id="keyword" type="text" class="text_search form-control"
                 placeholder="Nhập nội dung tìm kiếm" value="" />
-              <button type="submit" name="do_submit" id="do_submit_mb" class=""><i class="fa fa-search"></i></button>
+              <button type="submit" name="do_submit" id="do_submit_mb" class="">
+                <i class="fa fa-search"></i>
+              </button>
             </form>
           </div>
         </div>
@@ -943,17 +1100,25 @@
       <div class="divmmbg"></div>
     </div>
   </div>
-  <div id="vnt-tools-mobile" class=" hidden-lg hidden-md">
+  <div id="vnt-tools-mobile" class="hidden-lg hidden-md">
     <ul>
-      <li><a href="tel:0947442788"><span class="fa-phone">Hotline</span></a></li>
-      <li><a href="contact.html"><span class="fa-map-marker">Xem bản đồ</span></a></li>
+      <li>
+        <a href="tel:0947442788"><span class="fa-phone">Hotline</span></a>
+      </li>
+      <li>
+        <a href="/contact"><span class="fa-map-marker">Xem bản đồ</span></a>
+      </li>
     </ul>
   </div>
   <script language="javascript">
     function check_search(f) {
       var keyword = f.keyword.value;
       var key_len = f.keyword.value.length;
-      if ((keyword == '') || (keyword == "Nhập nội dung tìm kiếm") || (keyword == "")) {
+      if (
+        keyword == "" ||
+        keyword == "Nhập nội dung tìm kiếm" ||
+        keyword == ""
+      ) {
         // jAlert("Vui lòng nhập từ khóa");
         f.keyword.focus();
         return false;
@@ -964,28 +1129,40 @@
         return false;
       }
       return true;
-    }	
+    }
   </script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH95T6W" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+      style="display: none; visibility: hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <script type="text/javascript" th:src="@{/js/plusone.js}"></script>
   <!-- Subiz -->
   <script>
     (function (s, u, b, i, z) {
-      u[i] = u[i] || function () {
-        u[i].t = +new Date();
-        (u[i].q = u[i].q || []).push(arguments);
-      };
-      z = s.createElement('script');
-      var zz = s.getElementsByTagName('script')[0];
-      z.async = 1; z.src = b; z.id = 'subiz-script';
+      u[i] =
+        u[i] ||
+        function () {
+          u[i].t = +new Date();
+          (u[i].q = u[i].q || []).push(arguments);
+        };
+      z = s.createElement("script");
+      var zz = s.getElementsByTagName("script")[0];
+      z.async = 1;
+      z.src = b;
+      z.id = "subiz-script";
       zz.parentNode.insertBefore(z, zz);
-    })(document, window, '../../widgetv4.subiz.com/static/js/app.js', 'subiz');
-    subiz('setAccount', 'acphsfnqnmoaxgid14f1');
-  </script><!-- End Subiz -->
+    })(
+      document,
+      window,
+      "../../widgetv4.subiz.com/static/js/app.js",
+      "subiz"
+    );
+    subiz("setAccount", "acphsfnqnmoaxgid14f1");
+  </script>
+  <!-- End Subiz -->
   <script>
-    subiz('setLanguage', 'vi-VN');
+    subiz("setLanguage", "vi-VN");
   </script>
 </body>
+
+</html>

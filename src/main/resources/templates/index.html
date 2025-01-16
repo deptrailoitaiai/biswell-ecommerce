@@ -98,20 +98,16 @@
                         <a href="/" target="_self">Về Biswell</a>
                         <ul>
                           <li>
-                            <a href="/" target="_self">Cột mốc đáng
-                              nhớ</a>
+                            <a href="/" target="_self">Cột mốc đáng nhớ</a>
                           </li>
                           <li>
-                            <a href="/" target="_self">Câu chuyện
-                              thương hiệu</a>
+                            <a href="/" target="_self">Câu chuyện thương hiệu</a>
                           </li>
                           <li>
-                            <a href="/" target="_self">Lời hứa của
-                              chúng tôi</a>
+                            <a href="/" target="_self">Lời hứa của chúng tôi</a>
                           </li>
                           <li>
-                            <a href="/" target="_self">Tôi muốn mua
-                              hàng</a>
+                            <a href="/" target="_self">Tôi muốn mua hàng</a>
                           </li>
                         </ul>
                       </li>
@@ -246,21 +242,7 @@
               </div>
             </div>
 
-            <!-- <div class="item">
-              <div class="thumb">
-                <a href="/" title="Hệ thống phân phối của biswell" onmousedown="return rwt(this,'advertise','431')"
-                  target="_blank"><img src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/banner_phan_phoi-04.jpg"
-                    alt="banner" /></a>
-              </div>
-            </div> -->
-
-            <!-- <div class="item">
-              <div class="thumb">
-                <a href="/" title="Khách hàng Horeca" onmousedown="return rwt(this,'advertise','831')"
-                  target="_blank"><img src="../dhfood/dhfoods.com.vn/vnt_upload/weblink/banner_phan_phoi-03.jpg"
-                    alt="banner" /></a>
-              </div>
-            </div> -->
+          
           </div>
           <a href="javascript:;" class="go_bot"
             onclick="jQuery('html,body').animate({scrollTop: $('.aboutHome').offset().top},1000);">
@@ -419,89 +401,21 @@
                 <h2>Sản phẩm nổi bật</h2>
               </div>
               <div id="slideProduct" class="slick-init">
-                <div class="item">
+
+                <div class="item" th:each="item : ${dataList}">
                   <div class="productCat">
                     <div class="wrap">
                       <div class="img">
-                        <img th:src="@{/images/product/Lux05/Lux05-1.png}" />
+                        <img th:src="@{${item.mainImagePath}}" />
                       </div>
                       <div class="tend">
-                        <h3>Toori Lux05</h3>
+                        <h3 th:text="${item.pname}"></h3>
                       </div>
                       <a href="/" class="link"></a>
                     </div>
                   </div>
                 </div>
 
-                <div class="item">
-                  <div class="productCat">
-                    <div class="wrap">
-                      <div class="img">
-                        <img th:src="@{/images/product/TamChi/TamChi_01-Photoroom.png}" />
-                      </div>
-                      <div class="tend">
-                        <h3>Tăm chỉ nha khoa</h3>
-                      </div>
-                      <a href="/" class="link"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="productCat">
-                    <div class="wrap">
-                      <div class="img">
-                        <img th:src="@{/images/product/Lux01/Lux01_1.jpg}" />
-                      </div>
-                      <div class="tend">
-                        <h3>Bàn chải Nockito Lux01</h3>
-                      </div>
-                      <a href="/" class="link"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="productCat">
-                    <div class="wrap">
-                      <div class="img">
-                        <img th:src="@{/images/product/Lux02/Lux02_1.jpg}" />
-                      </div>
-                      <div class="tend">
-                        <h3>Bàn chải Nockito Lux02</h3>
-                      </div>
-                      <a href="/" class="link"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="productCat">
-                    <div class="wrap">
-                      <div class="img">
-                        <img th:src="@{/images/product/Lux04/Lux04-1.png}" />
-                      </div>
-                      <div class="tend">
-                        <h3>Bàn chải Nockito Lux04</h3>
-                      </div>
-                      <a href="/" class="link"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="productCat">
-                    <div class="wrap">
-                      <div class="img">
-                        <img th:src="@{/images/product/Lux03/Lux03_1-Photoroom.png}" />
-                      </div>
-                      <div class="tend">
-                        <h3>Bàn chải Nockito Lux03</h3>
-                      </div>
-                      <a href="/" class="link"></a>
-                    </div>
-                  </div>
-                </div>
 
               </div>
 
@@ -653,93 +567,7 @@
         </div>
       </div>
       <div id="vnt-footer">
-        <!-- <div class="mainFoot">
-          <div class="wrapper">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="title">Thông tin liên hệ</div>
-                <div class="grid">
-                  <div class="col">
-                    <div class="name">Văn phòng 1:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:example@gmail.com">example@gmail.com</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:0123456789">0123456789</a>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="name">Văn phòng 2</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:example@gmail.com">example@gmail.com</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:0123456789">0123456789</a>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="name">Văn phòng 3:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:example@gmail.com">example@gmail.com</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:0123456789">0123456789</a>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="name">Văn phòng 4:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:example@gmail.com">example@gmail.com</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:0123456789">0123456789</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="title">Liên kết với biswell</div>
-                <div class="socialFoot">
-                  <ul>
-                    <li>
-                      <a href="https://www.facebook.com/DHFoods.com.vn/" target="_blank"><i
-                          class="fa fa-facebook"></i></a>
-                    </li>
-
-                    <li>
-                      <a href="https://www.youtube.com/user/userGiaviDhfoods" target="_blank"><i
-                          class="fa fa-youtube"></i></a>
-                    </li>
-
-                    <li>
-                      <a href="http://google.com/" target="_blank"><i class="fa fa-google"></i></a>
-                    </li>
-
-                    <li>
-                      <a href="https://www.instagram.com/dhfoods_vn/" target="_blank"><i
-                          class="fa fa-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+        
         <div class="botFoot">
           <div class="wrapper">
             <div class="copyright">

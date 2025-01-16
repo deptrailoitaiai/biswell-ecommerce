@@ -1,14 +1,13 @@
 package org.example.services;
 
+import java.util.UUID;
+
 import org.example.entities.ItemsEntity;
 import org.example.exceptions.RuntimeExceptions.ExistedException;
 import org.example.exceptions.RuntimeExceptions.NotExistsException;
 import org.example.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
-import java.util.UUID;
 
 @Service()
 public class ItemService {

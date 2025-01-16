@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Create Product</title>
+</head>
+
+<body>
+    <h1>Create a Product</h1>
+    <form th:action="@{/product/save}" method="post" enctype="multipart/form-data">
+        <label for="pname">Product Name:</label>
+        <input type="text" id="pname" name="pname" />
+
+        <label for="pdesc">Description:</label>
+        <textarea id="pdesc" name="pdesc"></textarea>
+
+        <!-- Input để chọn ảnh chính -->
+        <label for="mainImage">Main Image:</label>
+        <input type="file" id="mainImage" name="mainImage" />
+
+        <!-- Thêm input để chọn nhiều ảnh -->
+        <label for="pimages">Other Images:</label>
+        <input type="file" id="pimages" name="pimages" multiple />
+
+        <button type="submit">Save Product</button>
+    </form>
+</body>
+
+</html>
