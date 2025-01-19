@@ -4,6 +4,7 @@ import org.example.dtos.requests.ProductDTO;
 import org.example.entities.V2Categories;
 import org.example.repositories.V2CategoriesRepository;
 import org.example.services.ProductService;
+import org.example.services.V2CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,27 +17,26 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    private final V2CategoriesRepository v2CategoriesRepository;
+    private final V2CategoriesService v2CategoriesService;
 
     private final ProductService productService;
 
+    @ModelAttribute("categoriesMenuTop")
+    public List<V2Categories> populateCategories() {
+        return v2CategoriesService.getAll();
+    }
+
     @Autowired
-    public ProductController(ProductService productService, V2CategoriesRepository v2CategoriesRepository) {
+    public ProductController(ProductService productService, V2CategoriesRepository v2CategoriesRepository, V2CategoriesService v2CategoriesService) {
         this.productService = productService;
-        this.v2CategoriesRepository = v2CategoriesRepository;
+        this.v2CategoriesService = v2CategoriesService;
     }
 
     @GetMapping("/add")
     public String getAddPage(Model model) {
-        List<V2Categories> categories = v2CategoriesRepository.findAll();
+        List<V2Categories> categories = v2CategoriesService.getAll();
         model.addAttribute("categories", categories);
         return "addProd";
-    }
-
-    @GetMapping
-    public String getProductPage(Model model) {
-        model.addAttribute("dataList", productService.getAllProducts());
-        return "san-pham";
     }
 
     @GetMapping("/{id}")

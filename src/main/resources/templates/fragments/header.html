@@ -12,12 +12,12 @@
                             <span>Tiếng Việt</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/" title="English">
-                            <img th:src="@{/images/flag/flag-en.svg}" title="English" />
-                            <span>English</span>
-                        </a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a href="/" title="English">-->
+<!--                            <img th:src="@{/images/flag/flag-en.svg}" title="English" />-->
+<!--                            <span>English</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>
@@ -36,25 +36,30 @@
                         <div class="menuTop">
                             <ul>
                                 <li class="">
-                                    <a href="/" target="_self">Về Biswell</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/" target="_self">Cột mốc đáng nhớ</a>
-                                        </li>
-                                        <li>
-                                            <a href="/" target="_self">Câu chuyện thương hiệu</a>
-                                        </li>
-                                        <li>
-                                            <a href="/" target="_self">Lời hứa của chúng tôi</a>
-                                        </li>
-                                        <li>
-                                            <a href="/" target="_self">Tôi muốn mua hàng</a>
-                                        </li>
-                                    </ul>
+                                    <a href="/introduction" target="_self">Về Biswell</a>
+<!--                                    <ul>-->
+<!--                                        <li>-->
+<!--                                            <a href="/" target="_self">Cột mốc đáng nhớ</a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="/" target="_self">Câu chuyện thương hiệu</a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="/" target="_self">Lời hứa của chúng tôi</a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="/" target="_self">Tôi muốn mua hàng</a>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
                                 </li>
 
                                 <li class="">
                                     <a href="/categories" target="_self">Sản phẩm</a>
+                                    <ul>
+                                        <li th:each="category : ${categoriesMenuTop}">
+                                            <a th:href="@{/categories/{id}(id=${category.categoryId})}" th:text="${category.categoryName}" target="_self"></a>
+                                        </li>
+                                    </ul>
                                 </li>
 
                                 <li class="">

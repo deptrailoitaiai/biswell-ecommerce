@@ -1,6 +1,7 @@
 package org.example.services.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
 import org.example.dtos.requests.ProductDTO;
 import org.example.entities.ProductEntity;
 import org.example.entities.V2Categories;
@@ -8,6 +9,8 @@ import org.example.repositories.ProductRepository;
 import org.example.repositories.V2CategoriesRepository;
 import org.example.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -60,23 +63,33 @@ public class ProductServiceImpl implements ProductService {
                 Files.createDirectories(path);
             }
 
-            // Lưu ảnh chính
-            String mainImageName = UUID.randomUUID().toString() + "-" + request.getMainImage().getOriginalFilename();
-            Path mainImagePathFile = path.resolve(mainImageName);
-            request.getMainImage().transferTo(mainImagePathFile.toFile());
-            String mainImagePath = "/uploads/" + mainImageName;
-
-            // Danh sách lưu các đường dẫn ảnh
-            List<String> imagePaths = new ArrayList<>();
-            // Lưu từng ảnh vào thư mục và thêm đường dẫn vào danh sách
-            for (MultipartFile file : request.getImages()) {
-                String fileName = UUID.randomUUID().toString() + "-" + file.getOriginalFilename();
-                Path filePath = path.resolve(fileName);
-                file.transferTo(filePath.toFile());
-
-                // Lưu đường dẫn ảnh (có thể là /uploads/filename.jpg)
-                imagePaths.add("/uploads/" + fileName);
+            // Tên thư mục con dựa trên tên sản phẩm
+            String productFolderName = request.getPname().replaceAll("[^a-zA-Z0-9-_]", "_");
+            File productFolder = new File(uploadDir + "/" + productFolderName);
+            if (!productFolder.exists()) {
+                productFolder.mkdir();
             }
+
+            // Lưu ảnh chính
+            String mainImagePath = null;
+            if (ObjectUtils.isNotEmpty(request.getMainImage())) {
+                String mainImageName = UUID.randomUUID() + "-" + request.getMainImage().getOriginalFilename();
+                File mainImageFile = new File(productFolder, mainImageName);
+                request.getMainImage().transferTo(mainImageFile);
+                mainImagePath = "/uploads/" + productFolderName + "/" + mainImageName;
+            }
+
+            // Lưu ảnh phụ
+            List<String> otherImagesPaths = new ArrayList<>();
+            for (MultipartFile image : request.getImages()) {
+                if (ObjectUtils.isNotEmpty(image)) {
+                    String imageName = UUID.randomUUID() + "-" + image.getOriginalFilename();
+                    File imageFile = new File(productFolder, imageName);
+                    image.transferTo(imageFile);
+                    otherImagesPaths.add("/uploads/" + productFolderName + "/" + imageName);
+                }
+            }
+
 
             // Lấy danh mục từ cơ sở dữ liệu
             Optional<V2Categories> categoryOpt = v2CategoriesRepository.findById(request.getCategoryId());
@@ -90,7 +103,7 @@ public class ProductServiceImpl implements ProductService {
             product.setPdesc(request.getPdesc());
             product.setCategory(categoryOpt.get());
             product.setMainImagePath(mainImagePath);
-            product.setPimages(imagePaths); // Lưu danh sách đường dẫn ảnh
+            product.setPimages(otherImagesPaths); // Lưu danh sách đường dẫn ảnh
 
             // Lưu vào DB
             return productRepository.save(product);
@@ -98,6 +111,11 @@ public class ProductServiceImpl implements ProductService {
             e.printStackTrace();
             return null; // Xử lý lỗi nếu upload thất bại
         }
+    }
+
+    @Override
+    public Page<ProductEntity> getByCategoryId(long categoryId, Pageable pageable) {
+        return productRepository.findByCategory_CategoryId(categoryId, pageable);
     }
 
 
