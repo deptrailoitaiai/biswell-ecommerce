@@ -161,7 +161,7 @@ display:none;
 	position: relative;
 }
 .product .link a span:before{
-	content: "\f105";
+	content: "❯";
 	font-family: fontAwesome;
 	position: absolute;
 	right:0;

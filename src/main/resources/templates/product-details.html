@@ -737,7 +737,7 @@
                     <a href="/categories"><span>Sản phẩm</span></a>
                   </li>
 
-                  <li><span>tên sp</span></li>
+                  <li><span th:text="${product.pname}"></span></li>
                 </ul>
               </div>
             </div>
@@ -749,37 +749,7 @@
               <div class="productWrap">
                 <div class="productWrap_c">
                   <div class="productWrap_l">
-                    <!-- <div class="productThumbnail">
 
-                        <div id="vnt-thumbnail-for">
-                          <div class="item">
-                            <div class="img">
-                              <img th:src="@{${product.mainImagePath}}" />
-                            </div>
-                          </div>
-
-                          <div class="item">
-                            <div class="img">
-                              <img
-                                src="../dhfood/dhfoods.com.vn/vnt_upload/product/07_2021/MUOI_TIEU_LA_CHANH_55G.png" />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div id="vnt-thumbnail-nav" th:each="item : ${product.pimages}">
-                          <div class="item">
-                            <div class="img">
-                              <img th:src="@{${item}}" />
-                            </div>
-                          </div>
-
-                          <div class="item">
-                            <div class="img">
-                              <img th:src="@{${item}}" />
-                            </div>
-                          </div>
-                        </div>
-                    </div> -->
                     <div class="productThumbnail">
                       <!-- Hiển thị ảnh lớn -->
                       <div id="vnt-thumbnail-for">
@@ -889,7 +859,7 @@
                         </div>
                         <div class="tend">
                           <h3>
-                            <a href="../dhfood/dhfoods.com.vn/vn/muoi-ot-tay-ninh.html">tên sp</a>
+                            <a href="../dhfood/dhfoods.com.vn/vn/muoi-ot-tay-ninh.html" th:text="${product.pname}"></a>
                           </h3>
                         </div>
                         <div class="link">
@@ -904,95 +874,7 @@
           </div>
         </div>
       </div>
-      <div id="vnt-footer">
-        <div class="mainFoot">
-          <div class="wrapper">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="title">Thông tin liên hệ</div>
-                <div class="grid">
-                  <div class="col">
-                    <div class="name">Phòng Hành Chính Nhân Sự:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:hr03@dhfoods.com.vn">hr03@dhfoods.com.vn</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:028 3922 5944">028 3922 5944</a>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="name">Phòng Xuất Khẩu:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:export@dhfoods.com.vn">export@dhfoods.com.vn</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:028 3922 5941">028 3922 5941</a>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="name">Phòng Kinh Doanh:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:tientt@dhfoods.com.vn">tientt@dhfoods.com.vn</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:028 3922 5940">028 3922 5940</a>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="name">Phòng Thu Mua:</div>
-                    <div class="be"></div>
-                    <div class="be">
-                      Email:
-                      <a href="mailto:xoanbk@dhfoods.com.vn">xoanbk@dhfoods.com.vn</a>
-                    </div>
-                    <div class="be">
-                      SĐT/Telegram:
-                      <a href="tel:028 3922 5943">028 3922 5943</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="title">Liên kết với Biswell</div>
-                <div class="socialFoot">
-                  <ul>
-                    <li>
-                      <a href="https://www.facebook.com/DHFoods.com.vn/" target="_blank"><i
-                          class="fa fa-facebook"></i></a>
-                    </li>
-
-                    <li>
-                      <a href="https://www.youtube.com/user/userGiaviDhfoods" target="_blank"><i
-                          class="fa fa-youtube"></i></a>
-                    </li>
-
-                    <li>
-                      <a href="http://google.com/" target="_blank"><i class="fa fa-google"></i></a>
-                    </li>
-
-                    <li>
-                      <a href="https://www.instagram.com/dhfoods_vn/" target="_blank"><i
-                          class="fa fa-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div th:replace="~{fragments/footer::footer}"></div>
     </div>
   </div>
   <div class="menu_mobile">

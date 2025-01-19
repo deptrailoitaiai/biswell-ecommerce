@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<div id="vnt-header" th:fragment="header">
+    <div class="topHead hidden-sm hidden-xs">
+        <div class="wrapper">
+            <!--<div class="hotlineTop">Hotline : <span><a href="tel: 0947442788">0947442788</a></span></div>-->
+            <div class="languageTop">
+                <ul>
+                    <li>
+                        <a href="/" title="Tiếng Việt" class="active">
+                            <img th:src="@{/images/flag/flag-vn.svg}" title="Tiếng Việt" />
+                            <span>Tiếng Việt</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" title="English">
+                            <img th:src="@{/images/flag/flag-en.svg}" title="English" />
+                            <span>English</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mainHeadWrap">
+        <div class="mainHead">
+            <div class="wrapper">
+                <div class="wrap">
+                    <div class="logo">
+                        <a onmousedown="return rwt(this,'advertise',3)" href="/" target="_self" title="Biswell">
+                            <img th:src="@{/images/logo.png}" alt="Biswell" />
+                        </a>
+                        <h1 style="display: none">Biswell</h1>
+                    </div>
+                    <div class="header-tools hidden-sm hidden-xs">
+                        <div class="menuTop">
+                            <ul>
+                                <li class="">
+                                    <a href="/" target="_self">Về Biswell</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/" target="_self">Cột mốc đáng nhớ</a>
+                                        </li>
+                                        <li>
+                                            <a href="/" target="_self">Câu chuyện thương hiệu</a>
+                                        </li>
+                                        <li>
+                                            <a href="/" target="_self">Lời hứa của chúng tôi</a>
+                                        </li>
+                                        <li>
+                                            <a href="/" target="_self">Tôi muốn mua hàng</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="">
+                                    <a href="/categories" target="_self">Sản phẩm</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/" target="_self">Tin tức</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/" target="_self">Tin tức - Sự
+                                                kiện</a>
+                                        </li>
+                                        <li>
+                                            <a href="/" target="_self">Sản Phẩm Mới</a>
+                                        </li>
+                                        <li>
+                                            <a href="/" target="_self">Tuyển dụng</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="">
+                                    <a href="/" target="_self">Góc báo chí</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/" target="_self">Liên hệ</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="header-tools hidden-lg hidden-md">
+                        <div class="languageMobile">
+                            <ul>
+                                <li>
+                                    <a href="/" title="Tiếng Việt" class="active">
+                                        <img th:src="@{/images/flag/flag-vn.svg}" title="Tiếng Việt" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/" title="English">
+                                        <img th:src="@{/images/flag/flag-en.svg}" title="English" />
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="menu_mobile hidden-lg hidden-md">
+                            <div class="icon_menu">
+                                <span class="style_icon"></span>Menu
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

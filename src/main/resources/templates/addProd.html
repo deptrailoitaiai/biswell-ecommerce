@@ -14,9 +14,16 @@
         <label for="pdesc">Description:</label>
         <textarea id="pdesc" name="pdesc"></textarea>
 
+        <!-- Dropdown để chọn danh mục -->
+        <label for="category">Category:</label>
+        <select id="category" name="categoryId">
+            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+        </select>
+
         <!-- Input để chọn ảnh chính -->
         <label for="mainImage">Main Image:</label>
         <input type="file" id="mainImage" name="mainImage" />
+        <br />
 
         <!-- Thêm input để chọn nhiều ảnh -->
         <label for="pimages">Other Images:</label>

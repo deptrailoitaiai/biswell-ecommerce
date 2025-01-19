@@ -2,174 +2,12 @@
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <!-- Mirrored from dhfoods.com.vn/vn/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Dec 2024 11:45:33 GMT -->
 
-<head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-  <title>Công ty Cổ Phần biswell</title>
-  <meta name="keywords" content="Công ty Cổ phần Biswell Việt Nam" />
-  <meta name="description" content="Biswell Việt Nam" />
-  <meta name="robots" content="index, follow" />
-  <!-- <meta name="google-site-verification" content="aEmUg-7Z0H8FynZTBTzycgen1XIhJ8ExKGPLjmo2XfM" /> -->
-  <meta name="author" content="katuan" />
-  <link rel="stylesheet" th:href="@{/css/index.css}" />
-
-  <link rel="canonical" href="https://biswell.vn/" />
-  <link rel="alternate" media="handheld" href="https://biswell.vn/" />
-  <link rel="SHORTCUT ICON" th:href="@{\images\logo.png}" type="image/x-icon" />
-  <link rel="icon" th:href="@{\images\logo.png}" type="image/gif" />
-
-  <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
-  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
-  <link th:href="@{/css/slick.css}" rel="stylesheet" />
-  <link th:href="@{/css/jquery.fancybox.css}" type="text/css" rel="stylesheet" />
-  <link th:href="@{/css/jquery.alerts.css}" type="text/css" rel="stylesheet" />
-  <link th:href="@{/css/menumobile.css}" type="text/css" rel="stylesheet" />
-  <link th:href="@{/css/animate.css}" type="text/css" rel="stylesheet" />
-  <link th:href="@{/css/screenc619.css}" rel="stylesheet" type="text/css" />
-  <script language="javascript">
-    var ROOT = "https://biswell.vn/";
-    var ROOT_MOD = "trang-chu-2.html";
-    var DIR_IMAGE = "https://biswell.vn/skins/default/images";
-    var cmd = "vnTRUST";
-    var lang = "vn";
-    var mem_id = 0;
-    var js_lang = new Array();
-    js_lang["announce"] = "Thông báo";
-    js_lang["error"] = "Có lỗi";
-    js_lang["success"] = "Thành công";
-  </script>
-  <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
-  <script type="text/javascript" th:src="@{/js/jquery-migrate.min.js}"></script>
-  <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
-  <script type="text/javascript" th:src="@{/js/slick.js}"></script>
-  <script type="text/javascript" th:src="@{/js/menumobile.js}"></script>
-  <script type="text/javascript" th:src="@{/js/jquery.fancybox.js}"></script>
-  <script type="text/javascript" th:src="@{/js/my_effect_scroll.js}"></script>
-  <script type="text/javascript" th:src="@{/js/jquery.alerts.js}"></script>
-  <script type="text/javascript" th:src="@{/js/core.js}"></script>
-  <script type="text/javascript" th:src="@{/js/style.js}"></script>
-  <link rel="stylesheet" th:href="@{/css/product.css}" type="text/css" />
-  <link rel="stylesheet" th:href="@{/css/mainc619.css}" type="text/css" />
-  <script type="text/javascript" th:src="@{/js/mainc619.js}"></script>
-
-</head>
+<head th:replace="~{fragments/head::head}"></head>
 
 <body>
   <div id="vnt-wrapper">
     <div id="vnt-container">
-      <div id="vnt-header">
-        <div class="topHead hidden-sm hidden-xs">
-          <div class="wrapper">
-            <!--<div class="hotlineTop">Hotline : <span><a href="tel: 0947442788">0947442788</a></span></div>-->
-            <div class="languageTop">
-              <ul>
-                <li>
-                  <a href="/" title="Tiếng Việt" class="active">
-                    <img th:src="@{/images/flag/flag-vn.svg}" title="Tiếng Việt" />
-                    <span>Tiếng Việt</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" title="English">
-                    <img th:src="@{/images/flag/flag-en.svg}" title="English" />
-                    <span>English</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="mainHeadWrap">
-          <div class="mainHead">
-            <div class="wrapper">
-              <div class="wrap">
-                <div class="logo">
-                  <a onmousedown="return rwt(this,'advertise',3)" href="/" target="_self" title="Biswell">
-                    <img th:src="@{/images/logo.png}" alt="Biswell" />
-                  </a>
-                  <h1 style="display: none">Biswell</h1>
-                </div>
-                <div class="header-tools hidden-sm hidden-xs">
-                  <div class="menuTop">
-                    <ul>
-                      <li class="">
-                        <a href="/" target="_self">Về Biswell</a>
-                        <ul>
-                          <li>
-                            <a href="/" target="_self">Cột mốc đáng nhớ</a>
-                          </li>
-                          <li>
-                            <a href="/" target="_self">Câu chuyện thương hiệu</a>
-                          </li>
-                          <li>
-                            <a href="/" target="_self">Lời hứa của chúng tôi</a>
-                          </li>
-                          <li>
-                            <a href="/" target="_self">Tôi muốn mua hàng</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li class="">
-                        <a href="/categories" target="_self">Sản phẩm</a>
-                      </li>
-
-                      <li class="">
-                        <a href="/" target="_self">Tin tức</a>
-                        <ul>
-                          <li>
-                            <a href="/" target="_self">Tin tức - Sự
-                              kiện</a>
-                          </li>
-                          <li>
-                            <a href="/" target="_self">Sản Phẩm Mới</a>
-                          </li>
-                          <li>
-                            <a href="/" target="_self">Tuyển dụng</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li class="">
-                        <a href="/" target="_self">Góc báo chí</a>
-                      </li>
-
-                      <li class="">
-                        <a href="/" target="_self">Liên hệ</a>
-                      </li>
-                    </ul>
-                  </div>
-
-                </div>
-                <div class="header-tools hidden-lg hidden-md">
-                  <div class="languageMobile">
-                    <ul>
-                      <li>
-                        <a href="/" title="Tiếng Việt" class="active">
-                          <img th:src="@{/images/flag/flag-vn.svg}" title="Tiếng Việt" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/" title="English">
-                          <img th:src="@{/images/flag/flag-en.svg}" title="English" />
-                        </a>
-                      </li>
-
-                    </ul>
-                  </div>
-                  <div class="menu_mobile hidden-lg hidden-md">
-                    <div class="icon_menu">
-                      <span class="style_icon"></span>Menu
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div th:replace="~{fragments/header::header}"></div>
       <div id="vnt-content">
         <div class="vnt-slide-home hidden-sm hidden-xs">
           <div id="vnt-slide-home">
@@ -411,7 +249,7 @@
                       <div class="tend">
                         <h3 th:text="${item.pname}"></h3>
                       </div>
-                      <a href="/" class="link"></a>
+                      <a th:href="@{/product/{id}(id=${item.id})}" class="link"></a>
                     </div>
                   </div>
                 </div>
@@ -426,7 +264,7 @@
                   </div>
                   <div class="img">
                     <a href="/">
-                      <img th:src="@{\images\BannerBanChai.png}" alt="Bàn chải" />
+                      <img th:src="@{/images/BannerBanChai.png}" alt="Bàn chải" />
                     </a>
                   </div>
                 </div>
@@ -476,7 +314,7 @@
                   <div class="news">
                     <div class="img">
                       <a href="/">
-                        <img th:src="@{\images\news\tatnien1.jpg}" />
+                        <img th:src="@{/images/news/tatnien1.jpg}" />
                       </a>
                     </div>
                     <div class="caption">
@@ -494,7 +332,7 @@
                   <div class="news">
                     <div class="img">
                       <a href="/">
-                        <img th:src="@{\images\news\tamlong.jpg}" />
+                        <img th:src="@{/images/news/tamlong.jpg}" />
                       </a>
                     </div>
                     <div class="caption">
@@ -512,7 +350,7 @@
                   <div class="news">
                     <div class="img">
                       <a href="/">
-                        <img th:src="@{\images\news\daily.jpg}" />
+                        <img th:src="@{/images/news/daily.jpg}" />
                       </a>
                     </div>
                     <div class="caption">
@@ -530,7 +368,7 @@
                   <div class="news">
                     <div class="img">
                       <a href="/">
-                        <img th:src="@{\images\news\amap.jpg}" />
+                        <img th:src="@{/images/news/amap.jpg}" />
                       </a>
                     </div>
                     <div class="caption">
@@ -566,25 +404,7 @@
           </div>
         </div>
       </div>
-      <div id="vnt-footer">
-        
-        <div class="botFoot">
-          <div class="wrapper">
-            <div class="copyright">
-              <div class="copy">
-                Copyright © 2018 <strong>biswell</strong>
-              </div>
-              <div class="per">-</div>
-              <div class="tkw">
-                <a href="/" target="_blank" title="toiditimtoi" rel="dofollow" class="thietkeweb">Thiết kế web :</a>
-                <strong><a href="/" target="_blank" rel="dofollow">KAT</a>
-                </strong>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
+      <div th:replace="~{fragments/footer::footer}"></div>
     </div>
   </div>
   <div class="menu_mobile">
@@ -657,6 +477,7 @@
       <div class="divmmbg"></div>
     </div>
   </div>
+  <div th:replace="~{fragments/menu-mobile :: menu_mobile}"></div>
   <div id="vnt-tools-mobile" class="hidden-lg hidden-md">
     <ul>
       <li>
