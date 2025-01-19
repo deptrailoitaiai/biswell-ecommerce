@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductEntity> getTop8() {
-        return productRepository.findTop8ByOrderById();
+        return productRepository.findTop8ByOrderByIdDesc();
     }
 
     @Override

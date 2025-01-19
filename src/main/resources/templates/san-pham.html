@@ -142,12 +142,12 @@
                                         <li th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
                                             <span th:if="${i == currentPage}" class="pagecur" th:text="${i + 1}"></span>
                                             <a th:if="${i != currentPage}"
-                                               th:href="@{/categories/{id}(id=${categoryId}, page=${i}, size=5)}"
+                                               th:href="@{/categories/{id}(id=${categoryId}, page=${i}, size=9)}"
                                                class="pagelink" th:text="${i + 1}"></a>
                                         </li>
                                         <!-- Trang kế tiếp -->
                                         <li th:if="${currentPage < totalPages - 1}">
-                                            <a th:href="@{/categories/{id}(id=${categoryId}, page=${currentPage + 1}, size=5)}"
+                                            <a th:href="@{/categories/{id}(id=${categoryId}, page=${currentPage + 1}, size=9)}"
                                                class="btnPage">❯<!--<i class="">❯</i>--></a>
                                         </li>
                                     </ul>
