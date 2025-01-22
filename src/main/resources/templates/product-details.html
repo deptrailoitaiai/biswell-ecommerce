@@ -463,7 +463,7 @@
                                     <div class="productTitle">
                                         <h1 th:text="${product.pname}"></h1>
                                     </div>
-                                    <div class="productDes">GIỚI THIỆU SẢN PHẨM</div>
+                                    <div class="productDes" th:text="${product.pdesc}"></div>
                                     <div class="productCart">
                                         <a href="../dhfood/dhfoods.com.vn/vn/toi-muon-mua-hang.html"><span>Tôi muốn mua hàng</span></a>
                                     </div>
@@ -471,14 +471,25 @@
                             </div>
                             <div class="description">
                                 <p>
-                    <span style="font-size: 20px"><span style="font-family: Roboto, sans-serif">GIỚI THIỆU SẢN
-                        PHẨM&nbsp;</span></span><span style="font-size: 20px"><span
-                                        style="font-family: Roboto, sans-serif"></span></span>
+                    <span style="font-size: 20px">
+                        <span style="font-family: Roboto, sans-serif">
+                            GIỚI THIỆU SẢN PHẨM&nbsp;
+                        </span>
+                    </span>
+                                    <span style="font-size: 20px">
+                                        <span style="font-family: Roboto, sans-serif">
+
+                                        </span>
+                                    </span>
                                 </p>
 
                                 <p>
-                    <span style="font-family: Roboto, sans-serif"><strong><span style="font-size: 22px">Thành
-                          phần:</span></strong><span style="font-size: 20px">&nbsp;</span></span>
+                    <span style="font-family: Roboto, sans-serif">
+                        <strong>
+                        <span style="font-size: 22px">Thành phần:</span>
+                        </strong>
+                        <span style="font-size: 20px">&nbsp;</span>
+                    </span>
                                 </p>
 
                                 <p>
