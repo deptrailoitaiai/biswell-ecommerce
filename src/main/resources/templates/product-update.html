@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Product</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Update Product</h1>
+    <form th:action="@{/product/update/{id}(id=${product.id})}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+
+        <!-- Product Name -->
+        <div class="form-group">
+            <label for="pname">Product Name:</label>
+            <input type="text" id="pname" name="pname" class="form-control" th:value="${product.pname}" required>
+            <div class="invalid-feedback">Please provide a product name.</div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="pdesc">Description:</label>
+            <textarea id="pdesc" name="pdesc" class="form-control" rows="4" th:text="${product.pdesc}" required></textarea>
+            <div class="invalid-feedback">Please provide a description.</div>
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+            <label for="categoryId">Category:</label>
+            <select id="categoryId" name="categoryId" class="form-control" required>
+                <option th:each="category : ${categories}"
+                        th:value="${category.categoryId}"
+                        th:text="${category.categoryName}"
+                        th:selected="${product.category?.categoryId == category.categoryId}">
+                </option>
+            </select>
+            <div class="invalid-feedback">Please select a category.</div>
+        </div>
+
+        <!-- Main Image -->
+        <div class="form-group">
+            <label for="mainImage">Main Image:</label>
+            <input type="file" id="mainImage" name="mainImage" class="form-control-file">
+            <div class="mt-2">
+                <img th:if="${product.mainImagePath}" th:src="@{${product.mainImagePath}}" alt="Main Image" class="img-thumbnail" width="150">
+            </div>
+        </div>
+
+        <!-- Other Images -->
+        <div class="form-group">
+            <label for="pimages">Other Images:</label>
+            <input type="file" id="pimages" name="pimages" multiple class="form-control-file">
+            <div class="mt-3">
+                <div class="d-flex flex-wrap">
+                    <img th:each="image : ${product.pimages}" th:src="@{${image}}" alt="Product Image" class="img-thumbnail mr-2 mb-2" width="100">
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Update Product</button>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Form Validation Script -->
+<script>
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var forms = document.getElementsByClassName('needs-validation');
+            Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+</body>
+</html>

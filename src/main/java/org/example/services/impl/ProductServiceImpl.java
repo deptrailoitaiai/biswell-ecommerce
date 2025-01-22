@@ -2,14 +2,17 @@ package org.example.services.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.example.dtos.requests.ProductDTO;
 import org.example.entities.ProductEntity;
 import org.example.entities.V2Categories;
 import org.example.repositories.ProductRepository;
 import org.example.repositories.V2CategoriesRepository;
 import org.example.services.ProductService;
+import org.example.services.V2CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,11 +32,15 @@ import java.util.UUID;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final V2CategoriesRepository v2CategoriesRepository;
+    private final V2CategoriesService v2CategoriesService;
+
+    private String uploadDir = System.getProperty("user.dir") + "" + File.separator + "uploads";
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository, V2CategoriesRepository v2CategoriesRepository) {
+    public ProductServiceImpl(ProductRepository productRepository, V2CategoriesRepository v2CategoriesRepository, V2CategoriesService v2CategoriesService) {
         this.productRepository = productRepository;
         this.v2CategoriesRepository = v2CategoriesRepository;
+        this.v2CategoriesService = v2CategoriesService;
     }
 
     @Override
@@ -57,7 +64,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductEntity addProduct(ProductDTO request) {
         try {
             // Kiểm tra thư mục upload nếu chưa có thì tạo
-            String uploadDir = System.getProperty("user.dir") + "" + File.separator + "uploads";
+//            String uploadDir = System.getProperty("user.dir") + "" + File.separator + "uploads";
             Path path = Paths.get(uploadDir);
             if (!Files.exists(path)) {
                 Files.createDirectories(path);
@@ -116,6 +123,70 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductEntity> getByCategoryId(long categoryId, Pageable pageable) {
         return productRepository.findByCategory_CategoryId(categoryId, pageable);
+    }
+
+    public void updateProduct(Long id, ProductDTO updatedProduct, MultipartFile mainImage, MultipartFile[] pimages) {
+        try {
+            ProductEntity product = getProductById(id);
+            // Cập nhật các trường
+            product.setPname(updatedProduct.getPname());
+            product.setPdesc(updatedProduct.getPdesc());
+            product.setCategory(v2CategoriesService.getById(updatedProduct.getCategoryId()));
+
+            String productFolderName = updatedProduct.getPname().replaceAll("[^a-zA-Z0-9-_]", "_");
+            File productFolder = new File(uploadDir + "/" + productFolderName);
+            if (!productFolder.exists()) {
+                productFolder.mkdir();
+            }
+
+            // Xử lý ảnh chính
+            if (ObjectUtils.isNotEmpty(mainImage) && StringUtils.isNotEmpty(mainImage.getOriginalFilename())) {
+                String mainImageName = UUID.randomUUID() + "-" + updatedProduct.getMainImage().getOriginalFilename();
+                File mainImageFile = new File(productFolder, mainImageName);
+                mainImage.transferTo(mainImageFile);
+                product.setMainImagePath("/uploads/" + productFolderName + "/" + mainImageName);
+            }
+
+            // Xử lý ảnh khác
+            if (pimages != null && pimages.length > 0) {
+                List<String> newImagePaths = new ArrayList<>();
+                for (MultipartFile image : pimages) {
+                    if (ObjectUtils.isNotEmpty(image.getOriginalFilename())) {
+                        String imageName = UUID.randomUUID() + "-" + image.getOriginalFilename();
+                        File imageFile = new File(productFolder, imageName);
+                        image.transferTo(imageFile);
+                        newImagePaths.add("/uploads/" + productFolderName + "/" + imageName);
+                    }
+                }
+                if (ObjectUtils.isNotEmpty(newImagePaths)) {
+                    product.setPimages(newImagePaths);
+                }
+            }
+
+            productRepository.save(product);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String saveFile(MultipartFile file, String uploadDir) throws IOException {
+        File directory = new File(uploadDir);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+        String filePath = uploadDir + "/" + file.getOriginalFilename();
+        file.transferTo(new File(filePath));
+        return filePath;
+    }
+
+
+    @Override
+    public Page<ProductEntity> getAllProducts(PageRequest page) {
+        return productRepository.findAll(page);
+    }
+
+    public void deleteById(Long id) {
+        productRepository.deleteById(id);
     }
 
 
