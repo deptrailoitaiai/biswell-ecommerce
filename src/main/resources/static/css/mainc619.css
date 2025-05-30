@@ -485,7 +485,7 @@ a.go_bot{
 	position: relative;
 }
 .bannerProduct .img{
-	padding-top: 34%;
+	padding-top: 50%;
 	position: relative;
 	overflow: hidden;
 }
@@ -494,6 +494,7 @@ a.go_bot{
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 100%
 	-webkit-transition: all 0.3s linear;
 	-o-transition: all 0.3s linear;
 	transition: all 0.3s linear;

@@ -31,6 +31,8 @@ public class ProductEntity {
     private String pname;
     @Column
     private String pdesc;
+//    @Column
+//    private String
 
     @Column(name = "main_image_path")
     private String mainImagePath;
