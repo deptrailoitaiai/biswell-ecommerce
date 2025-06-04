@@ -41,7 +41,7 @@
                                 </li>
 
                                 <li class="">
-                                    <a href="/categories" target="_self">Sản phẩm</a>
+                                    <a href="/categories/1" target="_self">Sản phẩm</a>
                                     <ul>
                                         <li th:each="category : ${categoriesMenuTop}">
                                             <a th:href="@{/categories/{id}(id=${category.categoryId})}" th:text="${category.categoryName}" target="_self"></a>
