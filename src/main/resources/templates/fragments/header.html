@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="header">
+
+    <!-- Topbar -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark" href="#">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="#">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="#">Support</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo + search -->
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a th:href="@{/}" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold">
+                        <span class="text-primary border px-3 mr-1">B</span>iswell
+                    </h1>
+                </a>
+            </div>
+
+            <div class="col-lg-6 col-6 text-left">
+                <form th:action="@{/search}">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-6 text-right">
+                <a th:href="@{/cart}" class="btn border">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="container-fluid mb-5">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 px-0">
+                    <a th:href="@{/}" class="nav-item nav-link active">Home</a>
+                    <a th:href="@{/shop}" class="nav-item nav-link">Shop</a>
+                    <a th:href="@{/contact}" class="nav-item nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
