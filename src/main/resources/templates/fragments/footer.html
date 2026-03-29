@@ -1,22 +1,39 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="">
-<div id="vnt-footer" th:fragment="footer">
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
 
-    <div class="botFoot">
-        <div class="wrapper">
-            <div class="copyright">
-                <div class="copy">
-                    Copyright © 2018 <strong>biswell</strong>
-                </div>
-                <div class="per">-</div>
-                <div class="tkw">
-                    <a href="/" target="_blank" title="toiditimtoi" rel="dofollow" class="thietkeweb">Thiết kế web :</a>
-                    <strong><a href="/" target="_blank" rel="dofollow">KAT</a>
-                    </strong>
-                </div>
+<div th:fragment="footer">
+
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+
+            <div class="col-lg-4 mb-5">
+                <h5 class="font-weight-bold mb-4">Biswell</h5>
+                <p>Website bán hàng demo sử dụng Thymeleaf + Spring Boot</p>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+                <h5 class="font-weight-bold mb-4">Links</h5>
+                <a th:href="@{/}" class="d-block mb-2">Home</a>
+                <a th:href="@{/shop}" class="d-block mb-2">Shop</a>
+                <a th:href="@{/contact}" class="d-block mb-2">Contact</a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+                <h5 class="font-weight-bold mb-4">Contact</h5>
+                <p>Email: support@biswell.vn</p>
             </div>
 
         </div>
+
+        <div class="row border-top py-3">
+            <div class="col text-center">
+                © Biswell 2026
+            </div>
+        </div>
     </div>
+
 </div>
+
+</body>
 </html>
