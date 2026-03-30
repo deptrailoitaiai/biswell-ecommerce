@@ -4,6 +4,7 @@ import org.example.dtos.requests.ProductDTO;
 import org.example.entities.ProductEntity;
 import org.example.entities.V2Categories;
 import org.example.repositories.V2CategoriesRepository;
+import org.example.services.CloudinaryService;
 import org.example.services.ProductService;
 import org.example.services.V2CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -25,15 +27,18 @@ public class ProductController {
 
     private final ProductService productService;
 
+    private final CloudinaryService cloudinaryService;
+
     @ModelAttribute("categoriesMenuTop")
     public List<V2Categories> populateCategories() {
         return v2CategoriesService.getAll();
     }
 
     @Autowired
-    public ProductController(ProductService productService, V2CategoriesRepository v2CategoriesRepository, V2CategoriesService v2CategoriesService) {
+    public ProductController(ProductService productService, V2CategoriesRepository v2CategoriesRepository, V2CategoriesService v2CategoriesService, CloudinaryService cloudinaryService) {
         this.productService = productService;
         this.v2CategoriesService = v2CategoriesService;
+        this.cloudinaryService = cloudinaryService;
     }
 
     @GetMapping("/add")
@@ -65,11 +70,21 @@ public class ProductController {
         dto.setPname(pname);
         dto.setPdesc(pdesc);
         dto.setCategoryId(categoryId);
-        dto.setMainImage(mainImage);
-        dto.setImages(files);
-        // Thêm sản phẩm vào model để hiển thị
+
+        // upload main image
+        String mainImageUrl = cloudinaryService.uploadFile(mainImage);
+        dto.setMainImagePath(mainImageUrl);
+
+        // upload sub images
+        List<String> imageUrls = Arrays.stream(files)
+                .filter(file -> !file.isEmpty())
+                .map(cloudinaryService::uploadFile)
+                .toList();
+
+        dto.setImagePaths(imageUrls);
+
         model.addAttribute("product", productService.addProduct(dto));
-        return "product-success"; // Chuyển tới trang thành công
+        return "product-success";
     }
 
     // Hiển thị form update

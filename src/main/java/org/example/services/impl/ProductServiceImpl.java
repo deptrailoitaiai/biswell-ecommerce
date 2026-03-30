@@ -63,60 +63,28 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductEntity addProduct(ProductDTO request) {
         try {
-            // Kiểm tra thư mục upload nếu chưa có thì tạo
-//            String uploadDir = System.getProperty("user.dir") + "" + File.separator + "uploads";
-            Path path = Paths.get(uploadDir);
-            if (!Files.exists(path)) {
-                Files.createDirectories(path);
-            }
-
-            // Tên thư mục con dựa trên tên sản phẩm
-            String productFolderName = request.getPname().replaceAll("[^a-zA-Z0-9-_]", "_");
-            File productFolder = new File(uploadDir + "/" + productFolderName);
-            if (!productFolder.exists()) {
-                productFolder.mkdir();
-            }
-
-            // Lưu ảnh chính
-            String mainImagePath = null;
-            if (ObjectUtils.isNotEmpty(request.getMainImage())) {
-                String mainImageName = UUID.randomUUID() + "-" + request.getMainImage().getOriginalFilename();
-                File mainImageFile = new File(productFolder, mainImageName);
-                request.getMainImage().transferTo(mainImageFile);
-                mainImagePath = "/uploads/" + productFolderName + "/" + mainImageName;
-            }
-
-            // Lưu ảnh phụ
-            List<String> otherImagesPaths = new ArrayList<>();
-            for (MultipartFile image : request.getImages()) {
-                if (ObjectUtils.isNotEmpty(image)) {
-                    String imageName = UUID.randomUUID() + "-" + image.getOriginalFilename();
-                    File imageFile = new File(productFolder, imageName);
-                    image.transferTo(imageFile);
-                    otherImagesPaths.add("/uploads/" + productFolderName + "/" + imageName);
-                }
-            }
-
-
-            // Lấy danh mục từ cơ sở dữ liệu
+            // validate category
             Optional<V2Categories> categoryOpt = v2CategoriesRepository.findById(request.getCategoryId());
-            if (!categoryOpt.isPresent()) {
+            if (categoryOpt.isEmpty()) {
                 throw new RuntimeException("Category not found");
             }
 
-            // Tạo và lưu sản phẩm vào cơ sở dữ liệu
+            // map entity
             ProductEntity product = new ProductEntity();
             product.setPname(request.getPname());
             product.setPdesc(request.getPdesc());
             product.setCategory(categoryOpt.get());
-            product.setMainImagePath(mainImagePath);
-            product.setPimages(otherImagesPaths); // Lưu danh sách đường dẫn ảnh
 
-            // Lưu vào DB
+            // set image từ URL (đã upload ở controller)
+            product.setMainImagePath(request.getMainImagePath());
+            product.setPimages(request.getImagePaths());
+
+            // save DB
             return productRepository.save(product);
-        } catch (IOException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
-            return null; // Xử lý lỗi nếu upload thất bại
+            return null;
         }
     }
 
