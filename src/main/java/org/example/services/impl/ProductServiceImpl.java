@@ -149,12 +149,17 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public Page<ProductEntity> getAllProducts(PageRequest page) {
+    public Page<ProductEntity> getAllProducts(Pageable page) {
         return productRepository.findAll(page);
     }
 
     public void deleteById(Long id) {
         productRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<ProductEntity> search(String search, Pageable pageable) {
+        return productRepository.findByPnameLike(search, pageable);
     }
 
 

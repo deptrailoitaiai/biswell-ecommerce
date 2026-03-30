@@ -2,17 +2,18 @@ package org.example.controllers.renderControllers;
 
 import org.example.entities.ProductEntity;
 import org.example.entities.V2Categories;
-import org.example.repositories.ProductRepository;
-import org.example.repositories.V2CategoriesRepository;
 import org.example.services.ProductService;
 import org.example.services.V2CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -51,20 +52,16 @@ public class HomePageController {
         return "introduction";
     }
 
-    @GetMapping("/product")
-    public String getProductPage(Model model) {
-        int page = 0;
-        int size = 9;
-        long id = 1L;
-        Pageable pageable = PageRequest.of(page, size);
-        Page<ProductEntity> productPage = productService.getByCategoryId(id, pageable);
-        V2Categories category = v2CategoriesService.getById(id);
-        model.addAttribute("dataList", productPage);
-        model.addAttribute("category", category);
-        model.addAttribute("categoryId", id);
-        model.addAttribute("currentPage", page);
+    @GetMapping("/shop")
+    public String getShopPage(@RequestParam(defaultValue = "0", required = false) Integer page,
+                              @RequestParam(defaultValue = "9", required = false) Integer size,
+                              Model model) {
+        Page<ProductEntity> productPage = productService.getAllProducts(
+                PageRequest.of(page, size, Sort.by("id").descending()));
+        model.addAttribute("dataList", productPage.getContent());
         model.addAttribute("totalPages", productPage.getTotalPages());
-        return "san-pham";
+        model.addAttribute("currentPage", page);
+        return "shop";
     }
 
     @GetMapping("/contact")

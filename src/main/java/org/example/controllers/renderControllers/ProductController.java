@@ -10,12 +10,13 @@ import org.example.services.V2CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -51,10 +52,18 @@ public class ProductController {
     @GetMapping("/{id}")
     public String getProductDetails(@PathVariable("id") Long id, Model model) {
 
-        model.addAttribute("product", productService.getProductById(id));
-        model.addAttribute("dataList", productService.getTop8());
+        var product = productService.getProductById(id);
+        Page<ProductEntity> productPage = productService.getByCategoryId(product.getCategory().getCategoryId(), PageRequest.of(0, 6));
 
-        return "product-details"; // Trả về trang chi tiết sản phẩm
+        List<String> images = new ArrayList<>();
+        images.add(product.getMainImagePath());
+        images.addAll(product.getPimages());
+
+        model.addAttribute("images", images);
+        model.addAttribute("product", productService.getProductById(id));
+        model.addAttribute("referProduct", productPage.getContent());
+
+        return "detail"; // Trả về trang chi tiết sản phẩm
     }
 
     @PostMapping("/save")
@@ -111,11 +120,12 @@ public class ProductController {
 
     // Hiển thị danh sách sản phẩm với phân trang
     @GetMapping("/list")
-    public String listProducts(@RequestParam(defaultValue = "0") int page,
-                               @RequestParam(defaultValue = "10") int size,
+    public String listProducts(@RequestParam(defaultValue = "0", required = false) Integer page,
+                               @RequestParam(defaultValue = "9", required = false) Integer size,
                                Model model) {
-        Page<ProductEntity> productPage = productService.getAllProducts(PageRequest.of(page, size));
-        model.addAttribute("products", productPage.getContent());
+        Page<ProductEntity> productPage = productService.getAllProducts(
+                PageRequest.of(page, size, Sort.by("id").descending()));
+        model.addAttribute("dataList", productPage.getContent());
         model.addAttribute("totalPages", productPage.getTotalPages());
         model.addAttribute("currentPage", page);
         return "product-list";
@@ -126,6 +136,20 @@ public class ProductController {
     public String deleteProduct(@PathVariable Long id) {
         productService.deleteById(id);
         return "redirect:/product/list";
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam("search") String search,
+                         @RequestParam(value = "search", required = false) Integer size,
+                         @RequestParam(value = "search", required = false) Integer page,
+                         Model model) {
+        size = size == null ? 9 : size;
+        page = page != null ? (page >= 0 ? page : 9) : 9;
+        Page<ProductEntity> productPage = productService.search(search, PageRequest.of(page, size));
+        model.addAttribute("dataList", productPage.getContent());
+        model.addAttribute("totalPages", productPage.getTotalPages());
+        model.addAttribute("currentPage", page);
+        return "shop";
     }
 
 }

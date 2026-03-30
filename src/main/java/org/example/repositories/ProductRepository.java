@@ -11,4 +11,5 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     List<ProductEntity> findTop8ByOrderByIdDesc();
     Page<ProductEntity> findByCategory_CategoryId(Long categoryId, Pageable pageable);
+    Page<ProductEntity> findByPnameLike(String search, Pageable pageable);
 }

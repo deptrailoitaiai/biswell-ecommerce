@@ -39,8 +39,8 @@ public class CategoriesController {
 
     @GetMapping("/{id}")
     public String getProductPage(@PathVariable Long id,
-                                 @RequestParam(defaultValue = "0") int page,
-                                 @RequestParam(defaultValue = "9") int size,
+                                 @RequestParam(defaultValue = "0", required = false) Integer page,
+                                 @RequestParam(defaultValue = "9", required = false) Integer size,
                                  Model model) {
         Pageable pageable = PageRequest.of(page, size);
         Page<ProductEntity> productPage = productService.getByCategoryId(id, pageable);
@@ -50,7 +50,7 @@ public class CategoriesController {
         model.addAttribute("categoryId", id);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", productPage.getTotalPages());
-        return "san-pham";
+        return "shop";
     }
 
 }
