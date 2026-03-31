@@ -125,7 +125,7 @@ public class ProductController {
                                Model model) {
         Page<ProductEntity> productPage = productService.getAllProducts(
                 PageRequest.of(page, size, Sort.by("id").descending()));
-        model.addAttribute("dataList", productPage.getContent());
+        model.addAttribute("products", productPage.getContent());
         model.addAttribute("totalPages", productPage.getTotalPages());
         model.addAttribute("currentPage", page);
         return "product-list";

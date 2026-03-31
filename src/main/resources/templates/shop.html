@@ -77,13 +77,21 @@
                 <div class="row pb-3">
                     <div class="col-12 pb-1">
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <form action="">
+                            <form th:action="@{/product/search}" method="get">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search by name">
+                                    <input type="text"
+                                           name="search"
+                                           class="form-control"
+                                           placeholder="Tìm kiếm tên sản phẩm"
+                                           th:value="${keyword}">
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-transparent text-primary">
+<!--                                        <span class="input-group-text bg-transparent text-primary">-->
+<!--                                            <i class="fa fa-search"></i>-->
+<!--                                        </span>-->
+                                        <button type="submit"
+                                                class="input-group-text bg-transparent text-primary border-0">
                                             <i class="fa fa-search"></i>
-                                        </span>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
