@@ -140,15 +140,16 @@ public class ProductController {
 
     @GetMapping("/search")
     public String search(@RequestParam("search") String search,
-                         @RequestParam(value = "search", required = false) Integer size,
-                         @RequestParam(value = "search", required = false) Integer page,
+                         @RequestParam(value = "size", required = false) Integer size,
+                         @RequestParam(value = "page", required = false) Integer page,
                          Model model) {
         size = size == null ? 9 : size;
-        page = page != null ? (page >= 0 ? page : 9) : 9;
+        page = (page == null || page < 0) ? 0 : page;
         Page<ProductEntity> productPage = productService.search(search, PageRequest.of(page, size));
         model.addAttribute("dataList", productPage.getContent());
         model.addAttribute("totalPages", productPage.getTotalPages());
         model.addAttribute("currentPage", page);
+        model.addAttribute("keyword", search); // để bind lại input
         return "shop";
     }
 
