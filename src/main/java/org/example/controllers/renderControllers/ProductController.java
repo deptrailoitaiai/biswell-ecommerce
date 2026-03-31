@@ -149,6 +149,7 @@ public class ProductController {
         model.addAttribute("dataList", productPage.getContent());
         model.addAttribute("totalPages", productPage.getTotalPages());
         model.addAttribute("currentPage", page);
+        model.addAttribute("baseUrl", "/product/search");
         model.addAttribute("keyword", search); // để bind lại input
         return "shop";
     }

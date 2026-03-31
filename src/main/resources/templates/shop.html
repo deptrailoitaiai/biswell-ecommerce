@@ -131,7 +131,11 @@
                                 <li class="page-item"
                                     th:classappend="${currentPage == 0} ? 'disabled'">
                                     <a class="page-link"
-                                       th:href="@{/shop(page=${currentPage - 1}, size=9)}"
+                                       th:href="@{${baseUrl}(
+                                            page=${currentPage - 1},
+                                            size=9,
+                                            search=${keyword}
+                                       )}"
                                        aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
@@ -143,7 +147,11 @@
                                     th:classappend="${i == currentPage} ? 'active'">
 
                                     <a class="page-link"
-                                       th:href="@{/shop(page=${i}, size=9)}"
+                                       th:href="@{${baseUrl}(
+                                            page=${i},
+                                            size=9,
+                                            search=${keyword}
+                                       )}"
                                        th:text="${i + 1}">
                                     </a>
                                 </li>
@@ -152,7 +160,11 @@
                                 <li class="page-item"
                                     th:classappend="${currentPage == totalPages - 1} ? 'disabled'">
                                     <a class="page-link"
-                                       th:href="@{/shop(page=${currentPage + 1}, size=9)}"
+                                       th:href="@{${baseUrl}(
+                                            page=${currentPage + 1},
+                                            size=9,
+                                            search=${keyword}
+                                       )}"
                                        aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>

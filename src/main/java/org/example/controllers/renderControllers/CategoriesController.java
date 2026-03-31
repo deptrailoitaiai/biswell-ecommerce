@@ -50,6 +50,7 @@ public class CategoriesController {
         model.addAttribute("categoryId", id);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", productPage.getTotalPages());
+        model.addAttribute("baseUrl", "/categories/" + id);
         return "shop";
     }
 
