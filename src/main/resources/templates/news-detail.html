@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head}"></head>
+
+<body>
+
+    <div th:replace="~{fragments/header::header}"></div>
+    <div th:replace="~{fragments/navbar::navbar}"></div>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Chi tiết tin tức</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a th:href="@{/}">Trang chủ</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0"><a th:href="@{/news}">Tin tức</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Chi tiết</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Article Detail Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-5 justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+
+                <!-- Back link -->
+                <a th:href="@{/news}" class="text-primary mb-4 d-inline-block">
+                    <i class="fas fa-arrow-left mr-1"></i> Quay lại danh sách
+                </a>
+
+                <!-- Thumbnail -->
+                <img th:if="${article.thumbnail}"
+                     th:src="${article.thumbnail}"
+                     class="img-fluid w-100 mb-4"
+                     style="max-height: 450px; object-fit: cover;"
+                     alt="">
+
+                <!-- Meta -->
+                <div class="d-flex align-items-center mb-3 text-muted" style="font-size: 14px;">
+                    <i class="far fa-calendar-alt mr-2"></i>
+                    <span th:text="${article.createAt != null ? #temporals.format(article.createAt, 'dd/MM/yyyy HH:mm') : ''}"></span>
+                </div>
+
+                <!-- Title -->
+                <h2 class="font-weight-semi-bold mb-3" th:text="${article.articleName}"></h2>
+
+                <!-- Summary -->
+                <p th:if="${article.summary}"
+                   class="lead text-muted border-left pl-3 mb-4"
+                   style="border-left: 4px solid #4a90e2 !important; font-size: 15px;"
+                   th:text="${article.summary}"></p>
+
+                <hr class="mb-4">
+
+                <!-- Content -->
+                <div style="line-height: 1.9; white-space: pre-wrap; font-size: 15px;"
+                     th:text="${article.text}"></div>
+
+                <!-- Back button -->
+                <div class="mt-5">
+                    <a th:href="@{/news}" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left mr-1"></i> Quay lại Tin tức
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Article Detail End -->
+
+
+    <div th:replace="~{fragments/footer::footer}"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/lib/easing/easing.min.js}"></script>
+    <script th:src="@{/js/lib/owlcarousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/js/mail/jqBootstrapValidation.min.js}"></script>
+    <script th:src="@{/js/mail/contact.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

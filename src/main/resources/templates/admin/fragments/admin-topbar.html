@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="topbar" class="admin-topbar">
+    <h6 class="page-title" th:text="${pageTitle ?: 'Admin'}">Admin</h6>
+    <div class="topbar-right">
+        <i class="fas fa-user-circle fa-lg"></i>
+        <span>Admin</span>
+    </div>
+</div>
+</body>
+</html>

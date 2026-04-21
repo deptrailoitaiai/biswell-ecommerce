@@ -4,6 +4,24 @@
 <head th:replace="~{fragments/head::head}"></head>
 
 <body>
+    <span id="is-index-page" style="display:none"></span>
+
+    <!-- Lottie Loader — trang chủ -->
+    <!-- Thay path bằng URL animation khác từ lottiefiles.com nếu muốn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <div id="lottie-loader">
+        <div id="lottie-anim" style="width:220px;height:220px;"></div>
+    </div>
+    <script>
+        lottie.loadAnimation({
+            container: document.getElementById('lottie-anim'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://assets1.lottiefiles.com/packages/lf20_usmfx6bp.json'
+        });
+    </script>
+
     <div th:replace="~{fragments/header::header}"></div>
 
     <!-- Navbar Start -->
@@ -27,7 +45,7 @@
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
+                    <a th:href="@{/}" class="text-decoration-none d-block d-lg-none">
                         <img th:src="@{/images/logo.png}" alt="Biswell" style="height: 50px;" />
                         <h1 style="display: none;">Biswell</h1>
                     </a>
@@ -49,6 +67,7 @@
                                     </a>
                                 </div>
                             </div>
+                            <a th:href="@{/news}" class="nav-item nav-link">Tin tức</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <a href="" class="nav-item nav-link">Login</a>
@@ -389,6 +408,26 @@
 
     <!-- Template Javascript -->
     <script th:src="@{/js/main.js}"></script>
+
+    <!-- Lottie timing -->
+    <script>
+        (function () {
+            var loader = document.getElementById('lottie-loader');
+            var t0 = Date.now();
+            var MIN = 1500;
+            function hide() {
+                loader.style.opacity = '0';
+                setTimeout(function () { loader.style.display = 'none'; }, 420);
+            }
+            window.addEventListener('load', function () {
+                var wait = Math.max(0, MIN - (Date.now() - t0));
+                setTimeout(hide, wait);
+            });
+            setTimeout(function () {
+                if (loader.style.display !== 'none') hide();
+            }, 8000);
+        })();
+    </script>
 </body>
 
 </html>

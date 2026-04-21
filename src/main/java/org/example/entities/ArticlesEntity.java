@@ -22,6 +22,12 @@ public class ArticlesEntity {
     @Lob()
     private String articleName;
 
+    @Column(name = "summary", columnDefinition = "TEXT")
+    private String summary;
+
+    @Column(name = "thumbnail")
+    private String thumbnail;
+
     @Column(name = "text")
     @Lob()
     private String text;

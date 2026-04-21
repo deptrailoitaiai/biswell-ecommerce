@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/fragments/admin-head::head}">
+    <style>
+        .thumbnail-preview { max-width: 200px; max-height: 150px; object-fit: cover; border-radius: 6px; margin-top: 8px; }
+        textarea.form-control { resize: vertical; }
+    </style>
+</head>
+<body>
+<div class="admin-wrapper">
+    <div th:replace="~{admin/fragments/admin-sidebar::sidebar}" th:with="activePage='news'"></div>
+
+    <div class="admin-main">
+        <div th:replace="~{admin/fragments/admin-topbar::topbar}"
+             th:with="pageTitle=${action == 'add'} ? 'Thêm tin tức' : 'Sửa tin tức'"></div>
+
+        <div class="admin-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb bg-transparent px-0 py-0 mb-0">
+                            <li class="breadcrumb-item">
+                                <a th:href="@{/admin/news}" class="text-primary">Tin tức</a>
+                            </li>
+                            <li class="breadcrumb-item active"
+                                th:text="${action == 'add'} ? 'Thêm mới' : 'Chỉnh sửa'"></li>
+                        </ol>
+                    </nav>
+
+                    <div class="card">
+                        <div class="card-header"
+                             th:text="${action == 'add'} ? 'Thêm tin tức mới' : 'Chỉnh sửa tin tức'"></div>
+                        <div class="card-body">
+
+                            <!-- Flash error -->
+                            <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+                            <form th:action="${action == 'add'} ? @{/admin/news/save} : @{/admin/news/{id}/update(id=${article.articleId})}"
+                                  method="post"
+                                  enctype="multipart/form-data">
+
+                                <!-- Title -->
+                                <div class="form-group">
+                                    <label class="font-weight-600">Tiêu đề <span class="text-danger">*</span></label>
+                                    <input type="text"
+                                           name="articleName"
+                                           class="form-control"
+                                           th:value="${article.articleName}"
+                                           placeholder="Nhập tiêu đề tin tức"
+                                           required>
+                                </div>
+
+                                <!-- Summary -->
+                                <div class="form-group">
+                                    <label class="font-weight-600">Tóm tắt</label>
+                                    <textarea name="summary"
+                                              class="form-control"
+                                              rows="3"
+                                              placeholder="Mô tả ngắn hiển thị ở danh sách tin tức"
+                                              th:text="${article.summary}"></textarea>
+                                </div>
+
+                                <!-- Thumbnail -->
+                                <div class="form-group">
+                                    <label class="font-weight-600">Ảnh đại diện</label>
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               class="custom-file-input"
+                                               name="thumbnail"
+                                               id="thumbnailInput"
+                                               accept="image/*"
+                                               onchange="previewThumbnail(this)">
+                                        <label class="custom-file-label" for="thumbnailInput">Chọn ảnh...</label>
+                                    </div>
+                                    <!-- Current thumbnail preview -->
+                                    <img th:if="${article.thumbnail}"
+                                         th:src="${article.thumbnail}"
+                                         id="thumbnailPreview"
+                                         class="thumbnail-preview">
+                                    <img th:unless="${article.thumbnail}"
+                                         id="thumbnailPreview"
+                                         class="thumbnail-preview"
+                                         style="display: none;">
+                                    <small class="form-text text-muted">Để trống nếu không muốn thay đổi ảnh</small>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="form-group">
+                                    <label class="font-weight-600">Nội dung</label>
+                                    <textarea name="text"
+                                              class="form-control"
+                                              rows="12"
+                                              placeholder="Nhập nội dung tin tức..."
+                                              th:text="${article.text}"></textarea>
+                                </div>
+
+                                <!-- Actions -->
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <a th:href="@{/admin/news}" class="btn btn-outline-secondary mr-2">
+                                        <i class="fas fa-arrow-left mr-1"></i> Hủy
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save mr-1"></i>
+                                        <span th:text="${action == 'add'} ? 'Thêm tin tức' : 'Lưu thay đổi'"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script>
+    function previewThumbnail(input) {
+        const preview = document.getElementById('thumbnailPreview');
+        const label = input.nextElementSibling;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = e => {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(input.files[0]);
+            label.textContent = input.files[0].name;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="sidebar" class="admin-sidebar">
+    <div class="sidebar-brand">
+        <img th:src="@{/images/logo.png}" alt="Biswell" style="height: 32px;">
+        <span>Admin</span>
+    </div>
+    <ul class="sidebar-menu">
+        <li>
+            <a th:href="@{/admin}"
+               th:classappend="${activePage == 'dashboard'} ? 'active'">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+        </li>
+        <li>
+            <a th:href="@{/admin/products}"
+               th:classappend="${activePage == 'products'} ? 'active'">
+                <i class="fas fa-box"></i> Sản phẩm
+            </a>
+        </li>
+        <li>
+            <a th:href="@{/admin/categories}"
+               th:classappend="${activePage == 'categories'} ? 'active'">
+                <i class="fas fa-tags"></i> Danh mục
+            </a>
+        </li>
+        <li>
+            <a th:href="@{/admin/news}"
+               th:classappend="${activePage == 'news'} ? 'active'">
+                <i class="fas fa-newspaper"></i> Tin tức
+            </a>
+        </li>
+        <li>
+            <a th:href="@{/admin/albums}"
+               th:classappend="${activePage == 'albums'} ? 'active'">
+                <i class="fas fa-images"></i> Albums
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a th:href="@{/}">
+                <i class="fas fa-external-link-alt"></i> Xem website
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

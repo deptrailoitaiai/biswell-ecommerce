@@ -16,7 +16,7 @@
                 <p>CÔNG TY TNHH BISWELL VIỆT NAM</p>
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>16/38 đường Thanh Bình, Phường Hà Đông, TP Hà Nội, Việt Nam</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@biswell.vn</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+84 988 277816 </p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+84 98 2274672 </p>
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row">
@@ -75,6 +75,32 @@
 <!--        </div>-->
     </div>
     <!-- Footer End -->
+
+    <!-- Glassmorphism Loader (non-index pages) -->
+    <div id="page-loader" style="display:none">
+        <div class="glass-card">
+            <div class="glass-spinner"></div>
+            <span class="glass-text">Đang tải...</span>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            if (document.getElementById('is-index-page')) return;
+            var loader = document.getElementById('page-loader');
+            var t0 = Date.now();
+            loader.style.display = 'flex';
+            function hide() {
+                var wait = Math.max(0, 1000 - (Date.now() - t0));
+                setTimeout(function () {
+                    loader.style.opacity = '0';
+                    setTimeout(function () { loader.style.display = 'none'; }, 420);
+                }, wait);
+            }
+            if (document.readyState === 'complete') { hide(); }
+            else { window.addEventListener('load', hide); }
+        })();
+    </script>
 
 </div>
 
