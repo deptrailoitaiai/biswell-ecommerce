@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head}"></head>
+
+<body>
+
+    <div th:replace="~{fragments/header::header}"></div>
+    <div th:replace="~{fragments/navbar::navbar}"></div>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Chính Sách Bảo Mật</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a th:href="@{/}">Trang chủ</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Chính sách bảo mật</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Content Start -->
+    <div class="container-fluid pt-5 pb-5">
+        <div class="row px-xl-5 justify-content-center">
+            <div class="col-lg-9 col-md-10 col-12">
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">1. Mục đích thu thập thông tin</h4>
+                    <p>Công ty TNHH Biswell Việt Nam (sau đây gọi là "Biswell" hoặc "chúng tôi") thu thập thông tin cá nhân của khách hàng nhằm các mục đích sau:</p>
+                    <ul style="line-height: 2;">
+                        <li>Xử lý đơn đặt hàng và cung cấp dịch vụ theo yêu cầu của khách hàng.</li>
+                        <li>Liên hệ xác nhận đơn hàng, tư vấn sản phẩm và hỗ trợ sau bán hàng.</li>
+                        <li>Gửi thông tin khuyến mãi, sản phẩm mới (nếu khách hàng đồng ý).</li>
+                        <li>Cải thiện chất lượng dịch vụ và trải nghiệm người dùng trên website.</li>
+                        <li>Thực hiện các nghĩa vụ theo quy định của pháp luật.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">2. Phạm vi thu thập thông tin</h4>
+                    <p>Chúng tôi có thể thu thập các thông tin sau của khách hàng:</p>
+                    <ul style="line-height: 2;">
+                        <li>Họ và tên, số điện thoại, địa chỉ email.</li>
+                        <li>Địa chỉ giao hàng, thông tin thanh toán.</li>
+                        <li>Thông tin thiết bị và trình duyệt (địa chỉ IP, loại trình duyệt, trang đã truy cập) phục vụ phân tích và bảo mật.</li>
+                    </ul>
+                    <p>Chúng tôi chỉ thu thập thông tin cần thiết và có liên quan trực tiếp đến mục đích nêu trên.</p>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">3. Thời gian lưu trữ thông tin</h4>
+                    <p>Thông tin cá nhân của khách hàng được lưu trữ trong suốt thời gian cần thiết để thực hiện các mục đích thu thập, hoặc theo quy định của pháp luật hiện hành. Khi không còn cần thiết, chúng tôi sẽ tiêu hủy thông tin một cách an toàn.</p>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">4. Bảo mật thông tin</h4>
+                    <p>Biswell cam kết bảo mật thông tin cá nhân của khách hàng bằng các biện pháp kỹ thuật và tổ chức phù hợp, bao gồm:</p>
+                    <ul style="line-height: 2;">
+                        <li>Hệ thống máy chủ và cơ sở dữ liệu được bảo vệ bằng tường lửa và mã hóa.</li>
+                        <li>Truy cập thông tin khách hàng chỉ được cấp phép cho nhân viên có thẩm quyền.</li>
+                        <li>Không bán, cho thuê hoặc chia sẻ thông tin cá nhân của khách hàng cho bên thứ ba vì mục đích thương mại.</li>
+                    </ul>
+                    <p>Trong trường hợp bắt buộc phải chia sẻ với đối tác thứ ba (đơn vị vận chuyển, cổng thanh toán), chúng tôi chỉ cung cấp thông tin tối thiểu cần thiết và yêu cầu đối tác cam kết bảo mật.</p>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">5. Quyền của khách hàng</h4>
+                    <p>Khách hàng có quyền:</p>
+                    <ul style="line-height: 2;">
+                        <li>Yêu cầu truy cập, chỉnh sửa hoặc xóa thông tin cá nhân đã cung cấp.</li>
+                        <li>Từ chối nhận thông tin quảng cáo, khuyến mãi bất kỳ lúc nào.</li>
+                        <li>Khiếu nại về việc sử dụng thông tin cá nhân không đúng mục đích.</li>
+                    </ul>
+                    <p>Để thực hiện các quyền trên, khách hàng vui lòng liên hệ qua email: <strong>info@biswell.vn</strong> hoặc hotline: <strong>+84 98 2274672</strong>.</p>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">6. Thông tin liên hệ</h4>
+                    <p>Mọi thắc mắc về chính sách bảo mật, vui lòng liên hệ:</p>
+                    <ul style="line-height: 2; list-style: none; padding-left: 0;">
+                        <li><i class="fa fa-building text-primary mr-2"></i><strong>Công ty TNHH Biswell Việt Nam</strong></li>
+                        <li><i class="fa fa-map-marker-alt text-primary mr-2"></i>16/38 đường Thanh Bình, Phường Hà Đông, TP Hà Nội, Việt Nam</li>
+                        <li><i class="fa fa-envelope text-primary mr-2"></i>info@biswell.vn</li>
+                        <li><i class="fa fa-phone-alt text-primary mr-2"></i>+84 98 2274672</li>
+                    </ul>
+                </div>
+
+                <p class="text-muted" style="font-size: 13px;"><em>Chính sách bảo mật này có hiệu lực từ ngày 01/01/2025 và có thể được cập nhật. Mọi thay đổi sẽ được thông báo trên website.</em></p>
+
+            </div>
+        </div>
+    </div>
+    <!-- Content End -->
+
+    <div th:replace="~{fragments/footer::footer}"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/lib/easing/easing.min.js}"></script>
+    <script th:src="@{/js/lib/owlcarousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

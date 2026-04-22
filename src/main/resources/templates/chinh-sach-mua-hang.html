@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head}"></head>
+
+<body>
+
+    <div th:replace="~{fragments/header::header}"></div>
+    <div th:replace="~{fragments/navbar::navbar}"></div>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Chính Sách Mua Hàng</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a th:href="@{/}">Trang chủ</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Chính sách mua hàng</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Content Start -->
+    <div class="container-fluid pt-5 pb-5">
+        <div class="row px-xl-5 justify-content-center">
+            <div class="col-lg-9 col-md-10 col-12">
+
+                <!-- Mua hàng -->
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">1. Chính sách đặt hàng</h4>
+                    <p>Khách hàng có thể đặt hàng thông qua các kênh sau:</p>
+                    <ul style="line-height: 2;">
+                        <li>Website: <strong>biswell.vn</strong></li>
+                        <li>Hotline: <strong>+84 98 2274672</strong> (8h00 – 17h30, Thứ 2 – Thứ 7)</li>
+                        <li>Email: <strong>info@biswell.vn</strong></li>
+                    </ul>
+                    <p>Sau khi nhận được yêu cầu đặt hàng, nhân viên Biswell sẽ liên hệ xác nhận đơn hàng trong vòng <strong>24 giờ làm việc</strong>.</p>
+                </div>
+
+                <!-- Thanh toán -->
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">2. Chính sách thanh toán</h4>
+                    <p>Biswell chấp nhận các hình thức thanh toán sau:</p>
+                    <ul style="line-height: 2;">
+                        <li><strong>Tiền mặt (COD):</strong> Thanh toán khi nhận hàng, áp dụng với đơn hàng trong nội thành Hà Nội.</li>
+                        <li><strong>Chuyển khoản ngân hàng:</strong> Thông tin tài khoản sẽ được cung cấp khi xác nhận đơn hàng.</li>
+                        <li><strong>Thanh toán online:</strong> Qua các cổng thanh toán điện tử được tích hợp trên website.</li>
+                    </ul>
+                    <p>Đơn hàng sẽ được xử lý sau khi xác nhận thanh toán thành công. Biswell không thu thêm bất kỳ phí nào ngoài giá trị đơn hàng đã thỏa thuận.</p>
+                </div>
+
+                <!-- Giao nhận -->
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">3. Chính sách giao hàng</h4>
+                    <p><strong>Phạm vi giao hàng:</strong> Toàn quốc.</p>
+                    <p><strong>Thời gian giao hàng dự kiến:</strong></p>
+                    <ul style="line-height: 2;">
+                        <li>Nội thành Hà Nội: 1 – 2 ngày làm việc.</li>
+                        <li>Tỉnh thành khác: 2 – 5 ngày làm việc (tùy địa điểm).</li>
+                        <li>Khu vực vùng sâu, vùng xa: có thể kéo dài hơn, nhân viên sẽ thông báo cụ thể khi xác nhận đơn.</li>
+                    </ul>
+                    <p><strong>Phí vận chuyển:</strong> Được thông báo khi xác nhận đơn hàng, tùy theo trọng lượng và địa điểm giao. Biswell có chính sách miễn phí vận chuyển cho đơn hàng đủ điều kiện theo từng thời kỳ.</p>
+                    <p><strong>Kiểm tra hàng khi nhận:</strong> Khách hàng vui lòng kiểm tra hàng trước khi ký nhận. Trường hợp hàng bị hư hỏng hoặc sai sót do vận chuyển, vui lòng liên hệ ngay để được hỗ trợ.</p>
+                </div>
+
+                <!-- Đổi trả -->
+                <div class="mb-5">
+                    <h4 class="font-weight-bold mb-3">4. Chính sách đổi trả hàng</h4>
+                    <p>Biswell chấp nhận đổi trả trong các trường hợp:</p>
+                    <ul style="line-height: 2;">
+                        <li>Sản phẩm bị lỗi do nhà sản xuất hoặc hư hỏng trong quá trình vận chuyển.</li>
+                        <li>Sản phẩm không đúng với mô tả trên website hoặc đơn hàng đã xác nhận.</li>
+                    </ul>
+                    <p><strong>Thời gian đổi trả:</strong> Trong vòng <strong>7 ngày</strong> kể từ ngày nhận hàng.</p>
+                    <p><strong>Điều kiện:</strong> Sản phẩm còn nguyên vẹn, chưa qua sử dụng, còn đầy đủ bao bì và hóa đơn mua hàng.</p>
+                    <p>Để yêu cầu đổi trả, khách hàng vui lòng liên hệ <strong>+84 98 2274672</strong> hoặc email <strong>info@biswell.vn</strong>.</p>
+                </div>
+
+                <!-- Thông tin công ty -->
+                <div class="mb-5 p-4" style="background: #EDF1FF; border-radius: 8px;">
+                    <h5 class="font-weight-bold mb-3">Thông tin doanh nghiệp</h5>
+                    <ul style="line-height: 2.2; list-style: none; padding-left: 0; margin: 0;">
+                        <li><i class="fa fa-building text-primary mr-2"></i><strong>Công ty TNHH Biswell Việt Nam</strong></li>
+                        <li><i class="fa fa-id-card text-primary mr-2"></i>Mã số thuế: <strong>0106740188</strong></li>
+                        <li><i class="fa fa-map-marker-alt text-primary mr-2"></i>16/38 đường Thanh Bình, Phường Hà Đông, TP Hà Nội, Việt Nam</li>
+                        <li><i class="fa fa-envelope text-primary mr-2"></i>info@biswell.vn</li>
+                        <li><i class="fa fa-phone-alt text-primary mr-2"></i>+84 98 2274672</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Content End -->
+
+    <div th:replace="~{fragments/footer::footer}"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/lib/easing/easing.min.js}"></script>
+    <script th:src="@{/js/lib/owlcarousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
