@@ -25,6 +25,26 @@ public class V2CategoriesServiceImpl implements V2CategoriesService {
 
     @Override
     public V2Categories getById(long categoryId) {
-        return v2CategoriesRepository.findById(categoryId).orElseThrow(() -> new RuntimeException("Product not found"));
+        return v2CategoriesRepository.findById(categoryId).orElseThrow(() -> new RuntimeException("Category not found"));
+    }
+
+    @Override
+    public V2Categories save(V2Categories category) {
+        return v2CategoriesRepository.save(category);
+    }
+
+    @Override
+    public void delete(long categoryId) {
+        v2CategoriesRepository.deleteById(categoryId);
+    }
+
+    @Override
+    public long count() {
+        return v2CategoriesRepository.count();
+    }
+
+    @Override
+    public List<V2Categories> getHomepageCategories() {
+        return v2CategoriesRepository.findByShowOnHomeTrueOrderByCategoryIdAsc();
     }
 }

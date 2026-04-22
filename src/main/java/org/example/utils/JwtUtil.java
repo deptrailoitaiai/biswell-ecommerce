@@ -43,21 +43,23 @@ public class JwtUtil {
     public boolean validateToken(String token) throws JOSEException, ParseException {
         JWSObject jwsObject = JWSObject.parse(token);
         JWSVerifier verifier = new MACVerifier(jwtSecret);
+        if (!jwsObject.verify(verifier)) return false;
 
-        return jwsObject.verify(verifier);
+        JWTClaimsSet claims = JWTClaimsSet.parse(jwsObject.getPayload().toJSONObject());
+        return !claims.getExpirationTime().before(new Date());
     }
 
     public String getSubject(String token) throws ParseException {
         JWSObject jwsObject = JWSObject.parse(token);
         JWTClaimsSet jwtClaimsSet = JWTClaimsSet.parse(jwsObject.getPayload().toJSONObject());
-
         return jwtClaimsSet.getSubject();
     }
 
-    private boolean isTokenExpired(String token) throws ParseException {
+    /** Returns true if the token expires within the next 30 minutes. */
+    public boolean isExpiringSoon(String token) throws ParseException {
         JWSObject jwsObject = JWSObject.parse(token);
-        JWTClaimsSet jwtClaimsSet = JWTClaimsSet.parse(jwsObject.getPayload().toJSONObject());
-
-        return jwtClaimsSet.getExpirationTime().before(new Date());
+        JWTClaimsSet claims = JWTClaimsSet.parse(jwsObject.getPayload().toJSONObject());
+        long remaining = claims.getExpirationTime().getTime() - new Date().getTime();
+        return remaining < 30 * 60 * 1000L;
     }
 }

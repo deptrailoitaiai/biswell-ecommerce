@@ -37,4 +37,10 @@ public class ProductEntity {
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private V2Categories category;
 
+    @Column(name = "is_new", nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
+    private boolean isNew = false;
+
+    @Column(name = "is_best_seller", nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
+    private boolean isBestSeller = false;
+
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/fragments/admin-head::head}">
+    <style>
+        .img-preview { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid #dee2e6; }
+    </style>
+</head>
+<body>
+<div class="admin-wrapper">
+    <div th:replace="~{admin/fragments/admin-sidebar::sidebar}" th:with="activePage='categories'"></div>
+
+    <div class="admin-main">
+        <div th:replace="~{admin/fragments/admin-topbar::topbar}"
+             th:with="pageTitle=${action == 'add'} ? 'Thêm danh mục' : 'Sửa danh mục'"></div>
+
+        <div class="admin-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb bg-transparent px-0 py-0 mb-0">
+                            <li class="breadcrumb-item">
+                                <a th:href="@{/admin/categories}" class="text-primary">Danh mục</a>
+                            </li>
+                            <li class="breadcrumb-item active"
+                                th:text="${action == 'add'} ? 'Thêm mới' : 'Chỉnh sửa'"></li>
+                        </ol>
+                    </nav>
+
+                    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+                    <div class="card">
+                        <div class="card-header"
+                             th:text="${action == 'add'} ? 'Thêm danh mục mới' : 'Chỉnh sửa danh mục'"></div>
+                        <div class="card-body">
+
+                            <form th:action="${action == 'add'} ? @{/admin/categories/save} : @{/admin/categories/{id}/update(id=${category.categoryId})}"
+                                  method="post" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <label class="font-weight-600">Tên danh mục <span class="text-danger">*</span></label>
+                                    <input type="text" name="categoryName" class="form-control"
+                                           th:value="${category.categoryName}"
+                                           placeholder="Nhập tên danh mục" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-600">Mô tả</label>
+                                    <textarea name="description" class="form-control" rows="3"
+                                              placeholder="Mô tả danh mục..."
+                                              th:text="${category.description}"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-600">Ảnh đại diện</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="categoryImage"
+                                               id="catImageInput" accept="image/*"
+                                               onchange="previewCatImage(this)">
+                                        <label class="custom-file-label" for="catImageInput">Chọn ảnh...</label>
+                                    </div>
+                                    <div class="mt-2">
+                                        <img th:if="${category.categoryImage}" th:src="${category.categoryImage}"
+                                             id="catPreview" class="img-preview">
+                                        <img th:unless="${category.categoryImage}" id="catPreview"
+                                             class="img-preview" style="display:none;">
+                                    </div>
+                                    <small class="form-text text-muted" th:if="${action == 'edit'}">
+                                        Để trống nếu không muốn thay đổi ảnh
+                                    </small>
+                                </div>
+
+                                <div class="d-flex justify-content-end mt-4">
+                                    <a th:href="@{/admin/categories}" class="btn btn-outline-secondary mr-2">
+                                        <i class="fas fa-arrow-left mr-1"></i> Hủy
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save mr-1"></i>
+                                        <span th:text="${action == 'add'} ? 'Thêm danh mục' : 'Lưu thay đổi'"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script>
+    function previewCatImage(input) {
+        const preview = document.getElementById('catPreview');
+        const label = input.nextElementSibling;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = e => { preview.src = e.target.result; preview.style.display = 'block'; };
+            reader.readAsDataURL(input.files[0]);
+            label.textContent = input.files[0].name;
+        }
+    }
+</script>
+</body>
+</html>

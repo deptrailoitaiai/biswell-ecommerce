@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/fragments/admin-head::head}"></head>
+<body>
+<div class="admin-wrapper">
+    <div th:replace="~{admin/fragments/admin-sidebar::sidebar}" th:with="activePage='products'"></div>
+
+    <div class="admin-main">
+        <div th:replace="~{admin/fragments/admin-topbar::topbar}" th:with="pageTitle='Quản lý Sản phẩm'"></div>
+
+        <div class="admin-content">
+
+            <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                <span th:text="${success}"></span>
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+            </div>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span th:text="${error}"></span>
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+            </div>
+
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Danh sách sản phẩm</span>
+                    <a th:href="@{/admin/products/add}" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus mr-1"></i> Thêm sản phẩm
+                    </a>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 64px;">Ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Danh mục</th>
+                                <th style="width: 160px;" class="text-center">Nhãn</th>
+                                <th style="width: 90px;" class="text-center">Ảnh phụ</th>
+                                <th style="width: 130px;" class="text-center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(products)}">
+                                <td colspan="6" class="text-center py-4 text-muted">Chưa có sản phẩm nào</td>
+                            </tr>
+                            <tr th:each="product : ${products}">
+                                <td>
+                                    <img th:if="${product.mainImagePath}"
+                                         th:src="${product.mainImagePath}"
+                                         style="width: 52px; height: 52px; object-fit: cover; border-radius: 6px;">
+                                    <div th:unless="${product.mainImagePath}"
+                                         style="width: 52px; height: 52px; background: #e9ecef; border-radius: 6px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fas fa-image text-muted"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="font-weight-500" th:text="${product.pname}"></span>
+                                    <br>
+                                    <small class="text-muted"
+                                           th:text="${product.pdesc != null ? #strings.abbreviate(product.pdesc, 60) : ''}"></small>
+                                </td>
+                                <td>
+                                    <span th:if="${product.category != null}"
+                                          class="badge badge-light border"
+                                          th:text="${product.category.categoryName}"></span>
+                                    <span th:unless="${product.category != null}" class="text-muted">—</span>
+                                </td>
+                                <td class="text-center">
+                                    <form th:action="@{/admin/products/{id}/toggle-new(id=${product.id})}"
+                                          method="post" class="d-inline">
+                                        <input type="hidden" name="page" th:value="${currentPage}">
+                                        <button type="submit"
+                                                th:class="${product.new} ? 'btn btn-info btn-xs' : 'btn btn-outline-secondary btn-xs'"
+                                                style="font-size:11px;padding:2px 8px;" title="Sản phẩm mới">
+                                            Mới
+                                        </button>
+                                    </form>
+                                    <form th:action="@{/admin/products/{id}/toggle-bestseller(id=${product.id})}"
+                                          method="post" class="d-inline ml-1">
+                                        <input type="hidden" name="page" th:value="${currentPage}">
+                                        <button type="submit"
+                                                th:class="${product.bestSeller} ? 'btn btn-warning btn-xs' : 'btn btn-outline-secondary btn-xs'"
+                                                style="font-size:11px;padding:2px 8px;" title="Bán chạy">
+                                            Bán chạy
+                                        </button>
+                                    </form>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge badge-secondary"
+                                          th:text="${product.pimages != null ? product.pimages.size() : 0} + ' ảnh'"></span>
+                                </td>
+                                <td class="text-center">
+                                    <a th:href="@{/admin/products/{id}/edit(id=${product.id})}"
+                                       class="btn btn-outline-primary btn-sm mr-1" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form th:action="@{/admin/products/{id}/delete(id=${product.id})}"
+                                          method="post" class="d-inline"
+                                          onsubmit="return confirm('Xác nhận xóa sản phẩm này?')">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Xóa">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-footer bg-white" th:if="${totalPages > 1}">
+                    <nav>
+                        <ul class="pagination pagination-sm justify-content-center mb-0">
+                            <li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
+                                <a class="page-link" th:href="@{/admin/products(page=${currentPage - 1})}">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"
+                                th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+                                th:classappend="${i == currentPage} ? 'active'">
+                                <a class="page-link"
+                                   th:href="@{/admin/products(page=${i})}"
+                                   th:text="${i + 1}"></a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == totalPages - 1} ? 'disabled'">
+                                <a class="page-link" th:href="@{/admin/products(page=${currentPage + 1})}">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

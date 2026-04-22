@@ -71,9 +71,10 @@ public class ProductServiceImpl implements ProductService {
             product.setPdesc(request.getPdesc());
             product.setCategory(categoryOpt.get());
 
-            // set image từ URL (đã upload ở controller)
             product.setMainImagePath(request.getMainImagePath());
             product.setPimages(request.getImagePaths());
+            product.setNew(request.isNew());
+            product.setBestSeller(request.isBestSeller());
 
             // save DB
             return productRepository.save(product);
@@ -158,5 +159,38 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findByPnameLike(search, pageable);
     }
 
+    @Override
+    public ProductEntity updateProductAdmin(Long id, String pname, String pdesc, Long categoryId,
+                                            String mainImageUrl, List<String> pimageUrls,
+                                            boolean isNew, boolean isBestSeller) {
+        ProductEntity product = getProductById(id);
+        product.setPname(pname);
+        product.setPdesc(pdesc);
+        product.setCategory(v2CategoriesService.getById(categoryId));
+        if (mainImageUrl != null) product.setMainImagePath(mainImageUrl);
+        if (pimageUrls != null && !pimageUrls.isEmpty()) product.setPimages(pimageUrls);
+        product.setNew(isNew);
+        product.setBestSeller(isBestSeller);
+        return productRepository.save(product);
+    }
 
+    @Override
+    public ProductEntity save(ProductEntity product) {
+        return productRepository.save(product);
+    }
+
+    @Override
+    public long count() {
+        return productRepository.count();
+    }
+
+    @Override
+    public List<ProductEntity> getNewProducts() {
+        return productRepository.findByIsNewTrueOrderByIdDesc();
+    }
+
+    @Override
+    public List<ProductEntity> getBestSellerProducts() {
+        return productRepository.findByIsBestSellerTrueOrderByIdDesc();
+    }
 }

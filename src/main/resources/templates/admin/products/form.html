@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/fragments/admin-head::head}">
+    <style>
+        .img-preview { width: 100px; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #dee2e6; }
+        .img-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .img-grid-item { position: relative; }
+        .img-grid-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 1px solid #dee2e6; }
+        .img-new-preview { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .img-new-preview img { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 2px dashed #00AEEF; }
+    </style>
+</head>
+<body>
+<div class="admin-wrapper">
+    <div th:replace="~{admin/fragments/admin-sidebar::sidebar}" th:with="activePage='products'"></div>
+
+    <div class="admin-main">
+        <div th:replace="~{admin/fragments/admin-topbar::topbar}"
+             th:with="pageTitle=${action == 'add'} ? 'Thêm sản phẩm' : 'Sửa sản phẩm'"></div>
+
+        <div class="admin-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb bg-transparent px-0 py-0 mb-0">
+                            <li class="breadcrumb-item">
+                                <a th:href="@{/admin/products}" class="text-primary">Sản phẩm</a>
+                            </li>
+                            <li class="breadcrumb-item active"
+                                th:text="${action == 'add'} ? 'Thêm mới' : 'Chỉnh sửa'"></li>
+                        </ol>
+                    </nav>
+
+                    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+                    <form th:action="${action == 'add'} ? @{/admin/products/save} : @{/admin/products/{id}/update(id=${product.id})}"
+                          method="post" enctype="multipart/form-data">
+
+                        <div class="card mb-3">
+                            <div class="card-header">Thông tin cơ bản</div>
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label class="font-weight-600">Tên sản phẩm <span class="text-danger">*</span></label>
+                                    <input type="text" name="pname" class="form-control"
+                                           th:value="${product.pname}" placeholder="Nhập tên sản phẩm" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-600">Danh mục <span class="text-danger">*</span></label>
+                                    <select name="categoryId" class="form-control" required>
+                                        <option value="">-- Chọn danh mục --</option>
+                                        <option th:each="cat : ${categories}"
+                                                th:value="${cat.categoryId}"
+                                                th:text="${cat.categoryName}"
+                                                th:selected="${product.category != null and product.category.categoryId == cat.categoryId}">
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-600">Mô tả</label>
+                                    <textarea name="pdesc" class="form-control" rows="5"
+                                              placeholder="Nhập mô tả sản phẩm..."
+                                              th:text="${product.pdesc}"></textarea>
+                                </div>
+
+                                <div class="form-group mb-0">
+                                    <label class="font-weight-600 d-block mb-2">Nhãn sản phẩm</label>
+                                    <div class="d-flex" style="gap: 24px;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="isNew"
+                                                   name="isNew" value="true"
+                                                   th:checked="${product.new}">
+                                            <label class="custom-control-label" for="isNew">
+                                                <span class="badge badge-info">Sản phẩm mới</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="isBestSeller"
+                                                   name="isBestSeller" value="true"
+                                                   th:checked="${product.bestSeller}">
+                                            <label class="custom-control-label" for="isBestSeller">
+                                                <span class="badge badge-warning">Bán chạy</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-header">Ảnh sản phẩm</div>
+                            <div class="card-body">
+
+                                <!-- Main image -->
+                                <div class="form-group">
+                                    <label class="font-weight-600">Ảnh chính
+                                        <span th:if="${action == 'add'}" class="text-danger">*</span>
+                                    </label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="mainImage"
+                                               id="mainImageInput" accept="image/*"
+                                               th:required="${action == 'add'}"
+                                               onchange="previewMain(this)">
+                                        <label class="custom-file-label" for="mainImageInput">Chọn ảnh chính...</label>
+                                    </div>
+                                    <div class="mt-2">
+                                        <img th:if="${product.mainImagePath}" th:src="${product.mainImagePath}"
+                                             id="mainPreview" class="img-preview">
+                                        <img th:unless="${product.mainImagePath}" id="mainPreview"
+                                             class="img-preview" style="display:none;">
+                                    </div>
+                                    <small class="form-text text-muted" th:if="${action == 'edit'}">
+                                        Để trống nếu không muốn thay đổi ảnh chính
+                                    </small>
+                                </div>
+
+                                <!-- Sub images -->
+                                <div class="form-group mt-4">
+                                    <label class="font-weight-600">Ảnh phụ (nhiều ảnh)</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="pimages"
+                                               id="pimagesInput" accept="image/*" multiple
+                                               onchange="previewSubImages(this)">
+                                        <label class="custom-file-label" for="pimagesInput">Chọn ảnh phụ...</label>
+                                    </div>
+
+                                    <!-- Existing sub images in edit mode -->
+                                    <div th:if="${action == 'edit' and product.pimages != null and not #lists.isEmpty(product.pimages)}"
+                                         class="mt-2">
+                                        <small class="text-muted d-block mb-1">Ảnh hiện tại:</small>
+                                        <div class="img-grid">
+                                            <div th:each="img : ${product.pimages}" class="img-grid-item">
+                                                <img th:src="${img}" alt="">
+                                            </div>
+                                        </div>
+                                        <small class="form-text text-muted">Upload ảnh mới sẽ thay thế toàn bộ ảnh phụ cũ</small>
+                                    </div>
+
+                                    <!-- New images preview -->
+                                    <div id="newImagesPreview" class="img-new-preview"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <a th:href="@{/admin/products}" class="btn btn-outline-secondary mr-2">
+                                <i class="fas fa-arrow-left mr-1"></i> Hủy
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save mr-1"></i>
+                                <span th:text="${action == 'add'} ? 'Thêm sản phẩm' : 'Lưu thay đổi'"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script>
+    function previewMain(input) {
+        const preview = document.getElementById('mainPreview');
+        const label = input.nextElementSibling;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = e => { preview.src = e.target.result; preview.style.display = 'block'; };
+            reader.readAsDataURL(input.files[0]);
+            label.textContent = input.files[0].name;
+        }
+    }
+
+    function previewSubImages(input) {
+        const container = document.getElementById('newImagesPreview');
+        const label = input.nextElementSibling;
+        container.innerHTML = '';
+        if (input.files && input.files.length > 0) {
+            label.textContent = input.files.length + ' ảnh đã chọn';
+            Array.from(input.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    container.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    }
+</script>
+</body>
+</html>

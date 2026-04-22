@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/fragments/admin-head::head}"></head>
+<body>
+<div class="admin-wrapper">
+    <div th:replace="~{admin/fragments/admin-sidebar::sidebar}" th:with="activePage='categories'"></div>
+
+    <div class="admin-main">
+        <div th:replace="~{admin/fragments/admin-topbar::topbar}" th:with="pageTitle='Quản lý Danh mục'"></div>
+
+        <div class="admin-content">
+
+            <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                <span th:text="${success}"></span>
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+            </div>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span th:text="${error}"></span>
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+            </div>
+
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Danh sách danh mục</span>
+                    <a th:href="@{/admin/categories/add}" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus mr-1"></i> Thêm danh mục
+                    </a>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 64px;">Ảnh</th>
+                                <th>Tên danh mục</th>
+                                <th>Mô tả</th>
+                                <th style="width: 90px;" class="text-center">Sản phẩm</th>
+                                <th style="width: 110px;" class="text-center">Trang chủ</th>
+                                <th style="width: 130px;" class="text-center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(categories)}">
+                                <td colspan="6" class="text-center py-4 text-muted">Chưa có danh mục nào</td>
+                            </tr>
+                            <tr th:each="cat : ${categories}">
+                                <td>
+                                    <img th:if="${cat.categoryImage}"
+                                         th:src="${cat.categoryImage}"
+                                         style="width: 52px; height: 52px; object-fit: cover; border-radius: 6px;">
+                                    <div th:unless="${cat.categoryImage}"
+                                         style="width: 52px; height: 52px; background: #e9ecef; border-radius: 6px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fas fa-tags text-muted"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="font-weight-500" th:text="${cat.categoryName}"></span>
+                                </td>
+                                <td>
+                                    <small class="text-muted"
+                                           th:text="${cat.description != null ? #strings.abbreviate(cat.description, 80) : '—'}"></small>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge badge-secondary"
+                                          th:text="${cat.productEntity != null ? cat.productEntity.size() : 0} + ' SP'"></span>
+                                </td>
+                                <td class="text-center">
+                                    <form th:action="@{/admin/categories/{id}/toggle-home(id=${cat.categoryId})}"
+                                          method="post" class="d-inline">
+                                        <button type="submit"
+                                                th:class="${cat.showOnHome} ? 'btn btn-success btn-sm' : 'btn btn-outline-secondary btn-sm'"
+                                                th:title="${cat.showOnHome} ? 'Đang hiển thị — bấm để ẩn' : 'Bấm để hiển thị ở trang chủ'">
+                                            <i th:class="${cat.showOnHome} ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td class="text-center">
+                                    <a th:href="@{/admin/categories/{id}/edit(id=${cat.categoryId})}"
+                                       class="btn btn-outline-primary btn-sm mr-1" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form th:action="@{/admin/categories/{id}/delete(id=${cat.categoryId})}"
+                                          method="post" class="d-inline"
+                                          onsubmit="return confirm('Xác nhận xóa danh mục? Lưu ý: không thể xóa nếu còn sản phẩm.')">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Xóa">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

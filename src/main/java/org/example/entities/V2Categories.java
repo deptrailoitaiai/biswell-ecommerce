@@ -25,6 +25,9 @@ public class V2Categories {
     @Column(name = "category_image")
     private String categoryImage;
 
+    @Column(name = "show_on_home", nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
+    private boolean showOnHome = false;
+
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ProductEntity> productEntity;
 }

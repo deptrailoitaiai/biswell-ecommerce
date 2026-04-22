@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -50,6 +51,7 @@ public class AdminNewsController {
                        @RequestParam(required = false) String summary,
                        @RequestParam(required = false) String text,
                        @RequestParam(required = false) MultipartFile thumbnail,
+                       @RequestParam(required = false) MultipartFile[] images,
                        RedirectAttributes ra) {
         try {
             ArticlesEntity article = new ArticlesEntity();
@@ -58,6 +60,11 @@ public class AdminNewsController {
             article.setText(text);
             if (thumbnail != null && !thumbnail.isEmpty()) {
                 article.setThumbnail(cloudinaryService.uploadFile(thumbnail));
+            }
+            if (images != null) {
+                for (MultipartFile img : images) {
+                    if (!img.isEmpty()) article.getImages().add(cloudinaryService.uploadFile(img));
+                }
             }
             articleService.createArticle(article);
             ra.addFlashAttribute("success", "Thêm tin tức thành công!");
@@ -81,6 +88,8 @@ public class AdminNewsController {
                          @RequestParam(required = false) String summary,
                          @RequestParam(required = false) String text,
                          @RequestParam(required = false) MultipartFile thumbnail,
+                         @RequestParam(required = false) MultipartFile[] images,
+                         @RequestParam(required = false) List<String> keepImages,
                          RedirectAttributes ra) {
         try {
             ArticlesEntity article = articleService.getArticleById(id);
@@ -90,6 +99,14 @@ public class AdminNewsController {
             if (thumbnail != null && !thumbnail.isEmpty()) {
                 article.setThumbnail(cloudinaryService.uploadFile(thumbnail));
             }
+            // Giữ lại ảnh đã chọn + thêm ảnh mới
+            List<String> updatedImages = keepImages != null ? new java.util.ArrayList<>(keepImages) : new java.util.ArrayList<>();
+            if (images != null) {
+                for (MultipartFile img : images) {
+                    if (!img.isEmpty()) updatedImages.add(cloudinaryService.uploadFile(img));
+                }
+            }
+            article.setImages(updatedImages);
             articleService.updateArticle(article);
             ra.addFlashAttribute("success", "Cập nhật tin tức thành công!");
         } catch (Exception e) {

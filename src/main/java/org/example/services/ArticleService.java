@@ -46,6 +46,10 @@ public class ArticleService {
         throw new NotExistsException("Article '" + articlesEntity.getArticleName() + "' not exist");
     }
 
+    public long count() {
+        return articleRepository.count();
+    }
+
     public void deleteArticle(UUID articleId) {
         if(articleRepository.existsById(articleId)) {
             articleRepository.deleteById(articleId);

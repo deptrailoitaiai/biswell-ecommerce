@@ -16,4 +16,6 @@ public class ProductDTO {
     MultipartFile[] images;
     private String mainImagePath;
     private List<String> imagePaths;
+    private boolean isNew;
+    private boolean isBestSeller;
 }

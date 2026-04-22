@@ -7,4 +7,8 @@ import java.util.List;
 public interface V2CategoriesService {
     List<V2Categories> getAll();
     V2Categories getById(long categoryId);
+    V2Categories save(V2Categories category);
+    void delete(long categoryId);
+    long count();
+    List<V2Categories> getHomepageCategories();
 }

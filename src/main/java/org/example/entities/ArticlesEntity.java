@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity(name = "Articles")
@@ -31,6 +33,11 @@ public class ArticlesEntity {
     @Column(name = "text")
     @Lob()
     private String text;
+
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "article_images", joinColumns = @JoinColumn(name = "article_id"))
+    @Column(name = "image_url")
+    private List<String> images = new ArrayList<>();
 
     @Column(name = "create_at")
     @CreationTimestamp()

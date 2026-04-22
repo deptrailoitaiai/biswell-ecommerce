@@ -32,7 +32,9 @@ public class HomePageController {
 
     @GetMapping("/")
     public String getHomePage(Model model) {
-        model.addAttribute("dataList", productService.getTop8());
+        model.addAttribute("newProducts", productService.getNewProducts());
+        model.addAttribute("bestSellerProducts", productService.getBestSellerProducts());
+        model.addAttribute("homepageCategories", v2CategoriesService.getHomepageCategories());
         return "index";
     }
 

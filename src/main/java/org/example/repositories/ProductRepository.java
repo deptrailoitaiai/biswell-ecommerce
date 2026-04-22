@@ -12,6 +12,8 @@ import org.springframework.data.repository.query.Param;
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     List<ProductEntity> findTop8ByOrderByIdDesc();
+    List<ProductEntity> findByIsNewTrueOrderByIdDesc();
+    List<ProductEntity> findByIsBestSellerTrueOrderByIdDesc();
     Page<ProductEntity> findByCategory_CategoryId(Long categoryId, Pageable pageable);
 
     @Query("SELECT p FROM ProductEntity p WHERE p.pname LIKE %:search%")

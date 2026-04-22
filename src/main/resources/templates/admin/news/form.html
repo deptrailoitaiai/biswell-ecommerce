@@ -4,6 +4,15 @@
     <style>
         .thumbnail-preview { max-width: 200px; max-height: 150px; object-fit: cover; border-radius: 6px; margin-top: 8px; }
         textarea.form-control { resize: vertical; }
+        .img-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .img-grid-item { position: relative; }
+        .img-grid-item img { width: 90px; height: 90px; object-fit: cover; border-radius: 6px; border: 1px solid #dee2e6; }
+        .img-grid-item label { position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; background: rgba(0,0,0,0.55); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .img-grid-item label i { color: #fff; font-size: 10px; }
+        .img-grid-item input[type=checkbox] { display: none; }
+        .img-grid-item input[type=checkbox]:not(:checked) + label { background: rgba(220,53,69,0.85); }
+        .img-new-preview { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .img-new-preview img { width: 90px; height: 90px; object-fit: cover; border-radius: 6px; border: 2px dashed #00AEEF; }
     </style>
 </head>
 <body>
@@ -96,6 +105,38 @@
                                               th:text="${article.text}"></textarea>
                                 </div>
 
+                                <!-- Extra images -->
+                                <div class="form-group">
+                                    <label class="font-weight-600">Ảnh nội dung (nhiều ảnh)</label>
+
+                                    <!-- Existing images (edit mode) — checkbox to keep -->
+                                    <div th:if="${action == 'edit' and article.images != null and not #lists.isEmpty(article.images)}"
+                                         class="mb-2">
+                                        <small class="text-muted d-block mb-1">
+                                            Ảnh hiện tại — bỏ tích để xóa:
+                                        </small>
+                                        <div class="img-grid">
+                                            <div th:each="img : ${article.images}" class="img-grid-item">
+                                                <img th:src="${img}" alt="">
+                                                <input type="checkbox" name="keepImages"
+                                                       th:value="${img}" th:id="${img}" checked>
+                                                <label th:for="${img}" title="Bỏ tích để xóa ảnh này">
+                                                    <i class="fas fa-check"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="custom-file mt-2">
+                                        <input type="file" class="custom-file-input" name="images"
+                                               id="imagesInput" accept="image/*" multiple
+                                               onchange="previewImages(this)">
+                                        <label class="custom-file-label" for="imagesInput">Thêm ảnh mới...</label>
+                                    </div>
+                                    <div id="newImagesPreview" class="img-new-preview"></div>
+                                    <small class="form-text text-muted">Các ảnh này hiển thị trong nội dung bài viết</small>
+                                </div>
+
                                 <!-- Actions -->
                                 <div class="d-flex justify-content-end gap-2 mt-4">
                                     <a th:href="@{/admin/news}" class="btn btn-outline-secondary mr-2">
@@ -124,12 +165,27 @@
         const label = input.nextElementSibling;
         if (input.files && input.files[0]) {
             const reader = new FileReader();
-            reader.onload = e => {
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-            };
+            reader.onload = e => { preview.src = e.target.result; preview.style.display = 'block'; };
             reader.readAsDataURL(input.files[0]);
             label.textContent = input.files[0].name;
+        }
+    }
+
+    function previewImages(input) {
+        const container = document.getElementById('newImagesPreview');
+        const label = input.nextElementSibling;
+        container.innerHTML = '';
+        if (input.files && input.files.length > 0) {
+            label.textContent = input.files.length + ' ảnh đã chọn';
+            Array.from(input.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    container.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
         }
     }
 </script>

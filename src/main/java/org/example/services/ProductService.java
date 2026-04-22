@@ -26,4 +26,13 @@ public interface ProductService {
     void deleteById(Long id);
 
     Page<ProductEntity> search(String search, Pageable pageable);
+
+    ProductEntity updateProductAdmin(Long id, String pname, String pdesc, Long categoryId,
+                                     String mainImageUrl, List<String> pimageUrls,
+                                     boolean isNew, boolean isBestSeller);
+
+    ProductEntity save(ProductEntity product);
+    long count();
+    List<ProductEntity> getNewProducts();
+    List<ProductEntity> getBestSellerProducts();
 }
