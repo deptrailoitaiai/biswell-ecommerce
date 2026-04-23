@@ -12,6 +12,9 @@ import org.springframework.data.repository.query.Param;
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     List<ProductEntity> findTop8ByOrderByIdDesc();
+    java.util.Optional<ProductEntity> findBySlug(String slug);
+    boolean existsBySlug(String slug);
+    boolean existsBySlugAndIdNot(String slug, Long id);
     List<ProductEntity> findByIsNewTrueOrderByIdDesc();
     List<ProductEntity> findByIsBestSellerTrueOrderByIdDesc();
     Page<ProductEntity> findByCategory_CategoryId(Long categoryId, Pageable pageable);

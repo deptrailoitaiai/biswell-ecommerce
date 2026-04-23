@@ -51,6 +51,9 @@ public class CategoriesController {
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", productPage.getTotalPages());
         model.addAttribute("baseUrl", "/categories/" + id);
+        model.addAttribute("canonicalUrl", "/categories/" + id);
+        model.addAttribute("pageTitle", category.getCategoryName() + " - Biswell");
+        model.addAttribute("metaDesc", "Khám phá các sản phẩm " + category.getCategoryName() + " chất lượng cao tại Biswell. Giao hàng toàn quốc, đảm bảo chính hãng.");
         return "shop";
     }
 

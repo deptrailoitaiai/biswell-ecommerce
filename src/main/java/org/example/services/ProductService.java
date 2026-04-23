@@ -29,9 +29,11 @@ public interface ProductService {
 
     ProductEntity updateProductAdmin(Long id, String pname, String pdesc, Long categoryId,
                                      String mainImageUrl, List<String> pimageUrls,
-                                     boolean isNew, boolean isBestSeller);
+                                     boolean isNew, boolean isBestSeller,
+                                     String metaTitle, String metaDescription);
 
     ProductEntity save(ProductEntity product);
+    ProductEntity getBySlug(String slug);
     long count();
     List<ProductEntity> getNewProducts();
     List<ProductEntity> getBestSellerProducts();

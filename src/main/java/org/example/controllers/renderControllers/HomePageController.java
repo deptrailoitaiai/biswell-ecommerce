@@ -35,6 +35,9 @@ public class HomePageController {
         model.addAttribute("newProducts", productService.getNewProducts());
         model.addAttribute("bestSellerProducts", productService.getBestSellerProducts());
         model.addAttribute("homepageCategories", v2CategoriesService.getHomepageCategories());
+        model.addAttribute("canonicalUrl", "/");
+        model.addAttribute("pageTitle", "Biswell — Sản phẩm chăm sóc sức khỏe & vệ sinh cá nhân");
+        model.addAttribute("metaDesc", "Biswell cung cấp bàn chải, khăn tắm, bông tắm và các sản phẩm chăm sóc cá nhân chất lượng cao. Mua sắm trực tuyến tại biswell.vn.");
         return "index";
     }
 
@@ -64,6 +67,8 @@ public class HomePageController {
         model.addAttribute("totalPages", productPage.getTotalPages());
         model.addAttribute("currentPage", page);
         model.addAttribute("baseUrl", "/shop");
+        model.addAttribute("canonicalUrl", "/shop");
+        model.addAttribute("pageTitle", "Tất cả sản phẩm - Biswell");
         return "shop";
     }
 

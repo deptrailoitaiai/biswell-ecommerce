@@ -10,6 +10,7 @@ import org.example.repositories.ProductRepository;
 import org.example.repositories.V2CategoriesRepository;
 import org.example.services.ProductService;
 import org.example.services.V2CategoriesService;
+import org.example.utils.SlugUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -75,6 +76,9 @@ public class ProductServiceImpl implements ProductService {
             product.setPimages(request.getImagePaths());
             product.setNew(request.isNew());
             product.setBestSeller(request.isBestSeller());
+            product.setSlug(generateUniqueSlug(request.getPname(), null));
+            product.setMetaTitle(resolveMetaTitle(request.getMetaTitle(), request.getPname()));
+            product.setMetaDescription(resolveMetaDesc(request.getMetaDescription(), request.getPdesc()));
 
             // save DB
             return productRepository.save(product);
@@ -160,9 +164,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductEntity getBySlug(String slug) {
+        return productRepository.findBySlug(slug)
+                .orElseThrow(() -> new RuntimeException("Product not found: " + slug));
+    }
+
+    @Override
     public ProductEntity updateProductAdmin(Long id, String pname, String pdesc, Long categoryId,
                                             String mainImageUrl, List<String> pimageUrls,
-                                            boolean isNew, boolean isBestSeller) {
+                                            boolean isNew, boolean isBestSeller,
+                                            String metaTitle, String metaDescription) {
         ProductEntity product = getProductById(id);
         product.setPname(pname);
         product.setPdesc(pdesc);
@@ -171,7 +182,38 @@ public class ProductServiceImpl implements ProductService {
         if (pimageUrls != null && !pimageUrls.isEmpty()) product.setPimages(pimageUrls);
         product.setNew(isNew);
         product.setBestSeller(isBestSeller);
+
+        // Slug: regenerate nếu tên thay đổi, đảm bảo unique
+        String newSlug = generateUniqueSlug(pname, id);
+        product.setSlug(newSlug);
+
+        product.setMetaTitle(resolveMetaTitle(metaTitle, pname));
+        product.setMetaDescription(resolveMetaDesc(metaDescription, pdesc));
         return productRepository.save(product);
+    }
+
+    private String generateUniqueSlug(String pname, Long excludeId) {
+        String base = SlugUtil.toSlug(pname);
+        String candidate = base;
+        int suffix = 1;
+        while (excludeId == null
+                ? productRepository.existsBySlug(candidate)
+                : productRepository.existsBySlugAndIdNot(candidate, excludeId)) {
+            candidate = base + "-" + suffix++;
+        }
+        return candidate;
+    }
+
+    private String resolveMetaTitle(String input, String pname) {
+        if (input != null && !input.isBlank()) return input.length() > 120 ? input.substring(0, 120) : input;
+        String auto = pname + " - Biswell";
+        return auto.length() > 120 ? auto.substring(0, 120) : auto;
+    }
+
+    private String resolveMetaDesc(String input, String pdesc) {
+        if (input != null && !input.isBlank()) return input.length() > 160 ? input.substring(0, 160) : input;
+        if (pdesc != null && !pdesc.isBlank()) return pdesc.length() > 155 ? pdesc.substring(0, 155) + "…" : pdesc;
+        return "";
     }
 
     @Override

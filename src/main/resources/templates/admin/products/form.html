@@ -145,6 +145,42 @@
                             </div>
                         </div>
 
+                        <div class="card mb-3">
+                            <div class="card-header">SEO</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="font-weight-600">Slug (URL)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" style="font-size:13px;">/san-pham/</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="slugPreview"
+                                               th:value="${product.slug}" readonly
+                                               style="background:#f8f9fa;font-size:13px;" placeholder="Tự sinh từ tên sản phẩm">
+                                    </div>
+                                    <small class="form-text text-muted">Slug tự động cập nhật khi lưu</small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-weight-600">Meta Title <small class="text-muted">(tối đa 120 ký tự)</small></label>
+                                    <input type="text" name="metaTitle" class="form-control" maxlength="120"
+                                           th:value="${product.metaTitle}"
+                                           placeholder="Ví dụ: Muối tiêu lá chanh NATURAL - Biswell">
+                                    <small class="form-text text-muted">Để trống → tự sinh: <em>[Tên sản phẩm] - Biswell</em></small>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <label class="font-weight-600">Meta Description <small class="text-muted">(140–160 ký tự)</small></label>
+                                    <textarea name="metaDescription" class="form-control" rows="3"
+                                              maxlength="160" id="metaDescInput"
+                                              th:text="${product.metaDescription}"
+                                              placeholder="Mô tả ngắn xuất hiện trên kết quả tìm kiếm Google..."></textarea>
+                                    <div class="d-flex justify-content-between mt-1">
+                                        <small class="form-text text-muted">Để trống → tự sinh từ mô tả sản phẩm</small>
+                                        <small id="metaDescCount" class="text-muted">0/160</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="d-flex justify-content-end">
                             <a th:href="@{/admin/products}" class="btn btn-outline-secondary mr-2">
                                 <i class="fas fa-arrow-left mr-1"></i> Hủy
@@ -173,6 +209,19 @@
             reader.readAsDataURL(input.files[0]);
             label.textContent = input.files[0].name;
         }
+    }
+
+    // Meta description character counter
+    const metaDescInput = document.getElementById('metaDescInput');
+    const metaDescCount = document.getElementById('metaDescCount');
+    if (metaDescInput) {
+        const update = () => {
+            const len = metaDescInput.value.length;
+            metaDescCount.textContent = len + '/160';
+            metaDescCount.style.color = len >= 140 && len <= 160 ? '#28a745' : len > 160 ? '#dc3545' : '#6c757d';
+        };
+        metaDescInput.addEventListener('input', update);
+        update();
     }
 
     function previewSubImages(input) {

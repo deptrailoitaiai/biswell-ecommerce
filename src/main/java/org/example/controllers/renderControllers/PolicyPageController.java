@@ -23,12 +23,18 @@ public class PolicyPageController {
     }
 
     @GetMapping("/chinh-sach-bao-mat")
-    public String privacyPolicy() {
+    public String privacyPolicy(org.springframework.ui.Model model) {
+        model.addAttribute("canonicalUrl", "/chinh-sach-bao-mat");
+        model.addAttribute("pageTitle", "Chính sách bảo mật - Biswell");
+        model.addAttribute("metaDesc", "Chính sách bảo mật của Biswell — cam kết bảo vệ thông tin cá nhân khách hàng theo quy định pháp luật Việt Nam.");
         return "chinh-sach-bao-mat";
     }
 
     @GetMapping("/chinh-sach-mua-hang")
-    public String purchasePolicy() {
+    public String purchasePolicy(org.springframework.ui.Model model) {
+        model.addAttribute("canonicalUrl", "/chinh-sach-mua-hang");
+        model.addAttribute("pageTitle", "Chính sách mua hàng & giao nhận - Biswell");
+        model.addAttribute("metaDesc", "Hướng dẫn đặt hàng, thanh toán, giao nhận và đổi trả sản phẩm tại Biswell. Minh bạch, nhanh chóng, đảm bảo quyền lợi khách hàng.");
         return "chinh-sach-mua-hang";
     }
 }

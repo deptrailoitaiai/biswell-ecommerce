@@ -119,16 +119,16 @@
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" th:each="item : ${dataList}">
                                             <div class="product">
                                                 <div class="img">
-                                                    <a th:href="@{/product/{id}(id=${item.id})}">
+                                                    <a th:href="@{/san-pham/{slug}(slug=${item.slug ?: item.id})}">
                                                         <img th:src="@{${item.mainImagePath}}"></a>
                                                 </div>
                                                 <div class="tend">
                                                     <h3><a
-                                                            th:href="@{/product/{id}(id=${item.id})}"
+                                                            th:href="@{/san-pham/{slug}(slug=${item.slug ?: item.id})}"
                                                             th:text="${item.pname}"></a></h3>
                                                 </div>
                                                 <div class="link"><a
-                                                        th:href="@{/product/{id}(id=${item.id})}"><span>Xem chi tiết</span></a>
+                                                        th:href="@{/san-pham/{slug}(slug=${item.slug ?: item.id})}"><span>Xem chi tiết</span></a>
                                                 </div>
                                             </div>
                                         </div>

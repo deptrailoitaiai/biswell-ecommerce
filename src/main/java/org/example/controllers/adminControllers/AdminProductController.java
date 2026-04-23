@@ -61,6 +61,8 @@ public class AdminProductController {
                        @RequestParam(required = false) MultipartFile[] pimages,
                        @RequestParam(defaultValue = "false") boolean isNew,
                        @RequestParam(defaultValue = "false") boolean isBestSeller,
+                       @RequestParam(required = false) String metaTitle,
+                       @RequestParam(required = false) String metaDescription,
                        RedirectAttributes ra) {
         try {
             ProductDTO dto = new ProductDTO();
@@ -69,6 +71,8 @@ public class AdminProductController {
             dto.setCategoryId(categoryId);
             dto.setNew(isNew);
             dto.setBestSeller(isBestSeller);
+            dto.setMetaTitle(metaTitle);
+            dto.setMetaDescription(metaDescription);
             dto.setMainImagePath(cloudinaryService.uploadFile(mainImage));
 
             if (pimages != null) {
@@ -105,6 +109,8 @@ public class AdminProductController {
                          @RequestParam(required = false) MultipartFile[] pimages,
                          @RequestParam(defaultValue = "false") boolean isNew,
                          @RequestParam(defaultValue = "false") boolean isBestSeller,
+                         @RequestParam(required = false) String metaTitle,
+                         @RequestParam(required = false) String metaDescription,
                          RedirectAttributes ra) {
         try {
             String mainImageUrl = (mainImage != null && !mainImage.isEmpty())
@@ -119,7 +125,7 @@ public class AdminProductController {
                 if (pimageUrls.isEmpty()) pimageUrls = null;
             }
 
-            productService.updateProductAdmin(id, pname, pdesc, categoryId, mainImageUrl, pimageUrls, isNew, isBestSeller);
+            productService.updateProductAdmin(id, pname, pdesc, categoryId, mainImageUrl, pimageUrls, isNew, isBestSeller, metaTitle, metaDescription);
             ra.addFlashAttribute("success", "Cập nhật sản phẩm thành công!");
         } catch (Exception e) {
             ra.addFlashAttribute("error", e.getMessage());

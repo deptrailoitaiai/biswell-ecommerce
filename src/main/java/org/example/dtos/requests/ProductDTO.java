@@ -18,4 +18,6 @@ public class ProductDTO {
     private List<String> imagePaths;
     private boolean isNew;
     private boolean isBestSeller;
+    private String metaTitle;
+    private String metaDescription;
 }

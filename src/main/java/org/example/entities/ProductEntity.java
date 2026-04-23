@@ -43,4 +43,13 @@ public class ProductEntity {
     @Column(name = "is_best_seller", nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
     private boolean isBestSeller = false;
 
+    @Column(name = "slug", unique = true, nullable = false, length = 300)
+    private String slug;
+
+    @Column(name = "meta_title", length = 120)
+    private String metaTitle;
+
+    @Column(name = "meta_description", length = 300)
+    private String metaDescription;
+
 }

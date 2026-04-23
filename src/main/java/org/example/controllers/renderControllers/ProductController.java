@@ -16,7 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,29 +49,18 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public String getProductDetails(@PathVariable("id") Long id, Model model) {
-
+    public String redirectToSlug(@PathVariable Long id) {
         var product = productService.getProductById(id);
-        Page<ProductEntity> productPage = productService.getByCategoryId(product.getCategory().getCategoryId(), PageRequest.of(0, 6));
-
-        List<String> images = new ArrayList<>();
-        images.add(product.getMainImagePath());
-        images.addAll(product.getPimages());
-
-        model.addAttribute("images", images);
-        model.addAttribute("product", productService.getProductById(id));
-        model.addAttribute("referProduct", productPage.getContent());
-
-        return "detail"; // Trả về trang chi tiết sản phẩm
+        return "redirect:/san-pham/" + product.getSlug();
     }
 
     @PostMapping("/save")
     public String saveProduct(
-            @RequestParam("pname") String pname,
-            @RequestParam("pdesc") String pdesc,
-            @RequestParam("mainImage") MultipartFile mainImage,
-            @RequestParam("pimages") MultipartFile[] files,
-            @RequestParam("categoryId") Long categoryId,
+            @RequestParam String pname,
+            @RequestParam String pdesc,
+            @RequestParam MultipartFile mainImage,
+            @RequestParam MultipartFile[] files,
+            @RequestParam Long categoryId,
             Model model) {
 
         ProductDTO dto = new ProductDTO();
@@ -98,7 +86,7 @@ public class ProductController {
 
     // Hiển thị form update
     @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
+    public String showUpdateForm(@PathVariable Long id, Model model) {
         ProductEntity product = productService.getProductById(id);
         List<V2Categories> categories = v2CategoriesService.getAll();
 
@@ -110,10 +98,10 @@ public class ProductController {
 
     // Xử lý cập nhật
     @PostMapping("/update/{id}")
-    public String updateProduct(@PathVariable("id") Long id,
-                                @ModelAttribute("product") ProductDTO product,
-                                @RequestParam("mainImage") MultipartFile mainImage,
-                                @RequestParam("pimages") MultipartFile[] pimages) {
+    public String updateProduct(@PathVariable Long id,
+                                @ModelAttribute ProductDTO product,
+                                @RequestParam MultipartFile mainImage,
+                                @RequestParam MultipartFile[] pimages) {
         productService.updateProduct(id, product, mainImage, pimages);
         return "redirect:/product/list";
     }
@@ -139,9 +127,9 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam("search") String search,
-                         @RequestParam(value = "size", required = false) Integer size,
-                         @RequestParam(value = "page", required = false) Integer page,
+    public String search(@RequestParam String search,
+                         @RequestParam(required = false) Integer size,
+                         @RequestParam(required = false) Integer page,
                          Model model) {
         size = size == null ? 9 : size;
         page = (page == null || page < 0) ? 0 : page;
