@@ -19,6 +19,15 @@
     <meta property="og:description" th:content="${metaDesc ?: 'Biswell — Sản phẩm chăm sóc cá nhân chất lượng cao'}">
     <meta th:if="${product != null and product.mainImagePath != null}" property="og:image" th:content="${product.mainImagePath}">
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3N1KD4KSBQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3N1KD4KSBQ');
+    </script>
+
     <!-- Favicon -->
     <link rel="SHORTCUT ICON" th:href="@{/images/logo.png}" type="image/x-icon"/>
     <link rel="icon" th:href="@{/images/logo.png}" type="image/gif"/>
